@@ -1,0 +1,706 @@
+{
+    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test",
+    "runnable": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "expectSuccess": true,
+    "parms": {
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroHombres": 0,
+        "numeroMujeres": 1
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii",
+            "parmNames": [
+                "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                "contenidoficheroascii",
+                "contenidoficheroasciiAnoFueraDeRango",
+                "contenidoficheroasciiAnoNegativo",
+                "contenidoficheroasciiMesFueraDeRango",
+                "contenidoficheroasciiMesNegativo",
+                "contenidoficheroasciiProvinciaFueraDeRango",
+                "contenidoficheroasciiProvinciaNegativa"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/ficherosascii/ficheroASCIIDeEjemploParaFicheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin":          "~tipoBoletin",
+                                "theAno":                  "~anoFichero",
+                                "theMes":                  "~mesFichero",
+                                "theProvincia":            "~provinciaFichero",
+                                "theNumeroHombres":        "~numeroHombres",
+                                "theNumeroMujeres":        "~numeroMujeres",
+                                "theNumNBOLsRepetidos":    0,
+                                "theNumNBOLsYaExistentes": 0,
+                                "theFechasHombresSpec":    null,
+                                "theFechasMujeresSpec":    null,
+                                "theReutilizarExistentes": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vTipo-BoletinDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroASCII"
+                        }
+
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export",
+                            "exportAs": "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroascii",
+                            "exportAs": "contenidoficheroascii",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiAnoFueraDeRango",
+                            "exportAs": "contenidoficheroasciiAnoFueraDeRango",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return '1015' + theF.substring(4,8) + theF.substring(8,17) + theF.substring(17);}"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiAnoNegativo",
+                            "exportAs": "contenidoficheroasciiAnoNegativo",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return '-215'.concat( theF.substring(4,8), theF.substring(8,17), theF.substring(17));}"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiMesFueraDeRango",
+                            "exportAs": "contenidoficheroasciiMesFueraDeRango",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return  theF.substring(0,4).concat( '13', theF.substring(7,8), theF.substring(8,17), theF.substring(17));}"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiMesNegativo",
+                            "exportAs": "contenidoficheroasciiMesNegativo",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return  theF.substring(0,4).concat( '-1', theF.substring(7,8), theF.substring(8,17), theF.substring(17));}"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiProvinciaFueraDeRango",
+                            "exportAs": "contenidoficheroasciiProvinciaFueraDeRango",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return  theF.substring(0,6).concat( '00', theF.substring(8,17), theF.substring(17));}"
+                        },
+                        {
+                            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroasciiProvinciaNegativa",
+                            "exportAs": "contenidoficheroasciiProvinciaNegativa",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return  theF.substring(0,6).concat( '-1', theF.substring(8,17), theF.substring(17));}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-fuerarango",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiAnoFueraDeRango",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-fuerarango-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-fuerarango-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-fuerarango-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-fuerarango-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "vAno"
+                }
+            ]
+        },
+
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-negativo",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiAnoNegativo",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-negativo-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-negativo-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-negativo-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-ano-negativo-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "ERRORFORMATO[1..4] type <> java.lang.Integer"
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-fuerarango",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiMesFueraDeRango",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-fuerarango-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-fuerarango-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-fuerarango-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-fuerarango-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "vMes"
+                }
+            ]
+        },
+
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-negativo",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiMesNegativo",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-negativo-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-negativo-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-negativo-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-mes-negativo-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "ERRORFORMATO[5..6] type <> java.lang.Integer"
+                }
+            ]
+        },
+
+
+
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-fuerarango",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiProvinciaFueraDeRango",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-fuerarango-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-fuerarango-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-fuerarango-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-fuerarango-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "vProvincia"
+                }
+            ]
+        },
+
+        {
+            "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-negativa",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/importacionficherosascii/crearTrabajoImportacionFicheroASCIIJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "multiparts": [
+                        {
+                            "parmName" : "theTipoBoletin",
+                            "parmValue": "ine",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theForzar",
+                            "parmValue": "true",
+                            "contentType": null
+                        },
+                        {
+                            "parmName" : "theFileEncoding",
+                            "parmValue": "UTF-8",
+                            "contentType": null
+                        }
+                    ],
+                    "uploads": [
+                        {
+                            "parmName":    "theUploadedFile",
+                            "uploadBytes": "~contenidoficheroasciiProvinciaNegativa",
+                            "contentType": "text/plain"
+                        }
+                    ]
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-negativa-check-vSuccess-false",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-negativa-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-negativa-check-vStatusOperacion-FICHEROERRONEO",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vStatusOperacion",
+                    "checkValue": "FICHEROERRONEO"
+                },
+                {
+                    "name": "suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test-sub-provincia-negativa-check-vDetallesOperacion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vDetallesOperacion",
+                    "checkValue": "ERRORFORMATO[7..8] type <> java.lang.Integer"
+                }
+            ]
+        }
+
+    ]
+}
+
+
+
+
+

@@ -1,0 +1,13 @@
+[
+    "@testspath/springnut/aux-springnut/perfiles-springnut/perfiles-noautorizado/launchables.json",
+
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-10-auxperfiles-eliminarsiexiste-springnut-test.json",
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-12-auxperfiles-eliminar-autodesautorizacion-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-20-auxperfiles-crear-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-30-auxperfiles-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/perfiles-springnut/suite-40-auxperfiles-eliminarporid-springnut-test.json"
+]

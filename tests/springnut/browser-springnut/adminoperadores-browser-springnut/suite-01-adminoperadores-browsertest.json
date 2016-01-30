@@ -1,0 +1,908 @@
+{
+    "name": "suite-01-adminoperadores-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "salutation": "Hello suite-01-adminoperadores-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "nombrePerfil":               "@PERFBWR0111",
+        "descripcionPerfil":          "@PERFBWR0111 descripcion",
+        "nombrePerfil2":       "@PERFBWR0122",
+        "descripcionPerfil2":  "@PERFBWR0122 descripcion",
+        "protractor": {
+            "allScriptsTimeout": 240000,
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+
+
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+            {
+                "name": "VisitPage-Springnut-Adminoperadores",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "VisitSpringnutAdminoperadores",
+                        "visitURL": "/app/adminoperadores.html#/adminoperadoresOperacion",
+                        "isAngular": true,
+                        "expectedPageTitle": "Operadores - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+
+
+            {
+                "name": "WidgetCtrls-Springnut-Adminoperadores",
+                "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                "methodName": "pDoPtr_InitWithHelperParms",
+                "reuseInstanceAsExtraParm": "widgetctrlSpringnutAdminoperadores",
+                "helperParms": {
+                    "widgetctrls": {
+                        "name":        "WidgetCtrls-Springnut-Adminoperadores",
+                        "domIdPrefix": "didSpringnut_Adminoperadores"
+                    }
+                }
+            },
+
+
+            {
+                "name": "MultiComposite-Springnut-Adminoperadores",
+                "module": "@cmppath/browser-test/multicomposite-testhelper",
+                "constructorName": "MultiCompositeTestHelper_Constructor",
+                "methodName": "pDoPtr_MultiComposite",
+                "extraConstructorParms": [ "widgetctrlSpringnutAdminoperadores"],
+                "helperParms": {
+                    "multiComposite": {
+                        "name": "Adminoperadores",
+                        "compositeSpecs" : [
+
+
+
+                            {
+                                "name": "MultiAction-Springnut-Adminoperadores-ListaOperadoresDePerfil-crear0133",
+                                "gridName": "ListaOperadoresDePerfil",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPERBWR0133"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearOperadorDePerfil",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "vNombreOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0133"
+                                            },
+                                            {
+                                                "fieldName": "vNombreCompletoOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0133 Nombre Completo $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "vContrasena",
+                                                "type":      "String",
+                                                "value":     "OPERBWR0133"
+                                            },
+                                            {
+                                                "fieldName": "vRepetirContrasena",
+                                                "type":      "String",
+                                                "value":     "OPERBWR0133"
+                                            },
+                                            {
+                                                "fieldName": "vCuentaBloqueada",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vDescripcionOperador",
+                                                "type":      "Text",
+                                                "value":     "@OPERBWR0133 Descripcion $timestamp"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Adminoperadores-ListaOperadoresDePerfil-ListaAutorizacionesDeOperador",
+                                        "gridName": "ListaAutorizacionesDeOperadorDePerfil",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearAutorizacionDeOperadorDePerfil",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vNombrePerfil",
+                                                        "type":      "String",
+                                                        "candidates": true,
+                                                        "candidatesGridName": "AutorizacionDeOperadorDePerfil_Crear__vNombrePerfil_Candidatos_ListaPerfiles",
+                                                        "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~nombrePerfil"}
+                                                    }
+                                                ]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            },
+
+
+                            {
+                                "name": "MultiAction-Springnut-Adminoperadores-ListaOperadoresDePerfil-2-delete",
+                                "gridName": "ListaOperadoresDePerfil",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+                                    {
+                                       "actionKind": "DELETE"
+                                    }
+                                ]
+                            },
+
+
+
+
+
+
+
+
+
+                            {
+                                "name": "MultiAction-Springnut-Adminoperadores-ListaOperadoresDePerfil",
+                                "gridName": "ListaOperadoresDePerfil",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPERBWR0111"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPERBWR0122"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearOperadorDePerfil",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "vNombreOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0111"
+                                            },
+                                            {
+                                                "fieldName": "vNombreCompletoOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0111 Nombre Completo $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "vContrasena",
+                                                "type":      "String",
+                                                "value":     "OPERBWR0111"
+                                            },
+                                            {
+                                                "fieldName": "vRepetirContrasena",
+                                                "type":      "String",
+                                                "value":     "OPERBWR0111"
+                                            },
+                                            {
+                                                "fieldName": "vCuentaBloqueada",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vDescripcionOperador",
+                                                "type":      "Text",
+                                                "value":     "@OPERBWR0111 Descripcion $timestamp"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "OperadorDePerfil",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "vNombreCompletoOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0111 Nombre Completo EDITED $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "vCuentaBloqueada",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                "type":      "BoolYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "vDescripcionOperador",
+                                                "type":      "Text",
+                                                "value":     "@OPERBWR0111 Descripcion EDITED $timestamp"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "OperadorDePerfil",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "vNombreOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0122"
+                                            },
+                                            {
+                                                "fieldName": "vNombreCompletoOperador",
+                                                "type":      "String",
+                                                "value":     "@OPERBWR0122 Nombre Completo EDITED $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "vDescripcionOperador",
+                                                "type":      "Text",
+                                                "value":     "@OPERBWR0122 Descripcion EDITED $timestamp"
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Adminoperadores-ListaOperadoresDePerfil-ListaAutorizacionesDeOperador",
+                                        "gridName": "ListaAutorizacionesDeOperadorDePerfil",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearAutorizacionDeOperadorDePerfil",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vNombrePerfil",
+                                                        "type":      "String",
+                                                        "candidates": true,
+                                                        "candidatesGridName": "AutorizacionDeOperadorDePerfil_Crear__vNombrePerfil_Candidatos_ListaPerfiles",
+                                                        "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~nombrePerfil"}
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearAutorizacionDeOperadorDePerfil",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vNombrePerfil",
+                                                        "type":      "String",
+                                                        "candidates": true,
+                                                        "candidatesGridName": "AutorizacionDeOperadorDePerfil_Crear__vNombrePerfil_Candidatos_ListaPerfiles",
+                                                        "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~nombrePerfil2"}
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  5, "spanIndex":  0, "value":  "~nombrePerfil"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            },
+
+
+
+
+
+                            {
+                                "name": "MultiAction-Springnut-Adminoperadores-ListaOperadoresDePerfil-selectorPerfil",
+                                "gridName": "ListaOperadoresDePerfil",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+
+                                    {
+                                        "actionKind": "SELECTOR",
+                                        "selectorName": "ListaPerfiles",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~nombrePerfil2"}
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "SELECT",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPERBWR0122"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "OperadorDePerfil",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "vNombreCompletoOperador",
+                                                        "type":      "String",
+                                                        "value":     "@OPERBWR0122 Nombre Completo EDITED AGAIN $timestamp"
+                                                    },
+                                                    {
+                                                        "fieldName": "vCuentaBloqueada",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vDescripcionOperador",
+                                                        "type":      "Text",
+                                                        "value":     "@OPERBWR0122 Descripcion EDITED AGAIN $timestamp"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Adminoperadores-ListaOperadoresDePerfil-ListaAutorizacionesDeOperador",
+                                        "gridName": "ListaAutorizacionesDeOperadorDePerfil",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  5, "spanIndex":  0, "value":  "~nombrePerfil2"}
+                                            }
+
+                                        ]
+                                    },
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Adminoperadores-ListaOperadoresDePerfil-ConPerfilSeleccionado",
+                                        "gridName": "ListaOperadoresDePerfil",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPERBWR0114"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearOperadorDePerfil",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vNombreOperador",
+                                                        "type":      "String",
+                                                        "value":     "@OPERBWR0114"
+                                                    },
+                                                    {
+                                                        "fieldName": "vNombreCompletoOperador",
+                                                        "type":      "String",
+                                                        "value":     "@OPERBWR0114 Nombre Completo $timestamp"
+                                                    },
+                                                    {
+                                                        "fieldName": "vContrasena",
+                                                        "type":      "String",
+                                                        "value":     "OPERBWR0114"
+                                                    },
+                                                    {
+                                                        "fieldName": "vRepetirContrasena",
+                                                        "type":      "String",
+                                                        "value":     "OPERBWR0114"
+                                                    },
+                                                    {
+                                                        "fieldName": "vCuentaBloqueada",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vDescripcionOperador",
+                                                        "type":      "Text",
+                                                        "value":     "@OPERBWR0114 Descripcion $timestamp"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "OperadorDePerfil",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "vNombreCompletoOperador",
+                                                        "type":      "String",
+                                                        "value":     "@OPERBWR0114 Nombre Completo EDITED $timestamp"
+                                                    },
+                                                    {
+                                                        "fieldName": "vCuentaBloqueada",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioDebeCambiarPswdAInicioDeSesion",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vUsuarioNoPuedeCambiarPswd",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "vDescripcionOperador",
+                                                        "type":      "Text",
+                                                        "value":     "@OPERBWR0114 Descripcion EDITED $timestamp"
+                                                    }
+                                                ]
+                                            },
+
+
+
+                                            {
+                                                "actionKind": "GRID",
+                                                "name": "Grid-Springnut-Adminoperadores-ListaOperadoresDePerfil-ConPerfilSeleccionado-ListaAutorizacionesDeOperador",
+                                                "gridName": "ListaAutorizacionesDeOperadorDePerfil",
+                                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                "constructorName": "MultiActionTestHelper_Constructor",
+                                                "methodName": "fDoPtr_MultiAction",
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "CREATE",
+                                                        "creatorName": "CrearAutorizacionDeOperadorDePerfil",
+                                                        "fieldInits": [
+                                                            {
+                                                                "fieldName": "vNombrePerfil",
+                                                                "type":      "String",
+                                                                "candidates": true,
+                                                                "candidatesGridName": "AutorizacionDeOperadorDePerfil_Crear__vNombrePerfil_Candidatos_ListaPerfiles",
+                                                                "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~nombrePerfil"}
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "actionKind": "SELECT",
+                                                        "finder":  { "columnIndex":  5, "spanIndex":  0, "value":  "~nombrePerfil2"},
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "DELETE"
+                                                            }
+                                                        ]
+                                                    }
+
+                                                ]
+                                            }
+                                        ]
+                                    }
+
+
+                                ]
+                            }
+
+
+
+
+
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "required": [
+        {
+            "name": "suite-01-adminoperadores-browsertest-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-browsertest-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instalador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste",
+            "parmNames": [
+                "testeliminarperfilsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilConNombreEliminarJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":  "~nombrePerfil",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-supplier-export",
+                            "exportAs": "testeliminarperfilsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-2",
+            "parmNames": [
+                "testeliminarperfilsiexiste-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilConNombreEliminarJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":  "~nombrePerfil2",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testeliminarperfilsiexiste-2-supplier-export",
+                            "exportAs": "testeliminarperfilsiexiste-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil-idPerfil",
+            "parmNames": [
+                "testcrearperfil",
+                "idPerfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil",
+                                "theDescripcionPerfil":  "~descripcionPerfil"
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil-supplier-export",
+                            "exportAs": "testcrearperfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil-supplier-export-idPerfil",
+                            "exportAs": "idPerfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil2-idPerfil",
+            "parmNames": [
+                "testcrearperfil2",
+                "idPerfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil2",
+                                "theDescripcionPerfil":  "~descripcionPerfil2"
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil2-supplier-export",
+                            "exportAs": "testcrearperfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-adminoperadores-browsertest-require-testcrearperfil2-supplier-export-idPerfil",
+                            "exportAs": "idPerfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

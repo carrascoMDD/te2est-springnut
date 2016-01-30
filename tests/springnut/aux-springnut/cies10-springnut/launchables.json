@@ -1,0 +1,8 @@
+[
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/launchables.json",
+
+    "@testspath/springnut/aux-springnut/cies10-springnut/suite-01-auxcie10-crear-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/suite-02-auxcie10-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/suite-03-auxcie10-cambiaralgunosdatos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/suite-10-auxcie10-eliminar-springnut-test.json"
+]

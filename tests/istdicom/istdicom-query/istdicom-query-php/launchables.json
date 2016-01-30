@@ -1,0 +1,20 @@
+[
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-01-query-php-study-list-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-02-query-php-study-instance-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-03-query-php-study-list-iterateinstances-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-04-query-php-study-list-iterateinstances-dicomdownload-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-05-query-php-study-list-iterateinstances-dicomwritefile-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-14-query-php-study-list-iterateinstances-dicomdownload-usepayloadholder-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-20-query-php-study-list-iterateinstances-dicomcached-nocachehit-istdicom-test.json",
+
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/suite-22-query-php-study-list-iterateinstances-dicomcached-okcachehit-istdicom-test.json"
+
+]

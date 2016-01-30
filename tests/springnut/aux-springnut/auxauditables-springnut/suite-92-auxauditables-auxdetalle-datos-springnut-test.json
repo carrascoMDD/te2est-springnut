@@ -1,0 +1,826 @@
+{
+    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/aux/auditables/auxdetalleDatosJSON",
+            "URLparms": {
+                "theIdAuxdetalle":   "~idauxdetalle"
+            },
+            "requestdata": null,
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo": "AuxdetalleDatos",
+                "vSuccess": true
+            }
+        },
+        "auxkey": "@auxaudkey92",
+        "auxnum": 100092,
+        "auxstr": "@auxaudstr92",
+        "auxtxt": "@auxaudtxt\nauxaudtxtl2\nauxaudtxtl3\nauxaudtxtl4\nauxaudtxtl5",
+        "auxboo": true,
+        "auxkeydetalle": "@auxaudkeydetalle92",
+        "auxnumdetalle": 500092,
+        "auxstrdetalle": "@auxaudstrdetalle92",
+        "auxtxtdetalle": "@auxdettxt\nauxdettxtl2\nauxdettxtl3\nauxdettxtl4\nauxdettxtl5",
+        "auxboodetalle": true,
+        "auxkeydetalleOtro": "@auxaudkeydetalleOtro92",
+        "auxnumdetalleOtro": 500192,
+        "auxstrdetalleOtro": "@auxaudstrdetalleOtro92",
+        "auxtxtdetalleOtro": "@auxdettxtOtro\nauxdettxtOtrol2\nauxdettxtOtrol3\nauxdettxtOtrol4\nauxdettxtOtrol5",
+        "auxboodetalleOtro": true
+
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-auxfecha",
+            "exportAs": "auxfecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahora",
+            "exportAs": "auxfechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechadetalle",
+            "exportAs": "auxfechadetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoradetalle",
+            "exportAs": "auxfechahoradetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechadetalleOtro",
+            "exportAs": "auxfechadetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoradetalleOtro",
+            "exportAs": "auxfechahoradetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-_v_Reply.vTipo-ListaAuxdetalles",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "AuxdetalleDatos"
+        },
+
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vIdAuxdet-idauxdetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdAuxdet",
+            "checkValue": "~idauxdetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxKey-auxkeydetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxKey",
+            "checkValue": "~auxkeydetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxNum-auxnumdetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxNum",
+            "checkValue": "~auxnumdetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxStr-auxstrdetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxStr",
+            "checkValue": "~auxstrdetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxTxt-auxtxtdetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxTxt",
+            "checkValue": "~auxtxtdetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxBoo-auxboodetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxBoo",
+            "checkValue": "~auxboodetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxDateStr-auxfechadetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxDateStr",
+            "checkValue": "~auxfechadetalle"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxTimestampStr-auxfechahoradetalle",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxTimestampStr",
+            "checkValue": "~auxfechahoradetalle"
+        },
+
+
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxauditable.vTipo-AuxauditableDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vTipo",
+            "checkValue": "AuxauditableDatos"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxauditable.vIdAux-idaux",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vIdAux",
+            "checkValue": "~idauxauditable"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxauditable.vAuxKey-auxkey",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxKey",
+            "checkValue": "~auxkey"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxauditable.vAuxNum-auxnum",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxNum",
+            "checkValue": "~auxnum"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-check-vAuxauditable.vAuxStr-auxstr",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxStr",
+            "checkValue": "~auxstr"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-vAuxauditable.vAuxTxt-auxtxdetalleOtrot",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxTxt",
+            "checkValue": "~auxtxt"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-vAuxauditable.vAuxBoo-auxboo",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxBoo",
+            "checkValue": "~auxboo"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-vAuxauditable.vAuxDateStr-auxfecha",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxDateStr",
+            "checkValue": "~auxfecha"
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-check-vAuxauditable.vAuxTimestampStr-auxfechahora",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxauditable.vAuxTimestampStr",
+            "checkValue": "~auxfechahora"
+        }
+
+    ],
+    "required": [
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-eliminarauxauditablesiexiste",
+            "parmNames": [
+                "eliminarauxauditablesiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-eliminarauxauditablesiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                            "URLparms": null,
+                            "requestdata": {
+                                "theAuxKey": "~auxkey",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-eliminarauxauditablesiexiste-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-eliminarauxauditablesiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datosspringnut-test-require-eliminarauxauditablesiexiste-check-vAuxKey-auxkey",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkey"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-eliminarauxauditablesiexiste-export",
+                            "exportAs": "eliminarauxauditablesiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable",
+            "parmNames": [
+                "crearauxauditable",
+                "idauxauditable"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/crearAuxauditableJSON",
+                            "URLparms": null,
+                            "requestdata": {
+                                "theAuxKey": "~auxkey",
+                                "theAuxNum": "~auxnum",
+                                "theAuxStr": "~auxstr",
+                                "theAuxTxt": "~auxtxt",
+                                "theAuxBoo": "~auxboo",
+                                "theAuxFechaStr": "~auxfecha",
+                                "theAuxFechaHoraStr": "~auxfechahora",
+                                "theExitoSiYaExiste": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-check-vAuxKey-auxkey",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkey"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-check-vAuxNum-auxnum",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxNum",
+                            "checkValue": "~auxnum"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-check-vAuxStr-auxstr",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxStr",
+                            "checkValue": "~auxstr"
+                        },
+                        {
+                            "name": "suite-23-auxauditables-auxauditable-cambiar-check.vAuxTxt-auxtxt",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTxt",
+                            "checkValue": "~auxtxt"
+                        },
+                        {
+                            "name": "suite-23-auxauditables-auxauditable-cambiar-check.vAuxBoo-auxboo",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxBoo",
+                            "checkValue": "~auxboo"
+                        },
+                        {
+                            "name": "suite-23-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfecha",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxDateStr",
+                            "checkValue": "~auxfecha"
+                        },
+                        {
+                            "name": "suite-23-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfechahora",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                            "checkValue": "~auxfechahora"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-export",
+                            "exportAs": "crearauxauditable",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxauditable-export-idauxauditable",
+                            "exportAs": "idauxauditable",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdAux",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle",
+            "parmNames": [
+                "crearauxdetalle",
+                "idauxdetalle"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/crearAuxdetalleDeAuxauditableConIdJSON",
+                            "requestdata": {
+                                "theIdAuxauditable": "~idauxauditable",
+                                "theAuxKeyDetalle":  "~auxkeydetalle",
+                                "theAuxNum": "~auxnumdetalle",
+                                "theAuxStr": "~auxstrdetalle",
+                                "theAuxTxt": "~auxtxtdetalle",
+                                "theAuxBoo": "~auxboodetalle",
+                                "theAuxFechaStr": "~auxfechadetalle",
+                                "theAuxFechaHoraStr": "~auxfechahoradetalle",
+                                "theExitoSiYaExiste": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxdetalleDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxdetalleDatos"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxKey-auxkeydetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkeydetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxNum-auxnumdetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxNum",
+                            "checkValue": "~auxnumdetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxStr-auxstrdetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxStr",
+                            "checkValue": "~auxstrdetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxTxt-auxtxtdetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTxt",
+                            "checkValue": "~auxtxtdetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxBoo-auxboodetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxBoo",
+                            "checkValue": "~auxboodetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxDateStr-auxfechadetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxDateStr",
+                            "checkValue": "~auxfechadetalle"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-check-vAuxTimestampStr-auxfechahoradetalle",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                            "checkValue": "~auxfechahoradetalle"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-export",
+                            "exportAs": "crearauxdetalle",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalle-export-idauxdetalle",
+                            "exportAs": "idauxdetalle",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdAuxdet",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro",
+            "parmNames": [
+                "crearauxdetalleOtro",
+                "idauxdetalle"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/crearAuxdetalleDeAuxauditableConIdJSON",
+                            "requestdata": {
+                                "theIdAuxauditable": "~idauxauditable",
+                                "theAuxKeyDetalle":  "~auxkeydetalleOtro",
+                                "theAuxNum": "~auxnumdetalleOtro",
+                                "theAuxStr": "~auxstrdetalleOtro",
+                                "theAuxTxt": "~auxtxtdetalleOtro",
+                                "theAuxBoo": "~auxboodetalleOtro",
+                                "theAuxFechaStr": "~auxfechadetalleOtro",
+                                "theAuxFechaHoraStr": "~auxfechahoradetalleOtro",
+                                "theExitoSiYaExiste": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxdetalleDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxdetalleDatos"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxKey-auxkeydetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkeydetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxNum-auxnumdetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxNum",
+                            "checkValue": "~auxnumdetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxStr-auxstrdetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxStr",
+                            "checkValue": "~auxstrdetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxTxt-auxtxtdetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTxt",
+                            "checkValue": "~auxtxtdetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxBoo-auxboodetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxBoo",
+                            "checkValue": "~auxboodetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxDateStr-auxfechadetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxDateStr",
+                            "checkValue": "~auxfechadetalleOtro"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-check-vAuxTimestampStr-auxfechahoradetalleOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                            "checkValue": "~auxfechahoradetalleOtro"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-export",
+                            "exportAs": "crearauxdetalleOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-92-auxauditables-auxdetalle-datos-springnut-test-require-crearauxdetalleOtro-export-idauxdetalleOtro",
+                            "exportAs": "idauxdetalleOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdAuxdet",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

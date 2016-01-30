@@ -1,0 +1,361 @@
+{
+    "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/aux/auditables/auxAuxdetallePorKeyDeAuxauditablePorKeyEliminarJSON",
+            "requestdata": {
+                "theAuxKey":        "~auxkey",
+                "theAuxKeyDetalle": "~auxkeydetalle",
+                "theExitoSiNoExiste": true
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo": "AuxdetalleDatos",
+                "vSuccess": true
+            }
+        },
+        "auxkey": "@auxaudkey66",
+        "auxnum": 100066,
+        "auxstr": "@auxaudstr66",
+        "auxtxt": "@auxaudtxt\nauxaudtxtl2\nauxaudtxtl3\nauxaudtxtl4\nauxaudtxtl5",
+        "auxboo": true,
+        "auxkeydetalle": "!INEXISTENTENOCREADA66"
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-auxfecha",
+            "exportAs": "auxfecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahora",
+            "exportAs": "auxfechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-check-_v_Reply.vTipo-AuxauditableDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "AuxdetalleDatos"
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-check-vAuxKey-auxkey",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAuxKey",
+            "checkValue": "~auxkeydetalle"
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-check-vStatusOperacion-NOEXISTE",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStatusOperacion",
+            "checkValue": "NOEXISTE"
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-check-vDetallesOperacion-theIdAuxauditable",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vDetallesOperacion",
+            "checkValue": "theAuxKeyDetalle"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-eliminarauxauditablesiexiste",
+            "parmNames": [
+                "eliminarauxauditablesiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-eliminarauxauditablesiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                            "requestdata": {
+                                "theAuxKey": "~auxkey",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-eliminarauxauditablesiexiste-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-eliminarauxauditablesiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetallespringnut-test-require-eliminarauxauditablesiexiste-check-vAuxKey-auxkey",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkey"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-eliminarauxauditablesiexiste-export",
+                            "exportAs": "eliminarauxauditablesiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable",
+            "parmNames": [
+                "crearauxauditable",
+                "idauxauditable"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/crearAuxauditableJSON",
+                            "requestdata": {
+                                "theAuxKey": "~auxkey",
+                                "theAuxNum": "~auxnum",
+                                "theAuxStr": "~auxstr",
+                                "theAuxTxt": "~auxtxt",
+                                "theAuxBoo": "~auxboo",
+                                "theAuxFechaStr": "~auxfecha",
+                                "theAuxFechaHoraStr": "~auxfechahora",
+                                "theExitoSiYaExiste": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-check-vAuxKey-auxkey",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxKey",
+                            "checkValue": "~auxkey"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-check-vAuxNum-auxnum",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxNum",
+                            "checkValue": "~auxnum"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-check-vAuxStr-auxstr",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxStr",
+                            "checkValue": "~auxstr"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-springnut-test-require-crearauxauditable-check-vAuxTxt-auxtxt",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTxt",
+                            "checkValue": "~auxtxt"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-springnut-test-require-crearauxauditable-check-vAuxBoo-auxboo",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxBoo",
+                            "checkValue": "~auxboo"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-springnut-test-require-crearauxauditable-check-vAuxDateStr-auxfecha",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxDateStr",
+                            "checkValue": "~auxfecha"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-springnut-test-require-crearauxauditable-check-vAuxTimestampStr-auxfechahora",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                            "checkValue": "~auxfechahora"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-export",
+                            "exportAs": "crearauxauditable",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-66-auxauditables-auxdetalle-eliminar-dosclaves-exitosinoexiste-claveauxdetalle-springnut-test-require-crearauxauditable-export-idauxauditable",
+                            "exportAs": "idauxauditable",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdAux",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

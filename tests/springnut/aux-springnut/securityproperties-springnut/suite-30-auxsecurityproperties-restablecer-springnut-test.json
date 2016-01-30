@@ -1,0 +1,273 @@
+{
+    "name": "suite-30-auxsecurityproperties-restablecer-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-30-auxsecurityproperties-restablecer. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": { }
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instalador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart",
+            "parmNames": [
+                "restablecerqstrplyexpectedresponsepart"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/general-test/fake-test",
+                    "constructorName": "FakeTest_Constructor",
+                    "methodName": "pF_Fake",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "fake": {
+                            "fakeResult":   { "fakeResult": "fakeResult"},
+                            "fakeSuccess":  true,
+                            "fakeRcvError": null,
+                            "fakeRcvStatus": 200,
+                            "fakeRcvBody": { "fakeBody": "fakeBody"}
+                        },
+                        "forRequestReply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                               "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-supplier-export-crearcondicionvalidaciontest",
+                            "exportAs": "restablecerqstrplyexpectedresponsepart",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-supplier-export-requestreply",
+                            "exportAs": "requestreply",
+                            "exportOrigin": "PARMS",
+                            "exportSource": "forRequestReply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos",
+            "parmNames": [
+                "restablecerqstrplyexpectedresponsepartdatos"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-securitypropertiesdatostest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theTokenSecurityProperties":  "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-export-securitypropertiesdatostest",
+                            "exportAs": "restablecerqstrplyexpectedresponsepartdatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vCuentaBloqueada",
+                            "exportAs": "requestreply.expectedresponsepart.vCuentaBloqueada",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vCuentaBloqueada",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vUsuarioNoPuedeCambiarPswd",
+                            "exportAs": "requestreply.expectedresponsepart.vUsuarioNoPuedeCambiarPswd",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vUsuarioNoPuedeCambiarPswd",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vDiasCambioPwd",
+                            "exportAs": "requestreply.expectedresponsepart.vDiasCambioPwd",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDiasCambioPwd",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vUsuarioDebeCambiarPswdAInicioSesion",
+                            "exportAs": "requestreply.expectedresponsepart.vUsuarioDebeCambiarPswdAInicioSesion",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vUsuarioDebeCambiarPswdAInicioSesion",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vMaxAccesosGracia",
+                            "exportAs": "requestreply.expectedresponsepart.vMaxAccesosGracia",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vMaxAccesosGracia",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vMaxFallos",
+                            "exportAs": "requestreply.expectedresponsepart.vMaxFallos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vMaxFallos",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vDiasCambioPwdMillisShrinkFactor",
+                            "exportAs": "requestreply.expectedresponsepart.vDiasCambioPwdMillisShrinkFactor",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDiasCambioPwdMillisShrinkFactor",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-restablecerqstrply-expectedresponsepart-datos-supplier-export-vDiasCambioPwdMillisShrinkApply",
+                            "exportAs": "requestreply.expectedresponsepart.vDiasCambioPwdMillisShrinkApply",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDiasCambioPwdMillisShrinkApply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-securityproperties-cambiartest",
+            "parmNames": [
+                "cambiartest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-auxsecurityproperties-restablecer-springnut-test-require-securityproperties-cambiartest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "salutation": "Hello suite-30-auxsecurityproperties-restablecer. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/cambiarSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theCuentaBloqueada":                      true,
+                                "theUsuarioNoPuedeCambiarPswd":            true,
+                                "theDiasCambioPwd":                        10,
+                                "theUsuarioDebeCambiarPswdAInicioSesion":  true,
+                                "theMaxAccesosGracia":                     1,
+                                "theMaxFallos":                            1,
+                                "theDiasCambioPwdMillisShrinkFactor":      2592000,
+                                "theDiasCambioPwdMillisShrinkApply":       true,
+                                "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos",
+                                "vCuentaBloqueada":                      true,
+                                "vUsuarioNoPuedeCambiarPswd":            true,
+                                "vDiasCambioPwd":                        10,
+                                "vUsuarioDebeCambiarPswdAInicioSesion":  true,
+                                "vMaxAccesosGracia":                     1,
+                                "vMaxFallos":                            1,
+                                "vDiasCambioPwdMillisShrinkFactor":      2592000,
+                                "vDiasCambioPwdMillisShrinkApply":       true
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "require-securityproperties-cambiartest-export",
+                            "exportAs": "cambiartest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

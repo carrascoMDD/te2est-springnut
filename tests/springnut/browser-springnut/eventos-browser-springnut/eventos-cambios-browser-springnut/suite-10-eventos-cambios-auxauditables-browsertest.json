@@ -1,0 +1,1425 @@
+{
+    "name": "suite-10-eventos-cambios-auxauditables-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-10-eventos-cambios-auxauditables-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "auxkey": "@auxaudkeyvc10",
+        "auxnum": 120001,
+        "auxstr": "@auxaudstrvc10",
+        "auxtxt": "@auxaudtxtvc10\nauxaudtxtvc10l2\nauxaudtxtvc10l3\nauxaudtxtvc10l4\nauxaudtxtvc10l5",
+        "auxboo": true,
+        "auxtipoentidad": "Auxauditable",
+        "auxkeyCambiado": "@auxaudkeyvc10Cambiado",
+        "auxnumCambiado": 120011,
+        "auxstrCambiado": "@auxaudstrvc10Cambiado",
+        "auxtxtCambiado": "@auxaudtxtvc10Cambiado\nauxaudtxtvc10Cambiadol2\nauxaudtxtvc10Cambiadol3\nauxaudtxvc10tCambiadol4\nauxaudtxtvc10Cambiadol5",
+        "auxbooCambiado": false
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-auxfecha",
+            "exportAs": "auxfecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahora",
+            "exportAs": "auxfechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaCambiado",
+            "exportAs": "auxfechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraCambiado",
+            "exportAs": "auxfechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaAyer",
+            "exportAs": "auxfechaAyer",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_YesterdayDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraAyer",
+            "exportAs": "auxfechahoraAyer",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_YesterdayTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaManana",
+            "exportAs": "auxfechaManana",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraManana",
+            "exportAs": "auxfechahoraManana",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-auxfechahoraAntesDeCambios",
+            "parmNames": [
+                "auxfechahoraAntesDeCambios"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-auxfechahoraAntesDeCambios-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/FechaHora/auxFechaHoraJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theDeltaMillis":  -10,
+                                "theDeltaDays":    null
+                            },
+                            "expectedresponsepart": {
+                                "vTipo": "FechaHoraDatos",
+                                "vSuccess": true
+                            }
+                        }
+
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-auxfechahoraAntesDeCambios-export",
+                            "exportAs": "auxfechahoraAntesDeCambios",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDeltaTimestampStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio",
+            "parmNames": [
+                "causarCambio"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/vercambios/veridcambiadaDatosJSON",
+                            "URLparms": {
+                                "theIdVeridcambiada": "~idveridcambiada",
+                                "theIncluyeInformeCampos": false,
+                                "theIncluyeCampos": false
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "VeridcambiadaDatos",
+                                "vSuccess": true
+                            }
+                        },
+                        "auxkey": "@auxaudkeyvc10",
+                        "auxnum": 120001,
+                        "auxstr": "@auxaudstrvc10",
+                        "auxtxt": "@auxaudtxtvc10\nauxaudtxtvc10l2\nauxaudtxtvc10l3\nauxaudtxtvc10l4\nauxaudtxtvc10l5",
+                        "auxboo": true,
+                        "auxtipoentidad": "Auxauditable",
+                        "auxkeyCambiado": "@auxaudkeyvc10Cambiado",
+                        "auxnumCambiado": 120011,
+                        "auxstrCambiado": "@auxaudstrvc10Cambiado",
+                        "auxtxtCambiado": "@auxaudtxtvc10Cambiado\nauxaudtxtvc10Cambiadol2\nauxaudtxtvc10Cambiadol3\nauxaudtxvc10tCambiadol4\nauxaudtxtvc10Cambiadol5",
+                        "auxbooCambiado": false
+                    },
+                    "scheduleSubs": "SERIES",                    
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-export",
+                            "exportAs": "causarCambio",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vTipo-VeridcambiadaDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "VeridcambiadaDatos"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vIdCambio-idvercambio",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdCambio",
+                            "checkValue": "~idvercambio"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vId-idveridcambiada",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vId",
+                            "checkValue": "~idveridcambiada"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vTipoRev-1",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoRev",
+                            "checkValue": 1
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vIdentidad-idauxauditable",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdentidad",
+                            "checkValue": "~idauxauditable"
+                        },
+                        {
+                            "name": "suite-40-vercambios-auxauditables-veridscambiadasdevercambio-lista-springnut-test-check-_v_Reply.vTipoentidad-Auxauditable",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoentidad",
+                            "checkValue": "Auxauditable"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vTipoentidad-auxtipoentidad",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoentidad",
+                            "checkValue": "~auxtipoentidad"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-check-_v_Reply.vClaves-auxkeyCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vClaves",
+                            "checkValue": "~auxkeyCambiado"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-check-_v_Reply.vVercambio.vTipo-VercambioDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVercambio.vTipo",
+                            "checkValue": "VercambioDatos"
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-check-_v_Reply.vVercambio.vIdCambio-idvercambio",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVercambio.vIdCambio",
+                            "checkValue": "~idvercambio"
+                        }
+                    ],
+                    "required": [
+
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios",
+                            "parmNames": [
+                                "ocasionarCambios",
+                                "fechaVercambio",
+                                "fechaHoraVercambio"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/aux/auditables/auxAuxauditableCambiarAlgunosDatosJSON",
+                                            "URLparms": null,
+                                            "requestdata": {
+                                                "theIdAuxauditable": "~idauxauditable",
+                                                "theAuxKey_cambiar": true,
+                                                "theAuxKey": "~auxkeyCambiado",
+                                                "theAuxNum_cambiar": true,
+                                                "theAuxNum": "~auxnumCambiado",
+                                                "theAuxStr_cambiar": true,
+                                                "theAuxStr": "~auxstrCambiado",
+                                                "theAuxTxt_cambiar": true,
+                                                "theAuxTxt": "~auxtxtCambiado",
+                                                "theAuxBoo_cambiar": true,
+                                                "theAuxBoo": "~auxbooCambiado",
+                                                "theAuxFecha_cambiar": true,
+                                                "theAuxFechaStr": "~auxfechaCambiado",
+                                                "theAuxFechaHora_cambiar": true,
+                                                "theAuxFechaHoraStr": "~auxfechahoraCambiado",
+                                                "theExitoSiNoCambiado": false
+                                            },
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "expectedresponsepart": {
+                                                "vTipo": "CambiadoAuxauditable",
+                                                "vSuccess":  true
+                                            }
+                                        }
+        
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-export",
+                                            "exportAs": "ocasionarCambios",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ],
+                                    "checks": [
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "CambiadoAuxauditable"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vIdAux-idaux",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vIdAux",
+                                            "checkValue": "~idauxauditable"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxKey-auxkey",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxKey",
+                                            "checkValue": "~auxkey"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxNum-auxnum",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxNum",
+                                            "checkValue": "~auxnum"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxStr-auxstr",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxStr",
+                                            "checkValue": "~auxstr"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxTxt-auxtxt",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTxt",
+                                            "checkValue": "~auxtxt"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxBoo-auxboo",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxBoo",
+                                            "checkValue": "~auxboo"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfecha",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxDateStr",
+                                            "checkValue": "~auxfecha"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfechahora",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTimestampStr",
+                                            "checkValue": "~auxfechahora"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vCambiado-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCambiado",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vCambiadoAuxkey-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCambiadoAuxKey",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vCambiadoAuxNum-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCambiadoAuxNum",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vCambiadoAuxStr-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCambiadoAuxStr",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vCambiadoAuxBoo-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCambiadoAuxBoo",
+                                            "checkValue": true
+                                        },
+        
+        
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vIdAux-idaux",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vIdAux",
+                                            "checkValue": "~idauxauditable"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxKey-auxkeyCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxKey",
+                                            "checkValue": "~auxkey"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxNum-auxnumCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxNum",
+                                            "checkValue": "~auxnum"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxStr-auxstrCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxStr",
+                                            "checkValue": "~auxstr"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxTxt-auxtxt",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTxt",
+                                            "checkValue": "~auxtxt"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxBoo-auxboo",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxBoo",
+                                            "checkValue": "~auxboo"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfecha",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxDateStr",
+                                            "checkValue": "~auxfecha"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfechahora",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTimestampStr",
+                                            "checkValue": "~auxfechahora"
+                                        },
+        
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vIdAux-idaux",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vIdAux",
+                                            "checkValue": "~idauxauditable"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxKey-auxkeyCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxKey",
+                                            "checkValue": "~auxkeyCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxNum-auxnumCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxNum",
+                                            "checkValue": "~auxnumCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxStr-auxstrCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxStr",
+                                            "checkValue": "~auxstrCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxTxt-auxtxt",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxTxt",
+                                            "checkValue": "~auxtxtCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxBoo-auxboo",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxBoo",
+                                            "checkValue": "~auxbooCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxDateStr-auxfecha",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxDateStr",
+                                            "checkValue": "~auxfechaCambiado"
+                                        },
+                                        {
+                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxTimestampStr-auxfechahora",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxTimestampStr",
+                                            "checkValue": "~auxfechahoraCambiado"
+                                        }
+                                    ],
+                                    "required": [
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste",
+                                            "parmNames": [
+                                                "eliminarauxauditablesiexiste"
+                                            ],
+                                            "suppliers": [
+                                                {
+                                                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-supplier",
+                                                    "runnable": true,
+                                                    "expectSuccess": true,
+                                                    "module": "@cmppath/common-test/requestreply-test",
+                                                    "constructorName": "RequestReply_Constructor",
+                                                    "methodName": "pF_RequestReply",
+                                                    "parms": {
+                                                        "requestreply": {
+                                                            "requestmethod": "POST",
+                                                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                                                            "URLparms": null,
+                                                            "requestdata": {
+                                                                "theAuxKey": "~auxkey",
+                                                                "theExitoSiNoExiste": true
+                                                            },
+                                                            "statuscode": 200,
+                                                            "UNUSED_dumpurl":         true,
+                                                            "UNUSED_dumprequestdata": true,
+                                                            "UNUSED_dumpreply":       true,
+                                                            "expectedresponsepart": {
+                                                                "vTipo": "AuxauditableDatos",
+                                                                "vSuccess": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "scheduleSubs": "SERIES",
+                                                    "checks": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-check-_v_Reply.vSuccess-true",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vSuccess",
+                                                            "checkValue": true
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vTipo",
+                                                            "checkValue": "AuxauditableDatos"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiarspringnut-test-require-eliminarauxauditablesiexiste-check-vAuxKey-auxkey",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxKey",
+                                                            "checkValue": "~auxkey"
+                                                        }
+                                                    ],
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-export",
+                                                            "exportAs": "eliminarauxauditablesiexiste",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "*",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable",
+                                            "parmNames": [
+                                                "crearauxauditable",
+                                                "idauxauditable"
+                                            ],
+                                            "suppliers": [
+                                                {
+                                                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-supplier",
+                                                    "runnable": true,
+                                                    "expectSuccess": true,
+                                                    "module": "@cmppath/common-test/requestreply-test",
+                                                    "constructorName": "RequestReply_Constructor",
+                                                    "methodName": "pF_RequestReply",
+                                                    "parms": {
+                                                        "requestreply": {
+                                                            "requestmethod": "POST",
+                                                            "URLpath": "/aux/auditables/crearAuxauditableJSON",
+                                                            "URLparms": null,
+                                                            "requestdata": {
+                                                                "theAuxKey": "~auxkey",
+                                                                "theAuxNum": "~auxnum",
+                                                                "theAuxStr": "~auxstr",
+                                                                "theAuxTxt": "~auxtxt",
+                                                                "theAuxBoo": "~auxboo",
+                                                                "theAuxFechaStr": "~auxfecha",
+                                                                "theAuxFechaHoraStr": "~auxfechahora",
+                                                                "theExitoSiYaExiste": false
+                                                            },
+                                                            "statuscode": 200,
+                                                            "UNUSED_dumpurl":         true,
+                                                            "UNUSED_dumprequestdata": true,
+                                                            "UNUSED_dumpreply":       true,
+                                                            "expectedresponsepart": {
+                                                                "vTipo": "AuxauditableDatos",
+                                                                "vSuccess": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "scheduleSubs": "SERIES",
+                                                    "checks": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-check-_v_Reply.vSuccess-true",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vSuccess",
+                                                            "checkValue": true
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-check-_v_Reply.vTipo-AuxauditableDatos",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vTipo",
+                                                            "checkValue": "AuxauditableDatos"
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxKey-auxkey",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxKey",
+                                                            "checkValue": "~auxkey"
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxNum-auxnum",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxNum",
+                                                            "checkValue": "~auxnum"
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxStr-auxstr",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxStr",
+                                                            "checkValue": "~auxstr"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check.vAuxTxt-auxtxt",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxTxt",
+                                                            "checkValue": "~auxtxt"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check.vAuxBoo-auxboo",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxBoo",
+                                                            "checkValue": "~auxboo"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfecha",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxDateStr",
+                                                            "checkValue": "~auxfecha"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfechahora",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                                                            "checkValue": "~auxfechahora"
+                                                        }
+                                                    ],
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-export",
+                                                            "exportAs": "crearauxauditable",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "*",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-crearauxauditable-export-idauxauditable",
+                                                            "exportAs": "idauxauditable",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "_v_Reply.vIdAux",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste",
+                                            "parmNames": [
+                                                "eliminarauxauditableOtrosiexiste"
+                                            ],
+                                            "suppliers": [
+                                                {
+                                                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-supplier",
+                                                    "runnable": true,
+                                                    "expectSuccess": true,
+                                                    "module": "@cmppath/common-test/requestreply-test",
+                                                    "constructorName": "RequestReply_Constructor",
+                                                    "methodName": "pF_RequestReply",
+                                                    "parms": {
+                                                        "requestreply": {
+                                                            "requestmethod": "POST",
+                                                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                                                            "URLparms": null,
+                                                            "requestdata": {
+                                                                "theAuxKey": "~auxkeyCambiado",
+                                                                "theExitoSiNoExiste": true
+                                                            },
+                                                            "statuscode": 200,
+                                                            "UNUSED_dumpurl":         true,
+                                                            "UNUSED_dumprequestdata": true,
+                                                            "UNUSED_dumpreply":       true,
+                                                            "expectedresponsepart": {
+                                                                "vTipo": "AuxauditableDatos",
+                                                                "vSuccess": true
+                                                            }
+                                                        }
+                                                    },
+                                                    "scheduleSubs": "SERIES",
+                                                    "checks": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-check-_v_Reply.vSuccess-true",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vSuccess",
+                                                            "checkValue": true
+                                                        },
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vTipo",
+                                                            "checkValue": "AuxauditableDatos"
+                                                        },
+                                                        {
+                                                            "name": "suite-11-auxauditables-auxauditable-cambiarspringnut-test-require-eliminarauxauditableOtrosiexiste-check-vAuxKey-auxkeyCambiado",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vAuxKey",
+                                                            "checkValue": "~auxkeyCambiado"
+                                                        }
+                                                    ],
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-export",
+                                                            "exportAs": "eliminarauxauditableOtrosiexiste",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "*",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+                            "parmNames": [
+                                "listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahora",
+                                "idvercambio",
+                                "idveridcambiada"
+                            ],
+                            "suppliers": [
+        
+                                {
+                                    "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "GET",
+                                            "URLpath": "/vercambios/listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+                                            "URLparms": {
+                                                "theTipoEntidad":          "~auxtipoentidad",
+                                                "theIdentidad":            "~idauxauditable",
+                                                "theDesdeFecha":           "~auxfechaAyer",
+                                                "theHastaFecha":           "~auxfechaManana",
+                                                "theTrasFecha":            "~auxfechahoraAntesDeCambios",
+                                                "theIncluyeInformeCampos": false,
+                                                "theIncluyeCampos": false,
+                                                "thePrimero": null,
+                                                "theCuantos": 5
+                                            },
+                                            "requestdata": null,
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "expectedresponsepart": {
+                                                "vTipo": "ListaVeridscambiadas",
+                                                "vSuccess": true
+                                            }
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vTipo-ListaVeridscambiadas",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "ListaVeridscambiadas"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipo-VeridcambiadaDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipo",
+                                            "checkValue": "VeridcambiadaDatos"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipoRev-1",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipoRev",
+                                            "checkValue": 1
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vIdentidad-idauxauditable",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vVeridscambiadas.first.vIdentidad",
+                                            "checkValue": "~idauxauditable"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipoentidad-auxtipoentidad",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipoentidad",
+                                            "checkValue": "~auxtipoentidad"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vClaves-auxkeyCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vVeridscambiadas.first.vClaves",
+                                            "checkValue": "~auxkeyCambiado"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export",
+                                            "exportAs": "listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahora",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export-idvercambio",
+                                            "exportAs": "idvercambio",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vVeridscambiadas.first.vIdCambio",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-cambios-auxauditables-browsertest-require-causarCambio-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export-idveridcambiada",
+                                            "exportAs": "idveridcambiada",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vVeridscambiadas.first.vId",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-10-eventos-cambios-auxauditables-browsertest-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+        {
+            "name": "suite-10-eventos-cambios-auxauditables-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "imports": [
+                {
+                    "name": "hitpoint-import",
+                    "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                    "importMode": "STATIC"
+                }
+            ],
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Eventos",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "Visit-Springnut-Eventos",
+                                "visitURL": "/app/eventos.html#/eventos",
+                                "isAngular": true,
+                                "expectedPageTitle": "Eventos - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Eventos",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutEventos",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Eventos",
+                                "domIdPrefix": "didSpringnut_Eventos"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Eventos",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutEventos"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Eventos",
+                                "compositeSpecs" : [
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Eventos-ListaCambios",
+                                        "gridName": "ListaCambios",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            { "actionKind": "ANYARGUMENTS", "argumentsName": "FechasListaCambios"},
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  0, "spanIndex":  0, "value":  "~idvercambio"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "EDIT",
+                                                        "editorName": "Cambio"
+                                                    },
+
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Eventos-ListaCambios-ListaEntidadesDeCambio",
+                                                        "gridName": "ListaEntidadesDeCambio",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "noRefresh": true,
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~idveridcambiada"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "EDIT",
+                                                                        "editorName": "EntidadDeCambio"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Eventos-ListaCambiosEntreFechas",
+                                        "gridName": "ListaCambios",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "ARGUMENTS",
+                                                "argumentsName": "FechasListaCambios",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "theDesdeFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~auxfecha"
+                                                    },
+                                                    {
+                                                        "fieldName": "theHastaFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~auxfecha"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  0, "spanIndex":  0, "value":  "~idvercambio"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "EDIT",
+                                                        "editorName": "Cambio"
+                                                    },
+
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Eventos-ListaCambios-ListaEntidadesDeCambio",
+                                                        "gridName": "ListaEntidadesDeCambio",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "noRefresh": true,
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~idveridcambiada"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "EDIT",
+                                                                        "editorName": "EntidadDeCambio"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

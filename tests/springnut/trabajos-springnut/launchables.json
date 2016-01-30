@@ -1,0 +1,14 @@
+[
+    "@testspath/springnut/trabajos-springnut/suite-10-trabajo-lista-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-11-trabajo-listadetipo-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-12-trabajo-listaincluyendo-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-13-trabajo-listadetipoincluyendo-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-14-trabajo-listamiembros-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-15-trabajo-listadetipomiembros-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-16-trabajo-listacompleta-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-17-trabajo-listadetipocompleta-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-20-trabajo-datos-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-22-trabajo-datosincluyendo-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-24-trabajo-datosmiembros-springnut-test.json",
+    "@testspath/springnut/trabajos-springnut/suite-26-trabajo-datoscompletos-springnut-test.json"
+]

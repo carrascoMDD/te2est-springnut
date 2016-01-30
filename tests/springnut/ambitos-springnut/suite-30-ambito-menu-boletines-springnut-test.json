@@ -1,0 +1,194 @@
+{
+    "name": "suite-30-ambito-menu-boletines-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-30-ambito-menu-boletines. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/ambitos/menuAmbitosJSON",
+            "URLparms": {
+                "theBasePath" : "~rutaboletines.Boletines",
+                "theFiltroFocos": null,
+                "theFiltroModos": null,
+                "theProfundidad": null,
+                "theFiltroOperadores": null,
+                "theFiltroPerfiles": null,
+                "theFiltroRelevantes": null,
+                "theFiltroRecientes": null,
+                "theIncluyeTrabajosRelevantes": null,
+                "theFiltroTrabajosRelevantes": null,
+                "theQueryPath": null,
+                "theExtra1": null,
+                "theExtra2": null,
+                "theExtra3": null,
+                "theExtra4": null,
+                "theMore": null,
+                "theFurther": null,
+                "theMaxNiveles": null,
+                "theMaxEnNivel": null,
+                "thePrimero": null,
+                "theCuantos": null
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true
+        },
+        "rutaboletines": null
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-30-ambito-menu-boletines-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-30-ambito-menu-boletines-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-ambito-menu-boletines-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-30-ambito-menu-boletines-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "name": "require-importacionfichero",
+            "parmNames": [
+                "importacionfichero"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-importacionfichero-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        
+        {
+            "name": "suite-30-ambito-menu-boletines-springnut-test-require-rutaboletines",
+            "parmNames": [
+                "rutaboletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-ambito-menu-boletines-springnut-test-require-rutaboletines-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ambitos/menuAmbitosJSON",
+                            "URLparms": {
+                                "theBasePath" : "Raiz.Instancias.!INSTANCE.INE.Ficheros",
+                                "theFiltroFocos": null,
+                                "theFiltroModos": null,
+                                "theProfundidad": null,
+                                "theFiltroOperadores": null,
+                                "theFiltroPerfiles": null,
+                                "theFiltroRelevantes": null,
+                                "theFiltroRecientes": null,
+                                "theIncluyeTrabajosRelevantes": null,
+                                "theFiltroTrabajosRelevantes": null,
+                                "theQueryPath": null,
+                                "theExtra1": null,
+                                "theExtra2": null,
+                                "theExtra3": null,
+                                "theExtra4": null,
+                                "theMore": null,
+                                "theFurther": null,
+                                "theMaxNiveles": null,
+                                "theMaxEnNivel": null,
+                                "thePrimero": null,
+                                "theCuantos": null
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-30-ambito-menu-boletines-springnut-test-require-rutaboletines-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-30-ambito-menu-boletines-springnut-test-require-rutaboletines-supplier-export",
+                            "exportAs": "rutaboletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vItems.last.vRutaAmbito",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

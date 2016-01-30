@@ -1,0 +1,9 @@
+[
+    "@testspath/springnut/ambitos-springnut/suite-01-ambito-menu-raiz-springnut-test.json",
+    "@testspath/springnut/ambitos-springnut/suite-16-ambito-menu-instancia-springnut-test.json",
+    "@testspath/springnut/ambitos-springnut/suite-17-ambito-menu-ine-springnut-test.json",
+    "@testspath/springnut/ambitos-springnut/suite-18-ambito-menu-ficheros-springnut-test.json",
+    "@testspath/springnut/ambitos-springnut/suite-20-ambito-menu-unidad-springnut-test.json",
+    "@testspath/springnut/ambitos-springnut/suite-30-ambito-menu-boletines-springnut-test.json"
+
+]

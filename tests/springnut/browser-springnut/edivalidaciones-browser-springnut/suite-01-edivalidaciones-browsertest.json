@@ -1,0 +1,927 @@
+{
+    "name": "suite-01-edivalidaciones-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "salutation": "Hello suite-01-edivalidaciones-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+
+        "crnombre":          "@CRBWRAUX01",
+        "crdescripcion":     "@CRBWRAUX01 Descripcion",
+        "crnombreOtro":      "@CRBWRAUX01OTRO",
+        "crdescripcionOtro": "@CRBWRAUX01OTRO Descripcion",
+
+        "protractor": {
+            "allScriptsTimeout": 240000,
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+
+
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+            {
+                "name": "VisitPage-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "VisitSpringnutEdivalidaciones",
+                        "visitURL": "/app/edivalidaciones.html#/edivalidacionesOperacion",
+                        "isAngular": true,
+                        "expectedPageTitle": "Criterios - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+
+            {
+                "name": "WidgetCtrls-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                "methodName": "pDoPtr_InitWithHelperParms",
+                "reuseInstanceAsExtraParm": "widgetctrlSpringnutEdivalidaciones",
+                "helperParms": {
+                    "widgetctrls": {
+                        "name":        "WidgetCtrls-Springnut-Edivalidaciones",
+                        "domIdPrefix": "didSpringnut_Edivalidaciones"
+                    }
+                }
+            },
+
+
+            {
+                "name": "MultiComposite-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/multicomposite-testhelper",
+                "constructorName": "MultiCompositeTestHelper_Constructor",
+                "methodName": "pDoPtr_MultiComposite",
+                "extraConstructorParms": [ "widgetctrlSpringnutEdivalidaciones"],
+                "helperParms": {
+                    "multiComposite": {
+                        "name": "Edivalidaciones",
+                        "compositeSpecs" : [
+
+
+
+                            {
+                                "name": "Composite-Springnut-Edivalidaciones-ListaValidacionesDeCriterio",
+                                "gridName": "ListaValidacionesDeCriterio",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "@VALIDA012"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "@VALIDA013"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearValidacionDeCriterio",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "iderror",
+                                                "type":      "String",
+                                                "value":     "@VALIDA012"
+                                            },
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@VALIDA012 NEW Validacion descripcion $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "severidad",
+                                                "type":      "IntYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "activa",
+                                                "type":      "BoolYesNo",
+                                                "value":     true
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "ValidacionDeCriterio",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@VALIDA012 EDITED Validacion de Criterio descripcion $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "severidad",
+                                                "type":      "IntYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "activa",
+                                                "type":      "BoolYesNo",
+                                                "value":     false
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "ValidacionDeCriterio",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "crNombre",
+                                                "type":      "String",
+                                                "candidates": true,
+                                                "candidatesGridName": "Validacion_fase_Candidatos_ListaCriterios",
+                                                "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~crnombre"}
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Edivalidaciones-ListaCondicionesDeValidacion",
+                                        "gridName": "ListaCondicionesDeValidacionDeCriterio",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "*88222222"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearCondicionDeValidacionDeCriterio",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "condicion",
+                                                        "type":      "Text",
+                                                        "value":     "'882222221' < NBOL OR NBOL > '$timestamp'"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "CondicionDeValidacionDeCriterio",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "condicion",
+                                                        "type":      "Text",
+                                                        "value":     "'882222221' < NBOL OR '882222222' < NBOL OR NBOL > '$timestamp'"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+
+
+
+
+
+
+
+                            {
+                                "name": "Composite-Springnut-Edivalidaciones-ListaValidacionesDeCriterio",
+                                "gridName": "ListaValidacionesDeCriterio",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+
+                                    {
+                                        "actionKind": "SELECTOR",
+                                        "selectorName": "ListaCriterios",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "~crnombre"}
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "SELECT",
+                                        "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "@VALIDA012"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "ValidacionDeCriterio",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "descripcion",
+                                                        "type":      "Text",
+                                                        "value":     "@VALIDA012 EDITED desde Criterio descripcion $timestamp"
+                                                    },
+                                                    {
+                                                        "fieldName": "severidad",
+                                                        "type":      "IntYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "activa",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     false
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearValidacionDeCriterio",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "iderror",
+                                                "type":      "String",
+                                                "value":     "@VALIDA013"
+                                            },
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@VALIDA013 NEW Validacion descripcion $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "severidad",
+                                                "type":      "IntYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "activa",
+                                                "type":      "BoolYesNo",
+                                                "value":     true
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "ValidacionDeCriterio",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@VALIDA013 EDITED Validacion de Criterio descripcion $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "severidad",
+                                                "type":      "IntYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "activa",
+                                                "type":      "BoolYesNo",
+                                                "value":     false
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Edivalidaciones-ListaCondicionesDeValidacion",
+                                        "gridName": "ListaCondicionesDeValidacionDeCriterio",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "*88333333"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearCondicionDeValidacionDeCriterio",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "condicion",
+                                                        "type":      "Text",
+                                                        "value":     "'883333331' < NBOL OR NBOL > '$timestamp'"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "CondicionDeValidacionDeCriterio",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "condicion",
+                                                        "type":      "Text",
+                                                        "value":     "'883333331' < NBOL OR '88333333' < NBOL OR NBOL > '$timestamp'"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+
+
+
+
+                            {
+                                "name": "Composite-Springnut-Edivalidaciones-ListaListasCodigos",
+                                "gridName": "ListaListasCodigos",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+
+
+
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex": 1, "spanIndex":  0, "value":  "*@LISTACODIGOS01"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearListaCodigos",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@LISTACODIGOS01"
+                                            }
+                                        ]
+                                    },
+
+
+
+                                    {
+                                        "actionKind": "EDIT",
+                                        "editorName": "ListaCodigos",
+                                        "fieldEdits": [
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@LISTACODIGOS01 EDITED"
+                                            }
+                                        ]
+                                    },
+
+
+
+
+                                    {
+                                        "actionKind": "GRID",
+                                        "name": "Grid-Springnut-Edivalidaciones-ListaListasCodigos-ListaCodigosDeLista",
+                                        "gridName": "ListaCodigosDeLista",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex": 2, "spanIndex":  0, "value":  "@111"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex": 2, "spanIndex":  0, "value":  "@112"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex": 2, "spanIndex":  0, "value":  "@113"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearCodigoDeLista",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "idcie10",
+                                                        "type":      "String",
+                                                        "value":     "@111"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "CodigoDeLista",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "idcie10",
+                                                        "type":      "String",
+                                                        "value":     "@112"
+                                                    }
+                                                ]
+                                            },
+
+
+                                            {
+                                                "actionKind": "DELETE"
+                                            },
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearCodigoDeLista",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "idcie10",
+                                                        "type":      "String",
+                                                        "value":     "@113"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+
+
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "required": [
+        {
+            "name": "suite-01-edivalidaciones-browsertest-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-edivalidaciones-browsertest-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste",
+            "parmNames": [
+                "eliminarCriterioSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioPorNombreEliminarJSON",
+                            "requestdata": {
+                                "theNombre": "~crnombre",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExiste-export",
+                            "exportAs": "eliminarCriterioSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista",
+            "parmNames": [
+                "crearCriterioParaQueYaExista",
+                "idcriterio"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioCrearContandoJSON",
+                            "requestdata": {
+                                "theNombre":      "~crnombre",
+                                "theDescripcion": "~crdescripcion"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-supplier-check-crDescripcion-crdescripcion",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crDescripcion",
+                            "checkValue": "~crdescripcion"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "crearCriterioParaQueYaExista",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "idcriterio",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.crId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro",
+            "parmNames": [
+                "eliminarCriterioSiExisteOtro"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioPorNombreEliminarJSON",
+                            "requestdata": {
+                                "theNombre": "~crnombreOtro",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro-supplier-check-crNombre-crnombreOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombreOtro"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-eliminarCriterioSiExisteOtro-export",
+                            "exportAs": "eliminarCriterioSiExisteOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro",
+            "parmNames": [
+                "crearCriterioParaQueYaExistaOtro",
+                "idcriterioOtro"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioCrearContandoJSON",
+                            "requestdata": {
+                                "theNombre":      "~crnombreOtro",
+                                "theDescripcion": "~crdescripcionOtro"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-supplier-check-crNombre-crnombreOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombreOtro"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-supplier-check-crDescripcion-crdescripcionOtro",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crDescripcion",
+                            "checkValue": "~crdescripcionOtro"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-export",
+                            "exportAs": "crearCriterioParaQueYaExistaOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-edivalidaciones-browsertest-require-crearCriterioParaQueYaExistaOtro-export",
+                            "exportAs": "idcriterioOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.crId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}
+
+
+
+
+
+
+
+

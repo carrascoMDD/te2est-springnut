@@ -1,0 +1,12 @@
+[
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-06-auxauditables-noautorizado-auxauditable-crear-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-14-auxauditables-noautorizado-auxauditable-eliminar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-18-auxauditables-noautorizado-auxauditable-eliminar-porclave-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-23-auxauditables-noautorizado-auxauditable-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-56-auxauditables-noautorizado-auxdetalle-crear-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-60-auxauditables-noautorizado-auxdetalle-eliminar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-63-auxauditables-noautorizado-auxdetalle-eliminar-porclave-springnut-test.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/auxauditables-noautorizado/suite-73-auxauditables-noautorizado-auxdetalle-cambiar-springnut-test.json"
+]
+
+

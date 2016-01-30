@@ -1,0 +1,88 @@
+{
+    "name": "obtener-sessiontest-administrador-springnut-test",
+    "expectSuccess": true,
+    "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+    "constructorName": "SessionSpringnutTest_Constructor",
+    "methodName": "pF_Session",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-administrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "obtener-sessiontest-administrador-require-logintest",
+            "parmNames": [
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "obtener-sessiontest-administrador-require-logintest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                    "constructorName": "LoginSpringnutTest_Constructor",
+                    "methodName": "pF_Login",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "login": {
+                            "lazy": false
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "obtener-sessiontest-administrador-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "obtener-sessiontest-administrador-require-isauthenticatedtest",
+            "parmNames": [
+                "isauthenticatedtest"
+            ],
+            "suppliers": [
+                {
+                    "name": "obtener-sessiontest-administrador-require-isauthenticatedtest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                    "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                    "methodName": "pF_IsAuthenticated",
+                    "parms": {
+                        "isauthenticated": {
+                            "lazy": false,
+                            "logintestparmname": "logintest"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "obtener-sessiontest-administrador-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+

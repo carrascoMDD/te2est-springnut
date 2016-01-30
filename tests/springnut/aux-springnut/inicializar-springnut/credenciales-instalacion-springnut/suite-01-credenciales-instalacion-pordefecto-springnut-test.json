@@ -1,0 +1,56 @@
+{
+    "name": "suite-01-credenciales-instalacion-pordefecto-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/credencialesInstalacion/credencialesInstalacionOperador_pordefectoJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "dumpurl":         true,
+            "dumprequestdata": true,
+            "dumpreply":       true,
+            "URLparms": {
+                "theTokenCredencialesInstalacion":  "TokenCredencialesInstalacionMagic7513176102"
+            },
+            "expectedresponsepart": {
+                "vSuccess": true,
+                "vTipo": "CredencialesInstalacion",
+                "vNombreOperador":   "pordefecto",
+                "vPasswordOperador": "pordefectopswd2"
+            }
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "suite-01-credenciales-instalacion-pordefecto-springnut-test-passwordCodificadapordefecto-export",
+            "exportAs": "passwordCodificadapordefecto",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_Reply.vPasswordCodificada",
+            "exportTarget": ".",
+            "exportWhen": "OK"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

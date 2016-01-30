@@ -1,0 +1,44 @@
+[
+    "@testspath/springnut/importacionficherosascii-springnut/importacionficherosascii-noautorizado/launchables.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-00-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-simularexcepcion-nbol999999999-springnut-test.json",
+
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-01-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-lineacorrecta-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-02-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-cerofinal-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-03-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-blancofinal-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-04-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-ceroinicial-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-05-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-blancoinicial-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-06-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbol-blancoenmedio-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-07-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-mes-blancoinicial-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-08-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-mes-blancofinal-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-10-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-simulardiferenciaboletines_ascii-ape1-nbol999999998-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-11-importacionficherosascii-creartrabajo-fail-anomesprovinciaincorrecto-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-12-importacionficherosascii-creartrabajoylanzarejecucionyesperarterminacion-springnut-test.json",
+
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-21-importacionficherosascii-crearlanzar-fail-anomesprovinciaincorrecto-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-22-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-springnut-test.json",
+
+
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-23-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavaciaalfinal-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-24-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbolsrepetidos-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-25-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-nbolsexistentesotrofichero-springnut-test.json",
+
+    "@testspath/springnut/importacionficherosascii-springnut/suite-26-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineaalteradamascorta-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-27-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineasinnbol-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-28-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineasinanonacimiento-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-29-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineasinanodefuncion-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-30-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineasinsexo-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test.json",
+    "@testspath/springnut/importacionficherosascii-springnut/suite-32-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafdefuncionincompleta-springnut-test.json"
+]
+
+

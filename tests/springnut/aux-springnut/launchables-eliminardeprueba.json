@@ -1,0 +1,14 @@
+[
+    "@testspath/springnut/aux-springnut/excepciones-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/perfiles-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/operadores-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/bloques-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/validaciones-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/listascodigos-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/ejecuciones-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/trabajos-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/ambitos-springnut/launchables-eliminardeprueba.json",
+    "@testspath/springnut/aux-springnut/fases-springnut/launchables-eliminardeprueba.json"
+]
+

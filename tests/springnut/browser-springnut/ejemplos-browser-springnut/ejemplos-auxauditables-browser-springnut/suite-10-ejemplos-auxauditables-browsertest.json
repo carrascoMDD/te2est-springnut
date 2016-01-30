@@ -1,0 +1,1041 @@
+{
+    "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-10-ejemplos-auxauditables-browsertest-. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "auxkey": "@auxkeyui10",
+        "auxnum": 6100010,
+        "auxstr": "@auxaudstrui10",
+        "auxtxt": "@auxaudtxtui\nauxaudtxtuil2\nauxaudtxtuil3\nauxaudtxtuil4\nauxaudtxtuil5",
+        "auxboo": true,
+        "auxkeyCambiado": "@auxkeyui10Cambiado",
+        "auxnumCambiado": 6100210,
+        "auxstrCambiado": "@auxaudstrui10Cambiado",
+        "auxtxtCambiado": "@auxaudtxtuiCambiado\nauxaudtxtuiCambiadol2\nauxaudtxtuiCambiadol3\nauxaudtxtuiCambiadol4\nauxaudtxtuiCambiadol5",
+        "auxbooCambiado": true,
+        "auxkeyOtro": "@auxkeyui10Otro",
+        "auxnumOtro": 6100310,
+        "auxstrOtro": "@auxaudstrui10Otro",
+        "auxtxtOtro": "@auxaudtxtuiOtro\nauxaudtxtuiOtrol2\nauxaudtxtuiOtrol3\nauxaudtxtuiOtrol4\nauxaudtxtuiOtrol5",
+        "auxbooOtro": true,
+        "auxkeyDetalle": "@auxkeyDetalle",
+        "auxnumDetalle": 6200210,
+        "auxstrDetalle": "@auxaudstrui10Detalle",
+        "auxtxtDetalle": "@auxaudtxtuiDetalle\nauxaudtxtuiDetallel2\nauxaudtxtuiDetallel3\nauxaudtxtuiDetallel4\nauxaudtxtuiDetallel5",
+        "auxbooDetalle": true,
+        "auxkeyDetalleCambiado": "@auxkeyDetalleCambiado",
+        "auxnumDetalleCambiado": 6200210,
+        "auxstrDetalleCambiado": "@auxaudstrui10DetalleCambiado",
+        "auxtxtDetalleCambiado": "@auxaudtxtuiDetalleCambiado\nauxaudtxtuiDetalleCambiadol2\nauxaudtxtuiDetalleCambiadol3\nauxaudtxtuiDetalleCambiadol4\nauxaudtxtuiDetalleCambiadol5",
+        "auxbooDetalleCambiado": true,
+        "auxkeyDetalleOtro": "@auxkeyDetalleOtro",
+        "auxnumDetalleOtro": 6200410,
+        "auxstrDetalleOtro": "@auxaudstrui10DetalleOtro",
+        "auxtxtDetalleOtro": "@auxaudtxtuiDetalleOtro\nauxaudtxtuiDetalleOtrol2\nauxaudtxtuiDetalleOtrol3\nauxaudtxtuiDetalleOtrol4\nauxaudtxtuiDetalleOtrol5",
+        "auxbooDetalleOtro": true
+
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-fecha",
+            "exportAs": "fecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahora",
+            "exportAs": "fechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaCambiado",
+            "exportAs": "fechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraCambiado",
+            "exportAs": "fechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaOtro",
+            "exportAs": "fechaOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraOtro",
+            "exportAs": "fechahoraOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalle",
+            "exportAs": "fechaDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalle",
+            "exportAs": "fechahoraDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleCambiado",
+            "exportAs": "fechaDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleCambiado",
+            "exportAs": "fechahoraDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleOtro",
+            "exportAs": "fechaDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleOtro",
+            "exportAs": "fechahoraDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-test-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableSiExiste",
+            "parmNames": [
+                "eliminarAuxauditableSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableSiExiste-supplier-springnut-test",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                            "requestdata": {
+                                "theAuxKey": "~auxkey",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo":   "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableSiExiste-supplier-export",
+                            "exportAs": "eliminarAuxauditableSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableSiExiste-supplier-ExcepcionJSON-check-vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableSiExiste-supplier-ExcepcionJSON-check-vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableOtroSiExiste",
+            "parmNames": [
+                "eliminarAuxauditableOtroSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableOtroSiExiste-supplier-springnut-test",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                            "requestdata": {
+                                "theAuxKey": "~auxkeyOtro",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo":   "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableOtroSiExiste-supplier-export",
+                            "exportAs": "eliminarAuxauditableOtroSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableOtroSiExiste-supplier-ExcepcionJSON-check-vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableOtroSiExiste-supplier-ExcepcionJSON-check-vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+
+                    ]
+                }
+            ]
+        },
+        
+        
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-eliminarAuxauditableCambiadoSiExiste",
+            "parmNames": [
+                "eliminarAuxauditableCambiadoSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-DetalleCambiadoeliminarAuxauditableCambiadoSiExiste-supplier-springnut-test",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                            "requestdata": {
+                                "theAuxKey": "~auxkeyCambiado",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo":   "AuxauditableDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-DetalleCambiadoeliminarAuxauditableCambiadoSiExiste-supplier-export",
+                            "exportAs": "eliminarAuxauditableCambiadoSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-DetalleCambiadoeliminarAuxauditableCambiadoSiExiste-supplier-ExcepcionJSON-check-vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-10-ejemplos-auxauditables-browsertest-springnut-require-DetalleCambiadoeliminarAuxauditableCambiadoSiExiste-supplier-ExcepcionJSON-check-vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+        {
+            "name": "suite-10-ejemplos-auxauditables-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "imports": [
+                {
+                    "name": "hitpoint-import",
+                    "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                    "importMode": "STATIC"
+                }
+            ],
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "Visit-Springnut-Ejemplos",
+                                "visitURL": "/app/ejemplos.html#/ejemplos",
+                                "isAngular": true,
+                                "expectedPageTitle": "Ejemplos - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutEjemplos",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Ejemplos",
+                                "domIdPrefix": "didSpringnut_Ejemplos"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutEjemplos"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Ejemplos",
+                                "compositeSpecs" : [
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-ListaAuxauditables-eliminarAuxauditablesAlPrincipioSiExisten",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+
+                                            { "actionKind": "ALLARGUMENTS", "argumentsName": "FechasListaAuxauditables"},
+
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkey"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkeyOtro"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            }
+
+                                        ]
+                                    },
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-ListaAuxauditables-crearAuxauditables",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+
+                                            { "actionKind": "ALLARGUMENTS", "argumentsName": "FechasListaAuxauditables"},
+
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearAuxauditable",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vAuxKey",
+                                                        "type":      "String",
+                                                        "value":     "~auxkeyOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxNum",
+                                                        "type":      "Int",
+                                                        "value":     "~auxnumOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxBoo",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     "~auxbooOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxDateStr",
+                                                        "type":      "String",
+                                                        "value":     "~fechaOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTimestampStr",
+                                                        "type":      "String",
+                                                        "value":     "~fechahoraOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxStr",
+                                                        "type":      "String",
+                                                        "value":     "~auxstrOtro"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTxt",
+                                                        "type":      "Text",
+                                                        "value":     "~auxtxtOtro"
+                                                    }
+                                                ]
+                                            },
+
+
+
+                                            {
+                                                "actionKind": "CREATE",
+                                                "creatorName": "CrearAuxauditable",
+                                                "fieldInits": [
+                                                    {
+                                                        "fieldName": "vAuxKey",
+                                                        "type":      "String",
+                                                        "value":     "~auxkey"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxNum",
+                                                        "type":      "Int",
+                                                        "value":     "~auxnum"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxBoo",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     "~auxboo"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxDateStr",
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTimestampStr",
+                                                        "type":      "String",
+                                                        "value":     "~fechahora"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxStr",
+                                                        "type":      "String",
+                                                        "value":     "~auxstr"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTxt",
+                                                        "type":      "Text",
+                                                        "value":     "~auxtxt"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "Auxauditable",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "vAuxKey",
+                                                        "type":      "String",
+                                                        "value":     "~auxkeyCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxNum",
+                                                        "type":      "Int",
+                                                        "value":     "~auxnumCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxBoo",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     "~auxbooCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxDateStr",
+                                                        "type":      "String",
+                                                        "value":     "~fechaCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTimestampStr",
+                                                        "type":      "String",
+                                                        "value":     "~fechahoraCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxStr",
+                                                        "type":      "String",
+                                                        "value":     "~auxstrCambiado"
+                                                    },
+                                                    {
+                                                        "fieldName": "vAuxTxt",
+                                                        "type":      "Text",
+                                                        "value":     "~auxtxtCambiado"
+                                                    }
+                                                ]
+                                            }
+
+                                        ]
+                                    },
+
+
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-CrearAuxdetalles",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "ARGUMENTS",
+                                                "argumentsName": "FechasListaAuxauditables",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "theDesdeFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    },
+                                                    {
+                                                        "fieldName": "theHastaFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    }
+                                                ]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkeyCambiado"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Ejemplos-ListaAuxauditables-ListaAuxdetallesDeAuxauditable",
+                                                        "gridName": "ListaAuxdetallesDeAuxauditable",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+
+                                                            {
+                                                                "actionKind": "CREATE",
+                                                                "creatorName": "CrearAuxdetalleDeAuxauditable",
+                                                                "fieldInits": [
+                                                                    {
+                                                                        "fieldName": "vAuxKey",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxkeyDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxNum",
+                                                                        "type":      "Int",
+                                                                        "value":     "~auxnumDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxBoo",
+                                                                        "type":      "BoolYesNo",
+                                                                        "value":     "~auxbooDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxDateStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechaDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTimestampStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechahoraDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxstrDetalleOtro"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTxt",
+                                                                        "type":      "Text",
+                                                                        "value":     "~auxtxtDetalleOtro"
+                                                                    }
+                                                                ]
+                                                            },
+
+                                                            {
+                                                                "actionKind": "CREATE",
+                                                                "creatorName": "CrearAuxdetalleDeAuxauditable",
+                                                                "fieldInits": [
+                                                                    {
+                                                                        "fieldName": "vAuxKey",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxkeyDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxNum",
+                                                                        "type":      "Int",
+                                                                        "value":     "~auxnumDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxBoo",
+                                                                        "type":      "BoolYesNo",
+                                                                        "value":     "~auxbooDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxDateStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechaDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTimestampStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechahoraDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxstrDetalle"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTxt",
+                                                                        "type":      "Text",
+                                                                        "value":     "~auxtxtDetalle"
+                                                                    }
+                                                                ]
+                                                            },
+
+
+                                                            {
+                                                                "actionKind": "EDIT",
+                                                                "editorName": "AuxdetalleDeAuxauditable",
+                                                                "noRefresh": true,
+                                                                "fieldEdits": [
+                                                                    {
+                                                                        "fieldName": "vAuxKey",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxkeyDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxNum",
+                                                                        "type":      "Int",
+                                                                        "value":     "~auxnumDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxBoo",
+                                                                        "type":      "BoolYesNo",
+                                                                        "value":     "~auxbooDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxDateStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechaDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTimestampStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~fechahoraDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxStr",
+                                                                        "type":      "String",
+                                                                        "value":     "~auxstrDetalleCambiado"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vAuxTxt",
+                                                                        "type":      "Text",
+                                                                        "value":     "~auxtxtDetalleCambiado"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-EliminarAuxdetalle",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "ARGUMENTS",
+                                                "argumentsName": "FechasListaAuxauditables",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "theDesdeFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    },
+                                                    {
+                                                        "fieldName": "theHastaFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    }
+                                                ]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkeyCambiado"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Ejemplos-ListaAuxauditables-ListaAuxdetallesDeAuxauditable",
+                                                        "gridName": "ListaAuxdetallesDeAuxauditable",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  4, "spanIndex":  0, "value":  "~auxkeyDetalleCambiado"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "DELETE"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-EliminarAuxauditables",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "ARGUMENTS",
+                                                "argumentsName": "FechasListaAuxauditables",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "theDesdeFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    },
+                                                    {
+                                                        "fieldName": "theHastaFecha",
+                                                        "inHeader":  true,
+                                                        "type":      "String",
+                                                        "value":     "~fecha"
+                                                    }
+                                                ]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkeyCambiado"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "~auxkeyOtro"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

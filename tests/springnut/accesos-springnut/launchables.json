@@ -1,0 +1,12 @@
+[
+    "@testspath/springnut/accesos-springnut/suite-10-accesosoperadores-lista-recientes-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-12-accesosoperadores-lista-enfecha-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-14-accesosoperadores-lista-entrefechas-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-20-accesosoperadores-acceso-datos-springnut-test.json",
+
+    "@testspath/springnut/accesos-springnut/suite-30-accesosfallidos-lista-recientes-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-32-accesosfallidos-lista-enfecha-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-34-accesosfallidos-lista-entrefechas-springnut-test.json",
+    "@testspath/springnut/accesos-springnut/suite-40-accesosfallidos-acceso-datos-springnut-test.json"
+
+]

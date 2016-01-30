@@ -1,0 +1,9 @@
+[
+    "@testspath/springnut/aux-springnut/fechahora-springnut/suite-01-auxfechahora-deltazero-springnut-test.json",
+    "@testspath/springnut/aux-springnut/fechahora-springnut/suite-02-auxfechahora-deltabefore-millis-springnut-test.json",
+    "@testspath/springnut/aux-springnut/fechahora-springnut/suite-03-auxfechahora-deltabefore-days-springnut-test.json",
+    "@testspath/springnut/aux-springnut/fechahora-springnut/suite-04-auxfechahora-deltaafter-millis-springnut-test.json",
+    "@testspath/springnut/aux-springnut/fechahora-springnut/suite-05-auxfechahora-deltaafter-days-springnut-test.json"
+]
+
+

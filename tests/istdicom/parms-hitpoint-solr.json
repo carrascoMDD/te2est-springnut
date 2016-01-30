@@ -1,0 +1,12 @@
+{
+    "name": "parms-hitpoint-solr",
+    "parms": {
+        "hitpointsolr": {
+            "baseURLsolr": "http://solr.desknova.com:8983/solr",
+            "NOTTOUSE_exampleFullURL": "http://solr.desknova.com:8983/solr/mia_dcm/select?q=TIPOFICHERO_scustom%3ADICOM+Study&wt=json&indent=true"
+        }
+    }
+}
+
+
+

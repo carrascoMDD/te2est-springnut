@@ -1,0 +1,808 @@
+{
+    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "protractor": {
+            "allScriptsTimeout": 240000,
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+            {
+                "name": "VisitPage-Springnut-Eventos",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "Visit-Springnut-Eventos",
+                        "visitURL": "/app/eventos.html#/eventos",
+                        "isAngular": true,
+                        "expectedPageTitle": "Eventos - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+
+
+            {
+                "name": "WidgetCtrls-Springnut-Eventos",
+                "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                "methodName": "pDoPtr_InitWithHelperParms",
+                "reuseInstanceAsExtraParm": "widgetctrlSpringnutEventos",
+                "helperParms": {
+                    "widgetctrls": {
+                        "name":        "WidgetCtrls-Springnut-Eventos",
+                        "domIdPrefix": "didSpringnut_Eventos"
+                    }
+                }
+            },
+
+
+            {
+                "name": "MultiComposite-Springnut-Eventos",
+                "module": "@cmppath/browser-test/multicomposite-testhelper",
+                "constructorName": "MultiCompositeTestHelper_Constructor",
+                "methodName": "pDoPtr_MultiComposite",
+                "extraConstructorParms": [ "widgetctrlSpringnutEventos"],
+                "helperParms": {
+                    "multiComposite": {
+                        "name": "Eventos",
+                        "compositeSpecs" : [
+
+
+                            {
+                                "name": "MultiAction-Springnut-Eventos-ListaLecturasboletines",
+                                "gridName": "ListaLecturasboletines",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "noRefresh": true,
+                                "actions": [
+
+                                    { "actionKind": "ANYARGUMENTS", "argumentsName": "FechasListaLecturasboletines"},
+
+                                    {
+                                        "actionKind": "SELECT",
+                                        "finder":  { "columnIndex":  23, "spanIndex":  0, "value":  "testinstaladministrador"}
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    "required": [
+        {
+            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-sessiontest-export-logintest",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin",
+            "parmNames": [
+                "registrarlecturaboletin",
+                "fechaLecturaboletin",
+                "fechaHoraLecturaboletin"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/lecturasBoletines/auxRegistrarLecturaBoletinJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdBoletin": "~idboletin",
+                                "theDePrueba": "~deprueba"
+                            }
+                        },
+                        "leeimage": false,
+                        "deprueba": "@lecturadeprueba"
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-supplier-check-_v_Reply.vTipo-LecturaboletinDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "LecturaboletinDatos"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vTipo-LecturaboletinDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "LecturaboletinDatos"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdBoletin-idboletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdBoletin",
+                            "checkValue": "~idboletin"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdBoletin-idcodboletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdCodBoletin",
+                            "checkValue": "~idcodboletin"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdBoletin-idlitboletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdLitBoletin",
+                            "checkValue": "~idlitboletin"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdBoletin-idimageboletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdImageBoletin",
+                            "checkValue": "~idimageboletin"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vNbol-nbol",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vNbol",
+                            "checkValue": "~nbol"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-registrarlecturaboletin-supplier-check-vIdentifica-identificaLecturaregistrada",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdentifica",
+                            "checkValue": "~identifica"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-export",
+                            "exportAs": "registrarlecturaboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-export-fechaLecturaboletin",
+                            "exportAs": "fechaLecturaboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDateStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-registrarlecturaboletin-export-fechaHoraLecturaboletin",
+                            "exportAs": "fechaHoraLecturaboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vTimestampStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "required": [
+
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-ficheroConBoletines",
+                            "parmNames": [
+                                "ficheroConBoletines"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-ficheroConBoletines-supplier",
+                                    "imports": [
+                                        {
+                                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-ficheroConBoletines-export",
+                                            "exportAs": "ficheroConBoletines",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero",
+                            "parmNames": [
+                                "idfichero"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "GET",
+                                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                                            "URLparms": {
+                                                "theTipoBoletin": "~tipoBoletin",
+                                                "theAno":         "~anoFichero",
+                                                "theMes":         "~mesFichero",
+                                                "theProvincia":   "~provinciaFichero"
+
+                                            },
+                                            "requestdata": null,
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true
+                                        }
+                                    },
+                                    "checks": [
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vTipo-FicheroDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "FicheroDatos"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipoBoletin",
+                                            "checkValue": "~tipoBoletin"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vAnoFichero-anoFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAnoFichero",
+                                            "checkValue": "~anoFichero"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vMesFichero-mesFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vMesFichero",
+                                            "checkValue": "~mesFichero"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFichero-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                                            "checkValue": "~provinciaFichero"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idFicherorequire-idboletin-supplier-export-idfichero",
+                                            "exportAs": "idfichero",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vIdFichero",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+
+                            ]
+                        },
+
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin",
+                            "parmNames": [
+                                "idboletin"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "GET",
+                                            "URLpath": "/bedids/listaBedidsDeFicheroJSON",
+                                            "URLparms": {
+                                                "theTipoBoletin":  "~tipoBoletin",
+                                                "theIdFichero":    "~idfichero",
+                                                "thePrimero":      0,
+                                                "theCuantos":      10
+                                            },
+                                            "requestdata": null,
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vTipo-ListaBoletinIds",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "ListaBoletinIds"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vNumeroBoletines-4",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vNumeroBoletines",
+                                            "checkValue": 4
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipo-BoletinIds",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vBoletines.first.vTipo",
+                                            "checkValue": "BoletinIds"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipoBoletin-tipoBoletin",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vBoletines.first.vTipoBoletin",
+                                            "checkValue": "~tipoBoletin"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vAnoFichero-anoFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vBoletines.first.vAnoFichero",
+                                            "checkValue": "~anoFichero"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vMesFichero-mesFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vBoletines.first.vMesFichero",
+                                            "checkValue": "~mesFichero"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vCodigoProvinciaFichero-provinciaFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vBoletines.first.vCodigoProvinciaFichero",
+                                            "checkValue": "~provinciaFichero"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-idboletin",
+                                            "exportAs": "idboletin",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vIdBoletin",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-nbol",
+                                            "exportAs": "nbol",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vNbol",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-vIdentifica",
+                                            "exportAs": "identifica",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vIdentifica",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-idcodboletin",
+                                            "exportAs": "idcodboletin",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vIdCodBoletin",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-idlitboletin",
+                                            "exportAs": "idlitboletin",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vIdLitBoletin",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-browsertest-require-idboletin-supplier-export-idimageboletin",
+                                            "exportAs": "idimageboletin",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vBoletines.first.vIdImageBoletin",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada",
+            "parmNames": [
+                "pollLecturaboletinRegistrada"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/poll-test",
+                    "constructorName": "PollTest_Constructor",
+                    "methodName": "pF_Poll",
+                    "parms": {
+                        "poll": {
+                            "eachParm":     "theNumPolls",
+                            "maxPolls":     3,
+                            "pollInterval": 2000
+                        },
+                        "theNumPolls": null
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-export",
+                            "exportAs": "pollLecturaboletinRegistrada",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod": "GET",
+                                    "URLpath": "/lecturasboletines/listaLecturasboletinesRecientesJSON",
+                                    "URLparms": {
+                                        "thePrimero": null,
+                                        "theCuantos": 5
+                                    },
+                                    "requestdata": null,
+                                    "statuscode": 200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "expectedresponsepart": {
+                                        "vTipo": "ListaLecturasboletines",
+                                        "vSuccess": true
+                                    }
+                                }
+                            },
+                            "scheduleSubs": "SERIES",
+                            "checks": [
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vSuccess-true",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vSuccess",
+                                    "checkValue": true
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vTipo-LecturaboletinDatos",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vTipo",
+                                    "checkValue": "LecturaboletinDatos"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vTipoBoletin-tipoBoletinLecturaregistrada",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vTipoBoletin",
+                                    "checkValue": "~tipoBoletin"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vIdBoletin-idboletinLecturaregistrada",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vIdBoletin",
+                                    "checkValue": "~idboletin"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vNbol-nbolLecturaregistrada",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vNbol",
+                                    "checkValue": "~nbol"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vIdentifica-identificaLecturaregistrada",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vIdentifica",
+                                    "checkValue": "~identifica"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vDateStr-fechaLecturaboletin",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vDateStr",
+                                    "checkValue": "~fechaLecturaboletin"
+                                },
+                                {
+                                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-pollLecturaboletinRegistrada-supplier-sub-listaLecturasboletinesRecientes-check-_v_Reply.vLecturasboletines.first.vDateStr-fechaHoraLecturaboletin",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vLecturasboletines.first.vTimestampStr",
+                                    "checkValue": "~fechaHoraLecturaboletin"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-logoutTest",
+            "parmNames": [
+                "logoutTest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-logoutTest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/general-test/security-test/logout-test",
+                    "constructorName": "LogoutTest_Constructor",
+                    "methodName": "pF_Logout",
+                    "parms": {
+                        "logout": {
+                            "logintestparmname": "logintest"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-10-eventos-lecturasboletines-lecturapor-api-springnut-test-require-logoutTest-export",
+                            "exportAs": "logoutTest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+}
+
+
+
+
+
+
+
+

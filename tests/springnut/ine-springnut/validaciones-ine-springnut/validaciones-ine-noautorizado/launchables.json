@@ -1,0 +1,5 @@
+[
+    "@testspath/springnut/ine-springnut/validaciones-ine-springnut/validaciones-ine-noautorizado/suite-01-fasesultimasehistoria-ine-noautorizado-springnut-test.json",
+    "@testspath/springnut/ine-springnut/validaciones-ine-springnut/validaciones-ine-noautorizado/suite-31-lanzarfaseficherocriterio-ine-noautorizado-springnut-test.json",
+    "@testspath/springnut/ine-springnut/validaciones-ine-springnut/validaciones-ine-noautorizado/suite-32-informeestadofase-ine-noautorizado-springnut-test.json"
+]

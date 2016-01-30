@@ -1,0 +1,10 @@
+{
+    "name": "parms-directory-dicomcache-notkept",
+    "parms": {
+        "parmsfordirectorydicomdownloadedfiles": {
+            "baseDirectoryIstStudyInstanceItems":    "~/ISTdicomcachenotkept/queryPHP/ISTstudyInstanceItems",
+            "directoryIstStudyInstanceItemImages":   "ISTstudyInstanceItemImages"
+        }
+    }
+}
+

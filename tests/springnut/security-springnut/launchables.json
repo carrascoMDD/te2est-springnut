@@ -1,0 +1,23 @@
+[
+    "@testspath/springnut/security-springnut/suite-01-login-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-10-isauthenticated-contrasenaincorrecta-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-11-isauthenticated-requiredlogin-inline-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-21-session-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-22-session-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-25-session-exporttoroot-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-31-logout-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-41-session-pordefecto-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-42-session-omnipotente-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-43-session-instalador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-44-session-avanzado-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-45-session-administrador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-46-session-codificador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-47-session-grabador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-53-session-noinstalador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-54-session-noavanzado-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-55-session-noadministrador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-56-session-nocodificador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-57-session-nograbador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-61-session-instaladministrador-obtener-springnut-test.json",
+    "@testspath/springnut/security-springnut/suite-62-session-sinperfiles-obtener-springnut-test.json"
+]

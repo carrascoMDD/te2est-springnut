@@ -1,0 +1,244 @@
+{
+    "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/importacionficherosascii/crearYLanzarTrabajoImportacionFicheroASCIIJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "multiparts": [
+                {
+                    "parmName" : "theTipoBoletin",
+                    "parmValue": "ine",
+                    "contentType": null
+                },
+                {
+                    "parmName" : "theFileEncoding",
+                    "parmValue": "UTF-8",
+                    "contentType": null
+                },
+                {
+                    "parmName" : "theForzar",
+                    "parmValue": "true",
+                    "contentType": null
+                },
+                {
+                    "parmName" : "theLanzar",
+                    "parmValue": "true",
+                    "contentType": null
+                }
+            ],
+            "uploads": [
+                {
+                    "parmName":    "theUploadedFile",
+                    "uploadBytes": "~contenidoficheroasciiLineaVacia",
+                    "contentType": "text/plain"
+                }
+            ]
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroHombres": 0,
+        "numeroMujeres": 1
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+
+    "checks": [
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vSuccess-false",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": false
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vTrExito-0",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTrExito",
+            "checkValue": null
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vTipo-CreadoLanzadoImportacionFicheroASCII",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vStatusOperacion-FICHEROERRONEO",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStatusOperacion",
+            "checkValue": "FICHEROERRONEO"
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-subs-trabajoDatos-check-vDetallesOperacion-!aFixedFormatManager.load( Boletines_ASCII_cabecera.class)",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vDetallesOperacion",
+            "checkValue": "!aFixedFormatManager.load( Boletines_ASCII_cabecera.class)"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii",
+            "parmNames": [
+                "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                "contenidoficheroascii",
+                "contenidoficheroasciiLineaVacia"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/ficherosascii/ficheroASCIIDeEjemploParaFicheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin":          "~tipoBoletin",
+                                "theAno":                  "~anoFichero",
+                                "theMes":                  "~mesFichero",
+                                "theProvincia":            "~provinciaFichero",
+                                "theNumeroHombres":        "~numeroHombres",
+                                "theNumeroMujeres":        "~numeroMujeres",
+                                "theNumNBOLsRepetidos":    0,
+                                "theNumNBOLsYaExistentes": 0,
+                                "theFechasHombresSpec":    null,
+                                "theFechasMujeresSpec":    null,
+                                "theReutilizarExistentes": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vTipo-BoletinDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroASCII"
+                        }
+
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export",
+                            "exportAs": "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroascii",
+                            "exportAs": "contenidoficheroascii",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-13-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineavacia-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroascii",
+                            "exportAs": "contenidoficheroasciiLineaVacia",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK",
+                            "exportComputation": "function( theF) { return '\\r\\n';}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

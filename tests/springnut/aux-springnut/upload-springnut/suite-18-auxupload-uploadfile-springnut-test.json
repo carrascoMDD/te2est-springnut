@@ -1,0 +1,174 @@
+{
+    "name": "suite-18-auxupload-uploadfile-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-16-auxupload-uploadlinesencoded. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/aux/upload/auxUploadFileEncodedJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "multiparts": [
+                {
+                    "parmName" : "theEncoding",
+                    "parmValue": "UTF-8",
+                    "contentType": null
+                }
+            ],
+            "uploads": [
+                {
+                    "parmName":    "theUploadedFile",
+                    "uploadBytes": "~contenidoficheroascii",
+                    "contentType": "text/plain"
+                }
+            ]
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroHombres": 2,
+        "numeroMujeres": 2
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-sinperfiles-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        
+        {
+            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii",
+            "parmNames": [
+                "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                "contenidoficheroascii"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/ficherosascii/ficheroASCIIDeEjemploParaFicheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin":          "~tipoBoletin",
+                                "theAno":                  "~anoFichero",
+                                "theMes":                  "~mesFichero",
+                                "theProvincia":            "~provinciaFichero",
+                                "theNumeroHombres":        "~numeroHombres",
+                                "theNumeroMujeres":        "~numeroMujeres",
+                                "theNumNBOLsRepetidos":    0,
+                                "theNumNBOLsYaExistentes": 0,
+                                "theFechasHombresSpec":    null,
+                                "theFechasMujeresSpec":    null,
+                                "theReutilizarExistentes": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier-check-_v_Reply.vTipo-BoletinDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroASCII"
+                        }
+
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-export",
+                            "exportAs": "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-16-auxupload-uploadlinesencoded-springnut-test-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-export-contenidoficheroascii",
+                            "exportAs": "contenidoficheroascii",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheroASCII",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

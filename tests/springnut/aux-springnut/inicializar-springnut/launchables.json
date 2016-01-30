@@ -1,0 +1,11 @@
+[
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-31-auxsecurityproperties-restablecer-incondicional-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/inicializar-springnut/credenciales-instalacion-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/inicializar-springnut/inicializar-predefinidos-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/inicializar-springnut/inicializar-paratest-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/inicializar-springnut/inicializar-parademo-springnut/launchables.json"
+
+]
+
+

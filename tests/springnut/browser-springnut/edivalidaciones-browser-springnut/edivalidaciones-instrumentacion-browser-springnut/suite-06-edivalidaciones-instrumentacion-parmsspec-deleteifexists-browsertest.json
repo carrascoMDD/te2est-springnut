@@ -1,0 +1,238 @@
+{
+    "name": "suite-06-edivalidaciones-instrumentacion-parmsspec-deleteifexists-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-administrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "salutation": "Hello suite-06-edivalidaciones-instrumentacion-parmsspec-deleteifexists-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "protractor": {
+            "allScriptsTimeout": 240000,
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+
+
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+            {
+                "name": "VisitPage-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "VisitSpringnutEdivalidaciones",
+                        "visitURL": "/app/edivalidaciones.html#/edivalidacionesInstrumentacion?theInitialLoadGrids=NONE&theAutoEditors=NONE&theTabsFixed=NONE&theAutoSelect=-1",
+                        "isAngular": true,
+                        "expectedPageTitle": "Criterios - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+
+
+            {
+                "name": "WidgetCtrls-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                "methodName": "pDoPtr_InitWithHelperParms",
+                "reuseInstanceAsExtraParm": "widgetctrlSpringnutEdivalidaciones",
+                "helperParms": {
+                    "widgetctrls": {
+                        "name":        "WidgetCtrls-Springnut-Edivalidaciones",
+                        "domIdPrefix": "didSpringnut_Edivalidaciones"
+                    }
+                }
+            },
+
+
+
+
+
+
+            {
+                "name": "MultiComposite-Springnut-Edivalidaciones",
+                "module": "@cmppath/browser-test/multicomposite-testhelper",
+                "constructorName": "MultiCompositeTestHelper_Constructor",
+                "methodName": "pDoPtr_MultiComposite",
+                "extraConstructorParms": [ "widgetctrlSpringnutEdivalidaciones"],
+                "helperParms": {
+                    "multiComposite": {
+                        "name": "Edivalidaciones",
+                        "compositeSpecs" : [
+
+
+
+
+
+
+
+
+
+                            {
+                                "name": "MultiAction-Springnut-Edivalidaciones-ListaValidaciones",
+                                "gridName": "ListaValidaciones",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "@V11111111"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "Validacion",
+                                                "fieldEdits": [
+                                                    {
+                                                        "fieldName": "descripcion",
+                                                        "type":      "Text",
+                                                        "value":     "@V11111111 Validacion EDITED descripcion $timestamp"
+                                                    },
+                                                    {
+                                                        "fieldName": "severidad",
+                                                        "type":      "IntYesNo",
+                                                        "value":     0
+                                                    },
+                                                    {
+                                                        "fieldName": "activa",
+                                                        "type":      "BoolYesNo",
+                                                        "value":     false
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "actionKind": "DELETE"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "CREATE",
+                                        "creatorName": "CrearValidacion",
+                                        "fieldInits": [
+                                            {
+                                                "fieldName": "iderror",
+                                                "type":      "String",
+                                                "value":     "@V11111111"
+                                            },
+                                            {
+                                                "fieldName": "descripcion",
+                                                "type":      "Text",
+                                                "value":     "@V11111111 Validacion NEW descripcion $timestamp"
+                                            },
+                                            {
+                                                "fieldName": "severidad",
+                                                "type":      "IntYesNo",
+                                                "value":     0
+                                            },
+                                            {
+                                                "fieldName": "activa",
+                                                "type":      "BoolYesNo",
+                                                "value":     true
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+
+
+
+                            {
+                                "name": "MultiAction-Springnut-Edivalidaciones-SimbolosPermitidos",
+                                "gridName": "SimbolosPermitidos",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "actions": [
+                                    {
+                                        "actionKind": "SELECTIFEXISTS",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "EsperadoINEXISTENTEaccidente"},
+                                        "actions": [
+                                            {
+                                                "actionKind": "EDIT",
+                                                "editorName": "SimboloPermitido"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "actionKind": "SELECT",
+                                        "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "accidente"}
+                                    }
+                                ]
+                            }
+
+
+                        ]
+                    }
+                }
+            }
+
+
+
+
+
+
+        ]
+    }
+}
+
+
+
+
+
+
+
+

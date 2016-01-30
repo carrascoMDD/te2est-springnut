@@ -1,0 +1,614 @@
+{
+    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "nombreOperador":                        "@OPER10101010",
+        "nombreCompletoOperador":                "@OPER10101010 Nombre Completo",
+        "contrasena":                            "OPER10101010",
+        "descripcionOperador":                   "@OPER10101010 descripcion",
+        "cuentaBloqueada":                       false,
+        "usuarioDebeCambiarPswdAInicioDeSesion":         false,
+        "usuarioNoPuedeCambiarPswd":             false,
+        "nombrePerfil":                          "ADMINISTRADOR",
+        "descripcionPerfil":                     "Descripcion perfil ADMINISTRADOR",
+        "nombrePerfil2":       "@PERF22222222",
+        "descripcionPerfil2":  "@PERF22222222 descripcion"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-administradorConectadoDatos",
+            "parmNames": [
+                "administradorConectadoDatos"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-administradorConectadoDatos-supplier",
+                    "runnable": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "scheduleSubs": "SERIES",
+                    "expectSuccess": true,
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-administradorConectadoDatos-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-administradorConectadoDatos-supplier-export",
+                            "exportAs": "administradorConectadoDatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearoperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       "~cuentaBloqueada",
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": "~usuarioDebeCambiarPswdAInicioDeSesion",
+                                "theUsuarioNoPuedeCambiarPswd":             "~usuarioNoPuedeCambiarPswd"
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil",
+            "parmNames": [
+                "testcrearperfil",
+                "idPerfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil",
+                                "theDescripcionPerfil":  "~descripcionPerfil",
+                                "theExitoSiYaExiste":    true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-supplier-export",
+                            "exportAs": "testcrearperfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-supplier-export-idPerfil",
+                            "exportAs": "idPerfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-2",
+            "parmNames": [
+                "testcrearperfil-2",
+                "idPerfil2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil2",
+                                "theDescripcionPerfil":  "~descripcionPerfil2",
+                                "theExitoSiYaExiste":    true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil-supplier-export",
+                            "exportAs": "testcrearperfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearperfil2-supplier-export-idPerfil",
+                            "exportAs": "idPerfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearautorizacion",
+            "parmNames": [
+                "testcrearautorizacion",
+                "idAutorizacion"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearautorizacion-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":  "~idOperador",
+                                "theIdPerfil":    "~idPerfil"
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearautorizacion-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearautorizacion-supplier-export",
+                            "exportAs": "testcrearautorizacion",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-require-testcrearautorizacion-supplier-export-idAutorizacion",
+                            "exportAs": "idAutorizacion",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdAutorizacion",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest-springnut-test-sub-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+        {
+            "name": "suite-32-adminoperadores-instrumentacion-autodesautorizacion-cambiando-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "imports": [
+                {
+                    "name": "hitpoint-import",
+                    "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                    "importMode": "STATIC"
+                }
+            ],
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                "@OPER10101010",
+                                "password":                "OPER10101010",
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Adminoperadores",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "VisitSpringnutAdminoperadores",
+                                "visitURL": "/app/adminoperadores.html#/adminoperadoresInstrumentacion?theInitialLoadGrids=NONE&theAutoEditors=NONE&theTabsFixed=NONE&theAutoSelect=-1",
+                                "isAngular": true,
+                                "expectedPageTitle": "Operadores - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Adminoperadores",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutAdminoperadores",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Adminoperadores",
+                                "domIdPrefix": "didSpringnut_Adminoperadores"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Adminoperadores",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutAdminoperadores"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Adminoperadores",
+                                "compositeSpecs" : [
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Adminoperadores-ListaOperadores",
+                                        "gridName": "ListaOperadores",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPER10101010"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Adminoperadores-ListaOperadores-ListaAutorizacionesDeOperador",
+                                                        "gridName": "ListaAutorizacionesDeOperador",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  5, "spanIndex":  0, "value":  "ADMINISTRADOR"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "EDIT",
+                                                                        "editorName": "AutorizacionDeOperador",
+                                                                        "fieldEdits": [
+                                                                            {
+                                                                                "fieldName": "vNombrePerfil",
+                                                                                "type":      "String",
+                                                                                "candidates": true,
+                                                                                "candidatesGridName": "AutorizacionDeOperador__vNombrePerfil_Candidatos_ListaPerfiles",
+                                                                                "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@PERF22222222"}
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+[
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-01-security-login-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-02-security-login-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-03-security-autorizado-instalador-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-04-security-autorizado-instalador-byapplicationcontextsecurity-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-05-security-autorizado-instalador-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-06-security-autorizado-instalador-bymethodannotation-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-07-security-autorizado-avanzado-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-08-security-autorizado-avanzado-byapplicationcontextsecurity-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-09-security-autorizado-avanzado-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-10-security-autorizado-avanzado-bymethodannotation-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-11-security-autorizado-administrador-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-12-security-autorizado-administrador-byapplicationcontextsecurity-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-13-security-autorizado-administrador-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-14-security-autorizado-administrador-bymethodannotation-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-15-security-autorizado-inexistente-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-16-security-autorizado-inexistente-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-17-security-autorizado-codificador-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-18-security-autorizado-codificador-byapplicationcontextsecurity-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-19-security-autorizado-codificador-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-20-security-autorizado-codificador-bymethodannotation-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-21-security-autorizado-grabador-byapplicationcontextsecurity-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-22-security-autorizado-grabador-byapplicationcontextsecurity-ok-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-23-security-autorizado-grabador-bymethodannotation-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/security-browser-springnut/suite-24-security-autorizado-grabador-bymethodannotation-ok-browsertest.json"
+]
+

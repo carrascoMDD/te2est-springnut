@@ -1,0 +1,7 @@
+[
+    "@testspath/springnut/aux-springnut/audit-springnut/suite-50-auxaudit-eliminartodos-accesosoperadores-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/suite-52-auxaudit-eliminartodos-accesosfallidos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/suite-54-auxaudit-eliminartodos-ultimosaccesos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/suite-56-auxaudit-eliminartodos-lecturasboletines-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/suite-90-auxaudit-eliminartodos-auditrecords-springnut-test.json"
+]

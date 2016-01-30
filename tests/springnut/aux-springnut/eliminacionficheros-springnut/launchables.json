@@ -1,0 +1,16 @@
+[
+
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/eliminacionficheros-noautorizado/launchables.json",
+
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/suite-32-eliminacionficheros-creartrabajoylanzarejecucionyesperarterminacion-obteniendofichero-springnut-test.json",
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/suite-34-eliminacionficheros-creartrabajoylanzarejecucionyesperarterminacion-obteniendofichero-importarsinoexistecorrecto-springnut-test.json",
+
+
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test.json",
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/suite-44-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-importarsinoexistecorrecto-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/suite-54-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-noexiste-eliminadoantes-springnut-test.json"
+
+]
+
+

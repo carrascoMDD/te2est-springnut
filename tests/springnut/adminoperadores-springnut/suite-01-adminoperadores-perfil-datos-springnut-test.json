@@ -1,0 +1,248 @@
+{
+    "name": "suite-01-adminoperadores-perfil-datos-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-01-adminoperadores-perfil-datos. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/administracionOperadores/perfilDatosJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLpathParms": {
+                "theIdPerfil": "~idPerfil"
+            }
+        },
+        "nombrePerfil":               "@PERF11111111",
+        "descripcionPerfil":          "@PERF11111111 descripcion"
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste",
+            "parmNames": [
+                "testeliminarperfilsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilConNombreEliminarJSON",
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":  "~nombrePerfil",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-supplier-export",
+                            "exportAs": "testeliminarperfilsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-2",
+            "parmNames": [
+                "testeliminarperfilsiexiste-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilConNombreEliminarJSON",
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":  "~nombrePerfilCambiado",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testeliminarperfilsiexiste-2-supplier-export",
+                            "exportAs": "testeliminarperfilsiexiste-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testcrearperfil-idPerfil",
+            "parmNames": [
+                "testcrearperfil",
+                "idPerfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testcrearperfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil",
+                                "theDescripcionPerfil":  "~descripcionPerfil"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testcrearperfil-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testcrearperfil-supplier-export",
+                            "exportAs": "testcrearperfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-adminoperadores-perfil-datos-springnut-test-require-testcrearperfil-supplier-export-idPerfil",
+                            "exportAs": "idPerfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

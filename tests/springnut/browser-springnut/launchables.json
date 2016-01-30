@@ -1,0 +1,23 @@
+[
+    "@testspath/springnut/browser-springnut/excepciones-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/security-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/ejemplos-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/ficheros-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/adminoperadores-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/definicionbloques-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/launchables.json",
+
+    "@testspath/springnut/browser-springnut/trabajos-browser-springnut/launchables.json"
+
+
+]

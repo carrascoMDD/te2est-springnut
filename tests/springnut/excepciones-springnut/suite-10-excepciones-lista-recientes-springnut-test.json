@@ -1,0 +1,310 @@
+{
+    "name": "suite-10-excepciones-lista-recientes-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-10-excepciones-lista-recientes. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/excepciones/listaExcepcionesRecientesJSON",
+            "URLparms": {
+                "thePrimero": null,
+                "theCuantos": 5
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo": "ListaExcepciones",
+                "vSuccess": true
+            }
+        }
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-10-excepciones-lista-recientes-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vTipo-ExcepcionJSON",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vTipo",
+            "checkValue": "ExcepcionDatos"
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vClassName-java.lang.RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vClassName",
+            "checkValue": "java.lang.RuntimeException"
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vClassSimpleName-RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vClassSimpleName",
+            "checkValue": "RuntimeException"
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vMessage-simularExcepcion forced Outer",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vMessage",
+            "checkValue": "OUTER-suite-10-excepciones-lista-recientes-springnut-test"
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vDateStr-fechaExcepcion",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vDateStr",
+            "checkValue": "~fechaExcepcion"
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-vExcepciones-first-check-vTimestampStr-fechaHoraExcepcion",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vExcepciones.first.vTimestampStr",
+            "checkValue": "~fechaHoraExcepcion"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-simularExcepcionTest",
+            "parmNames": [
+                "simularExcepcionTest",
+                "fechaExcepcion",
+                "fechaHoraExcepcion"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-simularExcepcionTest-springnut-test",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/simularExcepcionJSON",
+                            "URLparms": {
+                                "theExceptionMessageOuter": "OUTER-suite-10-excepciones-lista-recientes-springnut-test",
+                                "theExceptionMessageInner": "INNER-suite-10-excepciones-lista-recientes-springnut-test"
+                            },
+                            "statuscode": 500,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo":   "ExcepcionJSON"
+                            },
+                            "expectedexceptions": "ExcepcionJSON"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-simularExcepcionTest-export",
+                            "exportAs": "simularExcepcionTest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-simularExcepcionTest-export-fechaExcepcion",
+                            "exportAs": "fechaExcepcion",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDateStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-simularExcepcionTest-export-fechaHoraExcepcion",
+                            "exportAs": "fechaHoraExcepcion",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vTimestampStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada",
+            "parmNames": [
+                "pollExcepcionRegistrada"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/poll-test",
+                    "constructorName": "PollTest_Constructor",
+                    "methodName": "pF_Poll",
+                    "parms": {
+                        "poll": {
+                            "eachParm":     "theNumPolls",
+                            "maxPolls":     3,
+                            "pollInterval": 2000
+                        },
+                        "theNumPolls": null
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-export",
+                            "exportAs": "pollExcepcionRegistrada",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod": "GET",
+                                    "URLpath": "/excepciones/listaExcepcionesRecientesJSON",
+                                    "URLparms": {
+                                        "thePrimero": null,
+                                        "theCuantos": 5
+                                    },
+                                    "statuscode": 200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "expectedresponsepart": {
+                                        "vTipo": "ListaExcepciones",
+                                        "vSuccess": true
+                                    }
+                                }
+                            },
+                            "scheduleSubs": "SERIES",
+                            "checks": [
+                                {
+                                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes-check-_v_Reply.vSuccess-true",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vSuccess",
+                                    "checkValue": true
+                                },
+                                {
+                                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes-check-_v_Reply.vExcepciones.first.vTipo-ExcepcionDatos",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vExcepciones.first.vTipo",
+                                    "checkValue": "ExcepcionDatos"
+                                },
+                                {
+                                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes-check-_v_Reply.vExcepciones.first.vMessage-OUTER-suite-10-excepciones-lista-recientes-springnut-test",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vExcepciones.first.vMessage",
+                                    "checkValue": "OUTER-suite-10-excepciones-lista-recientes-springnut-test"
+                                },
+                                {
+                                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes-check-_v_Reply.vExcepciones.first.vDateStr-fechaExcepcion",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vExcepciones.first.vDateStr",
+                                    "checkValue": "~fechaExcepcion"
+                                },
+                                {
+                                    "name": "suite-10-excepciones-lista-recientes-springnut-test-require-pollExcepcionRegistrada-supplier-sub-listaExcepcionesRecientes-check-_v_Reply.vExcepciones.first.vTimestampStr-fechaHoraExcepcion",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vExcepciones.first.vTimestampStr",
+                                    "checkValue": "~fechaHoraExcepcion"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

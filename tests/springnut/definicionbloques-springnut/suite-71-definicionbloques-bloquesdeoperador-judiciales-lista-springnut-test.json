@@ -1,0 +1,1111 @@
+{
+    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-71-definicionbloques-bloquesdeoperador-ine-lista. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/definicionBloques/listaBloquesDeOperadorJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLparms": {
+                "theTipoBoletin":  "~tipoBoletin",
+                "theIdOperador":   "~idOperador",
+                "thePrimero":      null,
+                "theCuantos":      null
+            }
+        },
+        "tipoBoletin": "ine",
+        "descripcionBloque": "@TEST Bloque Descripcion primer fichero para @OPER11111BLK",
+        "idFichero":       null,
+        "idOperador":      null,
+        "identificaDesde": null,
+        "identificaHasta": null,
+        "identificasCuantos": null,
+        "nombreOperador":                                 "@OPER11111BLK",
+        "nombreCompletoOperador":                         "@OPER11111BLK Nombre Completo",
+        "descripcionOperador":                            "@OPER11111BLK descripcion",
+        "contrasena":                            "OPER11111BLK",
+        "cuentaBloqueada":                                false,
+        "usuarioDebeCambiarPswdAInicioDeSesion":          false,
+        "usuarioNoPuedeCambiarPswd":                      false,
+        "nombreOperador2":                                "@OPER22222BLK",
+        "nombreCompletoOperador2":                        "@OPER22222BLK Nombre Completo",
+        "descripcionOperador2":                           "@OPER22222BLK descripcion",
+        "contrasena2":                            "OPER22222BLK",
+        "cuentaBloqueada2":                               false,
+        "usuarioDebeCambiarPswdAInicioDeSesion2":         false,
+        "usuarioNoPuedeCambiarPswd2":                     false,
+        "idBloque": null,
+        "identificaDesdeOtro": null,
+        "identificaHastaOtro": null,
+        "identificasCuantosOtro": null,
+        "descripcionBloque2": "@TEST Bloque Descripcion segundo fichero para @OPER11111BLK",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99, "anoFicheroOtro": 2015, "mesFicheroOtro": 3,  "provinciaFicheroOtro": 99
+
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "require-ficheroConBoletines",
+            "parmNames": [
+                "ficheroConBoletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-ficheroConBoletines-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-boletines-datos-ligeros-ine-springnut-test-require-ficheroConBoletines-export",
+                            "exportAs": "ficheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+        {
+            "name": "require-idfichero",
+            "parmNames": [
+                "idfichero"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-idfichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theAno":         "~anoFichero",
+                                "theMes":         "~mesFichero",
+                                "theProvincia":   "~provinciaFichero"
+
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vTipo-FicheroDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroDatos"
+                        },
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "require-idfichero-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-idFichero-supplier-export",
+                            "exportAs": "idfichero",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+
+            ]
+        },
+
+
+
+
+        {
+            "name": "require-identificasEnFichero",
+            "parmNames": [
+                "identificaDesde",
+                "identificaHasta"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-identificasEnFichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroConIdentificasJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdFichero":   "~idfichero"
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vTipo-FicheroDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroConIdentificas"
+                        },
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "require-identificasEnFichero-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-identificasEnFicherorequire-idboletin-supplier-export-identificaDesde",
+                            "exportAs": "identificaDesde",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaDesde",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "require-identificasEnFicherorequire-idboletin-supplier-export-identificaHasta",
+                            "exportAs": "identificaHasta",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaHasta",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "equire-identificasEnFicherorequire-idboletin-supplier-export-vNumBoletines",
+                            "exportAs": "identificasCuantos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vNumBoletines",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "require-ficheroConBoletinesOtro",
+            "parmNames": [
+                "ficheroConBoletinesOtro"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-ficheroConBoletinesOtro-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-otroparaeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-otroparaeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-boletines-datos-ligeros-ine-springnut-test-require-ficheroConBoletinesOtro-export",
+                            "exportAs": "ficheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+        {
+            "name": "require-idficheroOtroOtro",
+            "parmNames": [
+                "idficheroOtro"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-idficheroOtro-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theAno":         "~anoFicheroOtro",
+                                "theMes":         "~mesFicheroOtro",
+                                "theProvincia":   "~provinciaFicheroOtro"
+
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vTipo-FicheroDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroDatos"
+                        },
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFicheroOtro"
+                        },
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFicheroOtro"
+                        },
+                        {
+                            "name": "require-idficheroOtro-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFicheroOtro"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-idFichero-supplier-export",
+                            "exportAs": "idficheroOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+
+            ]
+        },
+
+
+
+
+        {
+            "name": "require-identificasEnFicheroOtro",
+            "parmNames": [
+                "identificaDesde",
+                "identificaHasta"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-identificasEnFicheroOtro-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroConIdentificasJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdFichero":   "~idfichero"
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vTipo-FicheroDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroConIdentificas"
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFicheroOtro"
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFicheroOtro"
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtro-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFicheroOtro"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-identificasEnFicheroOtrorequire-idboletin-supplier-export-identificaDesdeOtro",
+                            "exportAs": "identificaDesdeOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaDesde",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "require-identificasEnFicheroOtrorequire-idboletin-supplier-export-identificaHastaOtro",
+                            "exportAs": "identificaHastaOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaHasta",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "equire-identificasEnFicherorequire-idboletin-supplier-export-vNumBoletinesOtro",
+                            "exportAs": "identificasCuantos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vNumBoletinesOtro",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero",
+            "parmNames": [
+                "idFichero",
+                "identificaDesde",
+                "identificaHasta",
+                "idFichero2",
+                "identificaDesdeOtro",
+                "identificaHastaOtro"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/listaFicherosConIdentificasJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin"
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-idfichero",
+                            "exportAs": "idFichero",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.first.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-identificaDesde",
+                            "exportAs": "identificaDesde",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.first.vIdentificaDesde",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-identificaHasta",
+                            "exportAs": "identificaHasta",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.first.vIdentificaHasta",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-idfichero2",
+                            "exportAs": "idFichero2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.last.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-identificaDesde",
+                            "exportAs": "identificaDesdeOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.last.vIdentificaDesde",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-idFichero-supplier-export-identificaHasta",
+                            "exportAs": "identificaHastaOtro",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros.last.vIdentificaHasta",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero",
+            "parmNames": [
+                "testeliminarbloquesdefichero"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/bloques/auxEliminarBloquesDeFicheroJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdFichero":   "~idfichero"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-supplier-export",
+                            "exportAs": "testeliminarbloquesdefichero",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-2",
+            "parmNames": [
+                "testeliminarbloquesdefichero2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/bloques/auxEliminarBloquesDeFicheroJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdFichero":   "~idFichero2"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminarbloquesdefichero-2-supplier-export",
+                            "exportAs": "testeliminarbloquesdefichero2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearoperador-idOperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       "~cuentaBloqueada",
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": "~usuarioDebeCambiarPswdAInicioDeSesion",
+                                "theUsuarioNoPuedeCambiarPswd":             "~usuarioNoPuedeCambiarPswd"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-idBloque",
+            "parmNames": [
+                "testcrearbloque",
+                "idBloque",
+                "descripcionBloque"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/definicionBloques/crearBloqueJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theTipoBoletin":     "~tipoBoletin",
+                                "theIdFichero":       "~idfichero",
+                                "theIdOperador":      "~idOperador",
+                                "theIdentificaDesde": "~identificaDesde",
+                                "theIdentificaHasta": "~identificaHasta",
+                                "theIdentificasCuantos": "~identificasCuantos",
+                                "theDescripcion":     "~descripcionBloque"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-supplier-export",
+                            "exportAs": "testcrearbloque",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-supplier-export-idOperador",
+                            "exportAs": "idBloque",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdBloque",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque-supplier-export-idOperador",
+                            "exportAs": "descripcionBloque",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdBloque",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque2-idBloque",
+            "parmNames": [
+                "testcrearbloque2",
+                "idBloque2",
+                "descripcionBloque2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/definicionBloques/crearBloqueJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": null,
+                            "requestdata": {
+                                "theTipoBoletin":     "~tipoBoletin",
+                                "theIdFichero":       "~idFichero2",
+                                "theIdOperador":      "~idOperador",
+                                "theIdentificaDesde": "~identificaDesdeOtro",
+                                "theIdentificaHasta": "~identificaHastaOtro",
+                                "theIdentificasCuantos": "~identificasCuantosOtro",
+                                "theDescripcion":     "~descripcionBloque2"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque2-supplier-export",
+                            "exportAs": "testcrearbloque2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-ine-lista-springnut-test-require-testcrearbloque2-supplier-export-idOperador",
+                            "exportAs": "idBloque2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdBloque",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-71-definicionbloques-bloquesdeoperador-judiciales-lista-springnut-test-require-testcrearbloque2-supplier-export-idOperador",
+                            "exportAs": "descripcionBloque2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdBloque",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

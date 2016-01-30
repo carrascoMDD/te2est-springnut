@@ -1,0 +1,6 @@
+[
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/securityproperties-noautorizado/suite-10-auxsecurityproperties-noautorizado-datos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/securityproperties-noautorizado/suite-20-auxsecurityproperties-noautorizado-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/securityproperties-noautorizado/suite-30-auxsecurityproperties-noautorizado-restablecer-springnut-test.json"
+
+]

@@ -1,0 +1,13 @@
+[
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-20-auxboletines-datosdeejemplo-ligeros-ine-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-21-auxboletines-datosdeejemplo-ligeros-judiciales-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-22-auxboletines-datosdeejemplo-detallados-ine-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-23-auxboletines-datosdeejemplo-detallados-judiciales-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-24-auxboletines-datosdeejemplo-detallados-conbaseendetalles-ine-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-25-auxboletines-datosdeejemplo-detallados-conbaseendetalles-judiciales-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/boletines-springnut/suite-30-auxboletines-listadeejemplo-paraficherodeanomesprovincia-ine-springnut-test.json"
+
+]

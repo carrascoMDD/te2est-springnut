@@ -1,0 +1,222 @@
+{
+    "name": "suite-40-accesosfallidos-acceso-datos-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-40-accesosfallidos-acceso-datos. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/accesos/accesofallidoDatosJSON",
+            "URLparms": null,
+            "URLpathParms": {
+                "theIdFallo":   "~idFallo"
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo": "AccesofallidoDatos",
+                "vSuccess": true
+            }
+        }
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-40-accesosfallidos-acceso-datos-vAccesos-first-check-vTipo-AccesofallidoDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "AccesofallidoDatos"
+        },
+        {
+            "name": "suite-40-accesosfallidos-acceso-datos-vAccesos-first-check-vNombreOperador-RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vNombreOperador",
+            "checkValue": "!NOEXISTENTE"
+        },
+        {
+            "name": "suite-40-accesosfallidos-lista-entrefechas-vAccesos-first-check-vNombreOperador-RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vModoFallo",
+            "checkValue": "CREDENCIALES_INCORRECTAS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-34-accesosfallidos-lista-entrefechas-springnut-test-require-loginfailed",
+            "parmNames": [
+                "loginfailed"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-34-accesosfallidos-lista-entrefechas-springnut-test-require-loginfailed-supplier",
+                    "runnable": true,
+                    "expectSuccess": false,
+                    "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                    "constructorName": "LoginSpringnutTest_Constructor",
+                    "methodName": "pF_Login",
+                    "parms": {
+                        "login": {
+                            "lazy": false
+                        },
+                        "isauthenticated": {
+                            "lazy": false
+                        },
+                        "credentials": {
+                            "username": "!NOEXISTENTE",
+                            "password": "!NOEXISTENTEpswd2"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-34-accesosfallidos-lista-entrefechas-springnut-test-require-loginfailed-export",
+                            "exportAs": "loginfailed",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "34-accesosfallidos-lista-entrefechas-springnut-test-require-loginfailed-sub-isauthentifated-fail",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "useloginparmname": "loginfailed"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-idAcceso",
+            "parmNames": [
+                "idFallo"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-idAcceso-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/accesos/listaAccesosfallidosRecientesJSON",
+                            "URLparms": {
+                                "thePrimero": null,
+                                "theCuantos": 5
+                            },
+                            "URLpathParms": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "ListaAccesosfallidos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-idAcceso-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-40-accesosfallidos-acceso-datos-springnut-test-require-idAcceso-export",
+                            "exportAs": "idFallo",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vAccesos.first.vIdFallo",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

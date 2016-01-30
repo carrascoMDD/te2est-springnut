@@ -1,0 +1,99 @@
+{
+    "name": "suite-01-query-solr-study-list-istdicom-test",
+    "runnable": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "expectSuccess": true,
+    "parms": {
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-solr-import",
+            "configurationPath": "@testspath/istdicom-host/parms-hitpoint-solr.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-01-query-solr-study-list-istdicom-test-sub-querylist",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "baseURLparmName": "hitpointsolr.baseURLsolr",
+                    "requestmethod": "GET",
+                    "URLpath": "/mia_dcm/select",
+                    "URLparms": {
+                        "q": "TIPOFICHERO_scustom:DICOM Study",
+                        "wt": "json",
+                        "indent": true
+                    },
+                    "NOTUSED_URLfull": "http://solr.desknova.com:8983/solr/mia_dcm/select?q=TIPOFICHERO_scustom%3ADICOM+Study&wt=json&indent=true",
+                    "statuscode": 200,
+                    "dumpurl":         true,
+                    "dumprequestdata": true,
+                    "dumpreply":       true
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-01-query-solr-study-list-istdicom-test-sub-querylist-check-_v_Reply.responseHeader.status-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.responseHeader.status",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-01-query-solr-study-list-istdicom-test-sub-querylist-check-_v_Reply.params.indent-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.responseHeader.params.indent",
+                    "checkValue": "true"
+                },
+                {
+                    "name": "suite-01-query-solr-study-list-istdicom-test-sub-querylist-check-_v_Reply.params.q-TIPOFICHERO_scustom:DICOM Study",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.responseHeader.params.q",
+                    "checkValue": "TIPOFICHERO_scustom:DICOM Study"
+                },
+                {
+                    "name": "suite-01-query-solr-study-list-istdicom-test-sub-querylist-check-_v_Reply.params.wt-json",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.responseHeader.params.wt",
+                    "checkValue": "json"
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

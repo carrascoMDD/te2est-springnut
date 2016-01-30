@@ -1,0 +1,7 @@
+[
+    "@testspath/springnut/aux-springnut/upload-springnut/suite-10-auxupload-uploadlines-springnut-test.json",
+    "@testspath/springnut/aux-springnut/upload-springnut/suite-12-auxupload-uploadlinesencoded-ascii-springnut-test.json",
+    "@testspath/springnut/aux-springnut/upload-springnut/suite-14-auxupload-uploadlinesencoded-utf8-springnut-test.json",
+    "@testspath/springnut/aux-springnut/upload-springnut/suite-16-auxupload-uploadlinesencoded-cp1252-springnut-test.json",
+    "@testspath/springnut/aux-springnut/upload-springnut/suite-18-auxupload-uploadfile-springnut-test.json"
+]

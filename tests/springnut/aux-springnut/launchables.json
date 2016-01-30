@@ -1,0 +1,20 @@
+[
+    "@testspath/springnut/aux-springnut/excepciones-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/inicializar-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/fechahora-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/auxauditables-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/perfiles-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/operadores-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/hasrole-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/eliminacionficheros-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/boletines-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/ficherosascii-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/upload-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/lecturasboletines-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/launchables.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/launchables.json"
+]
+

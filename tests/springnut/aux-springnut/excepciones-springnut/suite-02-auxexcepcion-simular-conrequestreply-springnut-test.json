@@ -1,0 +1,226 @@
+{
+    "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-02-auxexcepcion-simular-conrequestreply-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/aux/simularExcepcionJSON",
+            "statuscode": 500,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo":   "ExcepcionJSON",
+                "vSuccess": false,
+                "vClassName": "java.lang.RuntimeException",
+                "vClassSimpleName": "RuntimeException",
+                "vHttpMethod": "GET"
+            },
+            "expectedexceptions": "ExcepcionJSON"
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vTipo-ExcepcionJSON",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "ExcepcionJSON"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vClassName-java.lang.RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vClassName",
+            "checkValue": "java.lang.RuntimeException"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vClassSimpleName-RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vClassSimpleName",
+            "checkValue": "RuntimeException"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vMessage-simularExcepcion forced Outer",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vMessage",
+            "checkValue": "simularExcepcion forced Outer"
+        },
+        
+        
+        
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vTipo-ExcepcionJSON",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vTipo",
+            "checkValue": "ExcepcionJSON"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vClassName-java.lang.RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vClassName",
+            "checkValue": "java.lang.RuntimeException"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vClassSimpleName-RuntimeException",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vClassSimpleName",
+            "checkValue": "RuntimeException"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vMessage-simularExcepcion forced Inner",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vMessage",
+            "checkValue": "simularExcepcion forced Inner"
+        },
+
+
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vStackTraceElements-vTipo-StackTraceElementJSON",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStackTraceElements.first.vTipo",
+            "checkValue": "StackTraceElementJSON"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vStackTraceElements-vDeclaringClass-org.modeldd.springnut.domain.services.aux4tst.SimularExcepcionAuxService",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStackTraceElements.first.vDeclaringClass",
+            "checkValue": "org.modeldd.springnut.domain.services.aux4tst.SimularExcepcionAuxService"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vStackTraceElements-vMethodName-simularExcepcion",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStackTraceElements.first.vMethodName",
+            "checkValue": "simularExcepcion"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vStackTraceElements-vFileName-SimularExcepcionAuxService.java",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStackTraceElements.first.vFileName",
+            "checkValue": "SimularExcepcionAuxService.java"
+        },
+
+
+
+
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vStackTraceElements-vTipo-StackTraceElementJSON",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vStackTraceElements.first.vTipo",
+            "checkValue": "StackTraceElementJSON"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vStackTraceElements-vDeclaringClass-org.modeldd.springnut.domain.services.aux4tst.SimularExcepcionAuxService",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vStackTraceElements.first.vDeclaringClass",
+            "checkValue": "org.modeldd.springnut.domain.services.aux4tst.SimularExcepcionAuxService"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vStackTraceElements-vMethodName-simularExcepcion",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vStackTraceElements.first.vMethodName",
+            "checkValue": "simularExcepcion"
+        },
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-subs-ExcepcionJSON-check-vCausasAplanadas-vStackTraceElements-vFileName-SimularExcepcionAuxService.java",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCausasAplanadas.first.vStackTraceElements.first.vFileName",
+            "checkValue": "SimularExcepcionAuxService.java"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-omnipotente-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-02-auxexcepcion-simular-conrequestreply-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

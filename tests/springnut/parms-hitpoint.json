@@ -1,0 +1,16 @@
+{
+    "name": "parms-hitpoint",
+    "parms": {
+        "hitpoint": {
+            "baseURL": "http://192.168.69.111:64404/springnut",
+
+            "ZZZbaseURL": "http://192.168.69.82:8080/springnut",
+
+            "YYYbaseURL": "http://localhost:8080/springnut",
+            "XXXbaseURL": "http://localhost:64404/springnut"
+        }
+    }
+}
+
+
+

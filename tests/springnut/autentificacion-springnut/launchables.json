@@ -1,0 +1,9 @@
+[
+    "@testspath/springnut/autentificacion-springnut/suite-10-autentificacion-cuentabloqueada-springnut-test.json",
+    "@testspath/springnut/autentificacion-springnut/suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test.json",
+    "@testspath/springnut/autentificacion-springnut/suite-21-autentificacion-cuentadeshabilitada-evitarantesmaxfallos-springnut-test.json",
+    "@testspath/springnut/autentificacion-springnut/suite-30-autentificacion-credencialesexpiradas-pormaxaccesosgracia-springnut-test.json",
+    "@testspath/springnut/autentificacion-springnut/suite-35-autentificacion-credencialesexpiradas-pormaxaccesosgracia-forzadoporadministrador-springnut-test.json"
+]
+
+

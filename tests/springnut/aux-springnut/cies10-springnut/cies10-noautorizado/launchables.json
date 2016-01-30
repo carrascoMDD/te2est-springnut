@@ -1,0 +1,8 @@
+[
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/suite-01-auxcie10-noautorizado-crear-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/suite-02-auxcie10-noautorizado-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/suite-03-auxcie10-noautorizado-cambiaralgunosdatos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/suite-10-auxcie10-noautorizado-eliminar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/cies10-springnut/cies10-noautorizado/suite-50-auxcie10-noautorizado-eliminarcies10deprueba-springnut-test.json"
+
+]

@@ -1,0 +1,16 @@
+[
+
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/launchables.json",
+
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-01-auxcriterio-eliminarpornombre-exitosinoexiste-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-02-auxcriterio-eliminarpornombre-fallo-noexiste-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-10-auxcriterio-crear-eliminandosiexiste-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-12-auxcriterio-crear-fallo-yaexiste-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-20-auxcriterio-eliminar-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-30-auxcriterio-cambiar-descripcion-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-32-auxcriterio-cambiar-nombre-fallo-yaexiste-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/suite-34-auxcriterio-cambiar-nombre-springnut-test.json"
+]

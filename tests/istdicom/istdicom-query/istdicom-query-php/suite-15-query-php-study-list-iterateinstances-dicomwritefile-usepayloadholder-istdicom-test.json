@@ -1,0 +1,1366 @@
+{
+    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test",
+    "runnable": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "expectSuccess": true,
+    "parms": {
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-php-import",
+            "configurationPath": "@testspath/istdicom-host/parms-hitpoint-php.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "hitpoint-storage-import",
+            "configurationPath": "@testspath/istdicom-host/parms-hitpoint-storage.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "paths-dicomdownloadedfiles-import",
+            "configurationPath": "@testspath/istdicom/istdicom-query/istdicom-query-php/parms-directory-dicomdownloadedfiles-somefew.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "iterators-php-import",
+            "configurationPath": "@testspath/istdicom/istdicom-query/istdicom-query-php/parms-iterators-php-some.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-millis",
+            "exportAs": "millis",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_MillisStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-garbagecollectbefore",
+            "parmNames": [
+                "garbagecollectbefore"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-garbagecollectbefore-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/memory-test",
+                    "constructorName": "Memory_Constructor",
+                    "methodName": "pF_Memory",
+                    "parms": {
+                        "memory": {
+                            "minHeapAvailable":                -1,
+                            "maxHeapUsed":                     -1,
+                            "maxHeapTotal":                    -1,
+
+                            "failIfUnderMinHeapAvailable":      false,
+                            "failIfOverMaxHeapUsed":            false,
+                            "failIfOverMaxHeapTotal":           false,
+
+                            "garbageCollectIfMinHeapAvailable": false,
+                            "garbageCollectIfMaxHeapUsed":      false,
+                            "garbageCollectIfMaxHeapTotal":     false,
+                            "garbageCollectAlways":             true,
+
+                            "reportMemoryAfter":                true,
+
+                            "dumpmemoryreport":                 true,
+                            "dumpgarbagecollect":               true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-garbagecollectbefore-supplier-export-",
+                            "exportAs": "garbagecollectbefore",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory",
+            "parmNames": [
+                "uploaddirectory"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/directory-test",
+                    "constructorName": "Directory_Constructor",
+                    "methodName": "pF_Directory",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "directory": {
+                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                            "basePath":                null,
+                            "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                            "dirPath":                 null,
+                            "fullDirPathParmName":     null,
+                            "fullDirPath":             null,
+                            "expandHome":              true,
+
+                            "failIfDirNotExists":      false,
+                            "failIfDirAlreadyExists":  true,
+
+                            "tree":                    false,
+                            "treeDirs":                false,
+                            "treeLevel":               0,
+                            "treeFiles":               false,
+
+                            "rmDir":                   false,
+                            "rmDirContentsDirs":       false,
+                            "rmDirContentsFiles":      false,
+                            "failIfDirNotEmpty":       false,
+
+                            "createDir":               true,
+                            "createDirMode":           "0770",
+
+                            "dumppaths":               false,
+                            "dumpstats":               false,
+                            "dumpparseresult":         false,
+                            "dumpreaddirs":            false,
+                            "dumpdircontents":         false,
+                            "dumptree":                false,
+                            "dumptreeindented":        false,
+                            "dumptreestats":           false,
+                            "dumpremovals":            true,
+                            "dumpmkdirs":              true
+
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-export-UsedFullDirPath",
+                            "exportAs": "UsedFullDirPath",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_UsedFullDirPath",
+                            "exportTarget": ".",
+                            "exportWhen": "EXBEFORESUBS"
+                        }
+                    ],
+                    "required": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir",
+                            "parmNames": [
+                                "rmdirbeforemkdir"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/directory-test",
+                                    "constructorName": "Directory_Constructor",
+                                    "methodName": "pF_Directory",
+                                    "scheduleSubs": "SERIES",
+                                    "parms": {
+                                        "directory": {
+                                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                            "basePath":                null,
+                                            "dirPathParmName":         null,
+                                            "dirPath":                 null,
+                                            "fullDirPathParmName":     null,
+                                            "fullDirPath":             null,
+                                            "expandHome":              true,
+
+                                            "tree":                    false,
+                                            "treeDirs":                false,
+                                            "treeLevel":               -1,
+                                            "treeFiles":               false,
+
+                                            "rmDir":                   true,
+                                            "rmDirContentsDirs":       true,
+                                            "rmDirContentsFiles":      true,
+                                            "failIfDirNotEmpty":       false,
+
+                                            "createDir":               false,
+                                            "createDirMode":           "0770",
+                                            "failIfDirNotExists":      false,
+                                            "failIfDirAlreadyExists":  false,
+
+                                            "dumppaths":               false,
+                                            "dumpstats":               false,
+                                            "dumpparseresult":         false,
+                                            "dumpreaddirs":            false,
+                                            "dumpdircontents":         false,
+                                            "dumptree":                false,
+                                            "dumptreeindented":        false,
+                                            "dumptreestats":           false,
+                                            "dumpremovals":            true,
+                                            "dumpmkdirs":              true
+                                        }
+                                    },
+                                    "exports": [
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir-supplier-export-rmdirbeforemkdir",
+                                            "exportAs": "rmdirbeforemkdir",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir-supplier-export-RemovedFullDirPath",
+                                            "exportAs": "RemovedFullDirPath",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_UsedFullDirPath",
+                                            "exportTarget": ".",
+                                            "exportWhen": "EXBEFORESUBS"
+                                        }
+                                    ],
+                                    "subs": [
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir-supplier-sub-mustnotexistsafterrmdir",
+                                            "runnable": true,
+                                            "expectSuccess": true,
+                                            "module": "@cmppath/common-test/directory-test",
+                                            "constructorName": "Directory_Constructor",
+                                            "methodName": "pF_Directory",
+                                            "scheduleSubs": "SERIES",
+                                            "parms": {
+                                                "directory": {
+                                                    "basePathParmName":        null,
+                                                    "basePath":                null,
+                                                    "dirPathParmName":         null,
+                                                    "dirPath":                 null,
+                                                    "fullDirPathParmName":     "RemovedFullDirPath",
+                                                    "fullDirPath":             null,
+                                                    "expandHome":              true,
+
+                                                    "tree":                    false,
+                                                    "treeDirs":                false,
+                                                    "treeLevel":               -1,
+                                                    "treeFiles":               false,
+
+                                                    "rmDir":                   false,
+                                                    "rmDirContentsDirs":       false,
+                                                    "rmDirContentsFiles":      false,
+                                                    "failIfDirNotEmpty":       false,
+
+                                                    "createDir":               false,
+                                                    "createDirMode":           "0770",
+                                                    "failIfDirNotExists":      false,
+                                                    "failIfDirAlreadyExists":  true,
+
+                                                    "dumppaths":               false,
+                                                    "dumpstats":               false,
+                                                    "dumpparseresult":         false,
+                                                    "dumpreaddirs":            false,
+                                                    "dumpdircontents":         false,
+                                                    "dumptree":                false,
+                                                    "dumptreeindented":        false,
+                                                    "dumptreestats":           false,
+                                                    "dumpremovals":            true,
+                                                    "dumpmkdirs":              true
+                                                }
+                                            },
+                                            "checks": [
+                                                {
+                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-rmdirbeforemkdir-sub-mustnotexistsafterrmdir-supplier-check-_v_FullDirExisted-false",
+                                                    "checkWhen": "AFTER",
+                                                    "checkNegate": false,
+                                                    "checkKind": "EQ",
+                                                    "checkOrigin": "TEST",
+                                                    "checkSource": "_v_FullDirExisted",
+                                                    "checkValue": false
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-sub-mustexistsaftermkdir",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/directory-test",
+                            "constructorName": "Directory_Constructor",
+                            "methodName": "pF_Directory",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "directory": {
+                                    "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                    "basePath":                null,
+                                    "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                                    "dirPath":                 null,
+                                    "fullDirPathParmName":     null,
+                                    "fullDirPath":             null,
+                                    "expandHome":              true,
+
+                                    "tree":                    true,
+                                    "treeDirs":                true,
+                                    "treeLevel":               -1,
+                                    "treeFiles":               false,
+
+                                    "rmDir":                   false,
+                                    "rmDirContentsDirs":       false,
+                                    "rmDirContentsFiles":      false,
+                                    "failIfDirNotEmpty":       false,
+
+                                    "createDir":               false,
+                                    "createDirMode":           "0770",
+                                    "failIfDirNotExists":      true,
+                                    "failIfDirAlreadyExists":  false,
+
+                                    "dumppaths":               false,
+                                    "dumpstats":               false,
+                                    "dumpparseresult":         false,
+                                    "dumpreaddirs":            false,
+                                    "dumpdircontents":         false,
+                                    "dumptree":                false,
+                                    "dumptreeindented":        false,
+                                    "dumptreestats":           false,
+                                    "dumpremovals":            false,
+                                    "dumpmkdirs":              false
+                                }
+                            }
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-require-uploaddirectory-supplier-require-export-uploaddirectory",
+                            "exportAs": "uploaddirectory",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "baseURLparmName": "hitpointphp.baseURLphp",
+                    "requestmethod": "GET",
+                    "URLpath": "/solrQuery/consultaSolrNew.php",
+                    "URLparms": {
+                        "_dc": "~millis",
+                        "serverHostname": "solr.desknova.com",
+                        "serverPort": 8983,
+                        "ruta": "solr/mia_dcm",
+                        "todo": false,
+                        "q": "TIPOFICHERO_scustom:DICOM Study",
+                        "limit": 25,
+                        "rows": 25,
+                        "caller": "getIndexedFiles",
+                        "comboFilterProperty": null,
+                        "comboFilterValue": null,
+                        "query": null,
+                        "deleteRecords": false,
+                        "page": 1,
+                        "lang": "en"
+                    },
+                    "NOTUSED_URLfull": "http://paragon.desknova.com/php/commons/solrQuery/consultaSolrNew.php?_dc=1436921057943&serverHostname=solr.desknova.com&serverPort=8983&ruta=solr%2Fmia_dcm&todo=false&q=TIPOFICHERO_scustom%3ADICOM%20Study&limit=25&rows=25&caller=getIndexedFiles&comboFilterProperty=&comboFilterValue=&query=&deleteRecords=false&page=1&start=0&lang=en",
+                    "statuscode": 200,
+                    "dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-check-_v_Reply.success-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.success",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-check-_v_Reply.message-Documentos recuperados satisfactoriamente",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.message",
+                    "checkValue": "Documentos recuperados satisfactoriamente"
+                },
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-check-_v_Reply.action-Consulta",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.action",
+                    "checkValue": "Consulta"
+                },
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-check-_v_Reply.consulta-TIPOFICHERO_scustom:DICOM Study",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.consulta",
+                    "checkValue": "TIPOFICHERO_scustom:DICOM Study"
+                }
+            ],
+            "exports": [
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-export-study-items",
+                    "exportAs": "studyItems",
+                    "exportOrigin": "TEST",
+                    "exportSource": "_v_Reply.items",
+                    "exportTarget": ".",
+                    "exportWhen": "EXBEFORESUBS"
+                }
+            ],
+            "subs": [
+                {
+                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/iterator-test",
+                    "constructorName": "IteratorTest_Constructor",
+                    "methodName": "pF_Iterator",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "iterator": {
+                            "rangeParm": "studyItems",
+                            "eachParm":  "studyItem",
+                            "endidx":    "~istdicomquerywrite.studyItemsEndIdx"
+                        }
+                    },
+                    "subs": [
+                        {
+                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-computeStudyRetrievalParms",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "exports": [
+                                {
+                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-computeStudyRetrievalParms-export-q",
+                                    "exportAs": "computedStudyRetrievalParm_q",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "studyItem",
+                                    "exportTarget": ".",
+                                    "exportWhen": "EXBEFORESUBS",
+                                    "exportComputation": "function( theStudyItem) { return '(StudyInstanceUID_scustom:'.concat('' + theStudyItem.id).concat(' AND RUTATHUMBNAIL_scustom:*)');}"
+                                },
+                                {
+                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-computeStudyRetrievalParms-export-millissub",
+                                    "exportAs": "millissub",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "_v_MillisStr",
+                                    "exportTarget": ".",
+                                    "exportWhen": "EXBEFORESUBS"
+                                }
+                            ],
+                            "subs": [
+                                {
+                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "baseURLparmName": "hitpointphp.baseURLphp",
+                                            "requestmethod": "GET",
+                                            "URLpath": "/solrQuery/consultaSolrNew.php",
+                                            "URLparms": {
+                                                "_dc": "~millissub",
+                                                "serverHostname": "solr.desknova.com",
+                                                "serverPort": 8983,
+                                                "ruta": "solr/mia_dcm",
+                                                "todo": false,
+                                                "q": "~computedStudyRetrievalParm_q",
+                                                "limit": 25,
+                                                "rows": 25,
+                                                "caller": "onSelectItem",
+                                                "comboFilterProperty": null,
+                                                "comboFilterValue": null,
+                                                "query": null,
+                                                "deleteRecords": false,
+                                                "page": 1,
+                                                "start": 0,
+                                                "lang": "en"
+                                            },
+                                            "NOTUSED_URLfull": "http://paragon.desknova.com/php/commons/solrQuery/consultaSolrNew.php?_dc=1436923121489&serverHostname=solr.desknova.com&serverPort=8983&ruta=solr%2Fmia_dcm&todo=false&q=(StudyInstanceUID_scustom%3A270920%20AND%20RUTATHUMBNAIL_scustom%3A*)&limit=25&rows=25&caller=onSelectItem&deleteRecords=false&page=1&start=0&lang=en",
+                                            "statuscode": 200,
+                                            "dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.success-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.success",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.message-Documentos recuperados satisfactoriamente",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.message",
+                                            "checkValue": "Documentos recuperados satisfactoriamente"
+                                        },
+                                        {
+                                            "name":"suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.action-Consulta",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.action",
+                                            "checkValue": "Consulta"
+                                        },
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.consulta-(StudyInstanceUID_scustom:270920 AND RUTATHUMBNAIL_scustom:*)",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.consulta",
+                                            "checkValue": "~computedStudyRetrievalParm_q"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-export-study-items",
+                                            "exportAs": "studyInstanceItems",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.items",
+                                            "exportTarget": ".",
+                                            "exportWhen": "EXBEFORESUBS"
+                                        }
+                                    ],
+
+                                    "subs": [
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms",
+                                            "runnable": true,
+                                            "expectSuccess": true,
+                                            "module": "@cmppath/common-test/iterator-test",
+                                            "constructorName": "IteratorTest_Constructor",
+                                            "methodName": "pF_Iterator",
+                                            "scheduleSubs": "SERIES",
+                                            "parms": {
+                                                "iterator": {
+                                                    "rangeParm": "studyInstanceItems",
+                                                    "eachParm":  "studyInstanceItem",
+                                                    "endidx":    "~istdicomquerywrite.studyInstanceItemsEndIdx"
+                                                }
+                                            },
+                                            "subs": [
+                                                {
+                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms",
+                                                    "runnable": true,
+                                                    "module": "@cmppath/general-test/fake-test",
+                                                    "constructorName": "FakeTest_Constructor",
+                                                    "methodName": "pF_Fake",
+                                                    "scheduleSubs": "SERIES",
+                                                    "expectSuccess": true,
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-dicomURL",
+                                                            "exportAs": "dicomURL",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.ruta_fichero_s.replace('/home/istres/storage/', '');}"
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-dicomFile",
+                                                            "exportAs": "dicomFilename",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.ruta_fichero_s.replace('/home/istres/storage/', '');}"
+                                                        },
+
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thumbnailURL",
+                                                            "exportAs": "thumbnailURL",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.RUTATHUMBNAIL_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails//', 'Thumbnails/');}"
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thumbnailFilename",
+                                                            "exportAs": "thumbnailFilename",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.RUTATHUMBNAIL_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails//', 'Thumbnails/');}"
+                                                        },
+
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thliteURL",
+                                                            "exportAs": "thliteURL",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.th_litel_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails/', 'Thumbnails/');}"
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thliteFilename",
+                                                            "exportAs": "thliteFilename",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.th_litel_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails/', 'Thumbnails/');}"
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thfullURL",
+                                                            "exportAs": "thfullURL",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.th_litel_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails/', 'Thumbnails/').replace( 'TH_Litel', 'TH_Full');}"
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-computeStudyRetrievalParms-export-thfullFilename",
+                                                            "exportAs": "thfullFilename",
+                                                            "exportOrigin": "PARMS",
+                                                            "exportSource": "studyInstanceItem",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "EXBEFORESUBS",
+                                                            "exportComputation": "function( theStudyInstanceItem) { return theStudyInstanceItem.th_litel_scustom.replace('/home/storage/IstMedical/ISTSafe/Thumbnails/', 'Thumbnails/').replace( 'TH_Litel', 'TH_Full');}"
+                                                        }
+                                                    ],
+                                                    "subs": [
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail",
+                                                            "runnable": true,
+                                                            "expectSuccess": true,
+                                                            "module": "@cmppath/common-test/requestreply-test",
+                                                            "constructorName": "RequestReply_Constructor",
+                                                            "methodName": "pF_RequestReply",
+                                                            "parms": {
+                                                                "requestreply": {
+                                                                    "usePayloadHolder": true,
+
+                                                                    "contentkind":  "BINARY",
+                                                                    "baseURLparmName": "hitpointstorage.baseURLstorage",
+                                                                    "requestmethod": "GET",
+                                                                    "URLpath": "/",
+                                                                    "URLparms": null,
+                                                                    "URLparmsnotencoded": [ "the_thumbnailURL"],
+                                                                    "URLpathParms": {
+                                                                        "the_thumbnailURL": "~thumbnailURL"
+                                                                    },
+                                                                    "NOTUSED_URLfull": "http://paragon.desknova.com/storage/Thumbnails/th_Comp_Composer_MAMA_Heindrick_Copp_1.dcm_1436893030403.jpg",
+                                                                    "statuscode": 200,
+                                                                    "forgivablestatuscodes": [ 404],
+                                                                    "dumpurl":         true,
+                                                                    "UNUSED_dumprequestdata": true,
+                                                                    "UNUSED_dumpreply":       false
+                                                                }
+                                                            },
+                                                            "scheduleSubs": "SERIES",
+                                                            "exports": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-export-requestReplyTestThumbnail",
+                                                                    "exportAs": "requestReplyTestThumbnail",
+                                                                    "exportOrigin": "TEST",
+                                                                    "exportSource": "*",
+                                                                    "exportTarget": ".",
+                                                                    "exportWhen": "EXBEFORESUBS"
+                                                                }
+                                                            ],
+                                                            "subs": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile",
+                                                                    "runnable": true,
+                                                                    "expectSuccess": true,
+                                                                    "module": "@cmppath/common-test/fileaccess-test",
+                                                                    "constructorName": "FileAccess_Constructor",
+                                                                    "methodName": "pF_FileAccess",
+                                                                    "scheduleSubs": "SERIES",
+                                                                    "parms": {
+                                                                        "fileaccess": {
+                                                                            "usePayloadHolder": true,
+
+                                                                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                                                            "basePath":                null,
+                                                                            "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                                                                            "dirPath":                 null,
+                                                                            "filenameParmName":        "thumbnailFilename",
+                                                                            "filename":                null,
+                                                                            "fullFilePathParmName":    null,
+                                                                            "fullFilePath":            null,
+                                                                            "expandHome":              true,
+
+                                                                            "doDirectory":             true,
+
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "readFileContents":        true,
+
+                                                                            "unlinkFile":              true,
+                                                                            "createFile":              true,
+                                                                            "createFileMode":          "0660",
+                                                                            "touchFile":               false,
+                                                                            "truncateFile":            false,
+                                                                            "appendToFile":            false,
+
+                                                                            "writeFileContents":       true,
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "contentsToWriteParmName": "requestReplyTestThumbnail._v_Reply",
+
+                                                                            "failIfFileNotExists":     false,
+                                                                            "failIfFileAlreadyExists": false,
+                                                                            "failIfFileEmpty":         false,
+                                                                            "failIfFileNotEmpty":      false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpfilecontents":        false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpcreatefile":          false,
+                                                                            "dumpwrites":              false,
+                                                                            "dumpcontenttowrite":      false
+                                                                        },
+                                                                        "directory": {
+                                                                            "basePathParmName":        "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "basePath":                "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPathParmName":         "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPath":                 "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "fullDirPathParmName":     "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_into_synthetic_instance_of_directory-test_withValue_ofProperty_v_DirectoryOfUsedFullFilePath",
+                                                                            "fullDirPath":             "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "expandHome":              "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_false",
+
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "tree":                    true,
+                                                                            "treeDirs":                true,
+                                                                            "treeLevel":               -1,
+                                                                            "treeFiles":               true,
+
+                                                                            "rmDir":                   false,
+                                                                            "rmDirContentsDirs":       false,
+                                                                            "rmDirContentsFiles":      false,
+                                                                            "failIfDirNotEmpty":       false,
+
+                                                                            "createDir":               true,
+                                                                            "createDirMode":           "0770",
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpreaddirs":            false,
+                                                                            "dumpdircontents":         false,
+                                                                            "dumptree":                false,
+                                                                            "dumptreeindented":        false,
+                                                                            "dumptreestats":           false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpmkdirs":              false
+                                                                        }
+                                                                    },
+                                                                    "exports": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile-export-toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportAs": "toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportOrigin": "TEST",
+                                                                            "exportSource": "*",
+                                                                            "exportTarget": ".",
+                                                                            "exportWhen": "OK",
+                                                                            "exportCompuExtraParms": "~requestReplyTestThumbnail",
+                                                                            "exportComputation": "function( theFileAccessTest, theRequestReplyTest) { return (  ( theFileAccessTest && theFileAccessTest._v_FileContentsBefore && theFileAccessTest._v_FileContentsBefore.pReleasePayload && theFileAccessTest._v_FileContentsBefore.pReleasePayload() )   ||  ( theRequestReplyTest && theRequestReplyTest._v_Reply && theRequestReplyTest._v_Reply.pReleasePayload && theRequestReplyTest._v_Reply.pReleasePayload() ) ); }"
+                                                                        }
+                                                                    ],
+                                                                    "checks": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile-check-_v_FullFileExists-true",
+                                                                            "checkWhen": "AFTER",
+                                                                            "checkNegate": false,
+                                                                            "checkKind": "EQ",
+                                                                            "checkOrigin": "TEST",
+                                                                            "checkSource": "_v_FullFileExists",
+                                                                            "checkValue": true
+                                                                        }
+                                                                    ]
+                                                                }
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thlite",
+                                                            "runnable": true,
+                                                            "expectSuccess": true,
+                                                            "module": "@cmppath/common-test/requestreply-test",
+                                                            "constructorName": "RequestReply_Constructor",
+                                                            "methodName": "pF_RequestReply",
+                                                            "parms": {
+                                                                "requestreply": {
+                                                                    "usePayloadHolder": true,
+
+                                                                    "contentkind":  "BINARY",
+                                                                    "baseURLparmName": "hitpointstorage.baseURLstorage",
+                                                                    "requestmethod": "GET",
+                                                                    "URLpath": "/",
+                                                                    "URLparms": null,
+                                                                    "URLparmsnotencoded": [ "the_thliteURL"],
+                                                                    "URLpathParms": {
+                                                                        "the_thliteURL": "~thliteURL"
+                                                                    },
+                                                                    "NOTUSED_URLfull": "http://paragon.desknova.com/storage/Thumbnails/HeindrickCopp947414/TH_Litel/Comp_Composer_MAMA_Heindrick_Copp_1.dcm.jpg",
+                                                                    "statuscode": 200,
+                                                                    "forgivablestatuscodes": [ 404],
+                                                                    "dumpurl":         true,
+                                                                    "UNUSED_dumprequestdata": true,
+                                                                    "UNUSED_dumpreply":       false
+                                                                }
+                                                            },
+                                                            "scheduleSubs": "SERIES",
+                                                            "exports": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thlite-export-requestReplyTestThlite",
+                                                                    "exportAs": "requestReplyTestThlite",
+                                                                    "exportOrigin": "TEST",
+                                                                    "exportSource": "*",
+                                                                    "exportTarget": ".",
+                                                                    "exportWhen": "EXBEFORESUBS"
+                                                                }
+                                                            ],
+                                                            "subs": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thlite-sub-writeFile",
+                                                                    "runnable": true,
+                                                                    "expectSuccess": true,
+                                                                    "module": "@cmppath/common-test/fileaccess-test",
+                                                                    "constructorName": "FileAccess_Constructor",
+                                                                    "methodName": "pF_FileAccess",
+                                                                    "scheduleSubs": "SERIES",
+                                                                    "parms": {
+                                                                        "fileaccess": {
+                                                                            "usePayloadHolder": true,
+
+                                                                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                                                            "basePath":                null,
+                                                                            "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                                                                            "dirPath":                 null,
+                                                                            "filenameParmName":        "thliteFilename",
+                                                                            "filename":                null,
+                                                                            "fullFilePathParmName":    null,
+                                                                            "fullFilePath":            null,
+                                                                            "expandHome":              true,
+
+                                                                            "doDirectory":             true,
+
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "readFileContents":        true,
+
+                                                                            "unlinkFile":              true,
+                                                                            "createFile":              true,
+                                                                            "createFileMode":          "0660",
+                                                                            "touchFile":               false,
+                                                                            "truncateFile":            false,
+                                                                            "appendToFile":            false,
+
+                                                                            "writeFileContents":       true,
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "contentsToWriteParmName": "requestReplyTestThlite._v_Reply",
+
+                                                                            "failIfFileNotExists":     false,
+                                                                            "failIfFileAlreadyExists": false,
+                                                                            "failIfFileEmpty":         false,
+                                                                            "failIfFileNotEmpty":      false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpfilecontents":        false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpcreatefile":          false,
+                                                                            "dumpwrites":              false,
+                                                                            "dumpcontenttowrite":      false
+                                                                        },
+                                                                        "directory": {
+                                                                            "basePathParmName":        "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "basePath":                "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPathParmName":         "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPath":                 "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "fullDirPathParmName":     "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_into_synthetic_instance_of_directory-test_withValue_ofProperty_v_DirectoryOfUsedFullFilePath",
+                                                                            "fullDirPath":             "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "expandHome":              "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_false",
+
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "tree":                    true,
+                                                                            "treeDirs":                true,
+                                                                            "treeLevel":               -1,
+                                                                            "treeFiles":               true,
+
+                                                                            "rmDir":                   false,
+                                                                            "rmDirContentsDirs":       false,
+                                                                            "rmDirContentsFiles":      false,
+                                                                            "failIfDirNotEmpty":       false,
+
+                                                                            "createDir":               true,
+                                                                            "createDirMode":           "0770",
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpreaddirs":            false,
+                                                                            "dumpdircontents":         false,
+                                                                            "dumptree":                false,
+                                                                            "dumptreeindented":        false,
+                                                                            "dumptreestats":           false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpmkdirs":              false
+                                                                        }
+                                                                    },
+                                                                    "exports": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thlite-sub-writeFile-export-toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportAs": "toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportOrigin": "TEST",
+                                                                            "exportSource": "*",
+                                                                            "exportTarget": ".",
+                                                                            "exportWhen": "OK",
+                                                                            "exportCompuExtraParms": "~requestReplyTestThlite",
+                                                                            "exportComputation": "function( theFileAccessTest, theRequestReplyTest) { return (  ( theFileAccessTest && theFileAccessTest._v_FileContentsBefore && theFileAccessTest._v_FileContentsBefore.pReleasePayload && theFileAccessTest._v_FileContentsBefore.pReleasePayload() )   ||  ( theRequestReplyTest && theRequestReplyTest._v_Reply && theRequestReplyTest._v_Reply.pReleasePayload && theRequestReplyTest._v_Reply.pReleasePayload() ) ); }"
+                                                                        }
+                                                                    ],
+                                                                    "checks": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thlite-sub-writeFile-check-_v_FullFileExists-true",
+                                                                            "checkWhen": "AFTER",
+                                                                            "checkNegate": false,
+                                                                            "checkKind": "EQ",
+                                                                            "checkOrigin": "TEST",
+                                                                            "checkSource": "_v_FullFileExists",
+                                                                            "checkValue": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thfull",
+                                                            "runnable": true,
+                                                            "expectSuccess": true,
+                                                            "module": "@cmppath/common-test/requestreply-test",
+                                                            "constructorName": "RequestReply_Constructor",
+                                                            "methodName": "pF_RequestReply",
+                                                            "parms": {
+                                                                "requestreply": {
+                                                                    "usePayloadHolder": true,
+
+                                                                    "contentkind":  "BINARY",
+                                                                    "baseURLparmName": "hitpointstorage.baseURLstorage",
+                                                                    "requestmethod": "GET",
+                                                                    "URLpath": "/",
+                                                                    "URLparms": null,
+                                                                    "URLparmsnotencoded": [ "the_thfullURL"],
+                                                                    "URLpathParms": {
+                                                                        "the_thfullURL": "~thfullURL"
+                                                                    },
+                                                                    "NOTUSED_URLfull": "http://paragon.desknova.com/storage/Thumbnails/HeindrickCopp947414/TH_Full/Comp_Composer_MAMA_Heindrick_Copp_1.dcm.jpg",
+                                                                    "statuscode": 200,
+                                                                    "forgivablestatuscodes": [ 404],
+                                                                    "dumpurl":         true,
+                                                                    "UNUSED_dumprequestdata": true,
+                                                                    "UNUSED_dumpreply":       false
+                                                                }
+                                                            },
+                                                            "scheduleSubs": "SERIES",
+                                                            "exports": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thfull-export-requestReplyTestThFull",
+                                                                    "exportAs": "requestReplyTestThFull",
+                                                                    "exportOrigin": "TEST",
+                                                                    "exportSource": "*",
+                                                                    "exportTarget": ".",
+                                                                    "exportWhen": "EXBEFORESUBS"
+                                                                }
+                                                            ],
+                                                            "subs": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thfull-sub-writeFile",
+                                                                    "runnable": true,
+                                                                    "expectSuccess": true,
+                                                                    "module": "@cmppath/common-test/fileaccess-test",
+                                                                    "constructorName": "FileAccess_Constructor",
+                                                                    "methodName": "pF_FileAccess",
+                                                                    "scheduleSubs": "SERIES",
+                                                                    "parms": {
+                                                                        "fileaccess": {
+                                                                            "usePayloadHolder": true,
+
+                                                                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                                                            "basePath":                null,
+                                                                            "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                                                                            "dirPath":                 null,
+                                                                            "filenameParmName":        "thfullFilename",
+                                                                            "filename":                null,
+                                                                            "fullFilePathParmName":    null,
+                                                                            "fullFilePath":            null,
+                                                                            "expandHome":              true,
+
+                                                                            "doDirectory":             true,
+
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "readFileContents":        true,
+
+                                                                            "unlinkFile":              true,
+                                                                            "createFile":              true,
+                                                                            "createFileMode":          "0660",
+                                                                            "touchFile":               false,
+                                                                            "truncateFile":            false,
+                                                                            "appendToFile":            false,
+
+                                                                            "writeFileContents":       true,
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "contentsToWriteParmName": "requestReplyTestThFull._v_Reply",
+
+                                                                            "failIfFileNotExists":     false,
+                                                                            "failIfFileAlreadyExists": false,
+                                                                            "failIfFileEmpty":         false,
+                                                                            "failIfFileNotEmpty":      false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpfilecontents":        false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpcreatefile":          false,
+                                                                            "dumpwrites":              false,
+                                                                            "dumpcontenttowrite":      false
+                                                                        },
+                                                                        "directory": {
+                                                                            "basePathParmName":        "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "basePath":                "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPathParmName":         "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPath":                 "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "fullDirPathParmName":     "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_into_synthetic_instance_of_directory-test_withValue_ofProperty_v_DirectoryOfUsedFullFilePath",
+                                                                            "fullDirPath":             "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "expandHome":              "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_false",
+
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "tree":                    true,
+                                                                            "treeDirs":                true,
+                                                                            "treeLevel":               -1,
+                                                                            "treeFiles":               true,
+
+                                                                            "rmDir":                   false,
+                                                                            "rmDirContentsDirs":       false,
+                                                                            "rmDirContentsFiles":      false,
+                                                                            "failIfDirNotEmpty":       false,
+
+                                                                            "createDir":               true,
+                                                                            "createDirMode":           "0770",
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpreaddirs":            false,
+                                                                            "dumpdircontents":         false,
+                                                                            "dumptree":                false,
+                                                                            "dumptreeindented":        false,
+                                                                            "dumptreestats":           false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpmkdirs":              false
+                                                                        }
+                                                                    },
+                                                                    "exports": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thfull-sub-writeFile-export-toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportAs": "toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportOrigin": "TEST",
+                                                                            "exportSource": "*",
+                                                                            "exportTarget": ".",
+                                                                            "exportWhen": "OK",
+                                                                            "exportCompuExtraParms": "~requestReplyTestThFull",
+                                                                            "exportComputation": "function( theFileAccessTest, theRequestReplyTest) { return (  ( theFileAccessTest && theFileAccessTest._v_FileContentsBefore && theFileAccessTest._v_FileContentsBefore.pReleasePayload && theFileAccessTest._v_FileContentsBefore.pReleasePayload() )   ||  ( theRequestReplyTest && theRequestReplyTest._v_Reply && theRequestReplyTest._v_Reply.pReleasePayload && theRequestReplyTest._v_Reply.pReleasePayload() ) ); }"
+                                                                        }
+                                                                    ],
+                                                                    "checks": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_thfull-sub-writeFile-check-_v_FullFileExists-true",
+                                                                            "checkWhen": "AFTER",
+                                                                            "checkNegate": false,
+                                                                            "checkKind": "EQ",
+                                                                            "checkOrigin": "TEST",
+                                                                            "checkSource": "_v_FullFileExists",
+                                                                            "checkValue": true
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_dicom",
+                                                            "runnable": true,
+                                                            "expectSuccess": true,
+                                                            "module": "@cmppath/common-test/requestreply-test",
+                                                            "constructorName": "RequestReply_Constructor",
+                                                            "methodName": "pF_RequestReply",
+                                                            "parms": {
+                                                                "requestreply": {
+                                                                    "usePayloadHolder": true,
+
+                                                                    "contentkind":  "BINARY",
+                                                                    "baseURLparmName": "hitpointstorage.baseURLstorage",
+                                                                    "requestmethod": "GET",
+                                                                    "URLpath": "/",
+                                                                    "URLparms": null,
+                                                                    "URLparmsnotencoded": [ "the_dicomURL"],
+                                                                    "URLpathParms": {
+                                                                        "the_dicomURL": "~dicomURL"
+                                                                    },
+                                                                    "NOTUSED_URLfull": "http://paragon.desknova.com/storage/MAMAS/Composer/Pendientes/Analizados/Comp_Composer_MAMA_Fleurette_Keiser_1.dcm",
+                                                                    "statuscode": 200,
+                                                                    "forgivablestatuscodes": [ 404],
+                                                                    "dumpurl":         true,
+                                                                    "UNUSED_dumprequestdata": true,
+                                                                    "UNUSED_dumpreply":       false
+                                                                }
+                                                            },
+                                                            "scheduleSubs": "SERIES",
+                                                            "exports": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_dicom-export-requestReplyTestDicom",
+                                                                    "exportAs": "requestReplyTestDicom",
+                                                                    "exportOrigin": "TEST",
+                                                                    "exportSource": "*",
+                                                                    "exportTarget": ".",
+                                                                    "exportWhen": "EXBEFORESUBS"
+                                                                }
+                                                            ],
+                                                            "subs": [
+                                                                {
+                                                                    "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_dicom-sub-writeFile",
+                                                                    "runnable": true,
+                                                                    "expectSuccess": true,
+                                                                    "module": "@cmppath/common-test/fileaccess-test",
+                                                                    "constructorName": "FileAccess_Constructor",
+                                                                    "methodName": "pF_FileAccess",
+                                                                    "scheduleSubs": "SERIES",
+                                                                    "parms": {
+                                                                        "fileaccess": {
+                                                                            "usePayloadHolder": true,
+
+                                                                            "basePathParmName":        "parmsfordirectorydicomdownloadedfiles.baseDirectoryIstStudyInstanceItems",
+                                                                            "basePath":                null,
+                                                                            "dirPathParmName":         "parmsfordirectorydicomdownloadedfiles.directoryIstStudyInstanceItemImages",
+                                                                            "dirPath":                 null,
+                                                                            "filenameParmName":        "dicomFilename",
+                                                                            "filename":                null,
+                                                                            "fullFilePathParmName":    null,
+                                                                            "fullFilePath":            null,
+                                                                            "expandHome":              true,
+
+                                                                            "doDirectory":             true,
+
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "readFileContents":        true,
+
+                                                                            "unlinkFile":              true,
+                                                                            "createFile":              true,
+                                                                            "createFileMode":          "0660",
+                                                                            "touchFile":               false,
+                                                                            "truncateFile":            false,
+                                                                            "appendToFile":            false,
+
+                                                                            "writeFileContents":       true,
+                                                                            "fileEncoding":            "BINARY",
+
+                                                                            "contentsToWriteParmName": "requestReplyTestDicom._v_Reply",
+
+                                                                            "failIfFileNotExists":     false,
+                                                                            "failIfFileAlreadyExists": false,
+                                                                            "failIfFileEmpty":         false,
+                                                                            "failIfFileNotEmpty":      false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpfilecontents":        false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpcreatefile":          false,
+                                                                            "dumpwrites":              false,
+                                                                            "dumpcontenttowrite":      false
+                                                                        },
+                                                                        "directory": {
+                                                                            "basePathParmName":        "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "basePath":                "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPathParmName":         "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "dirPath":                 "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "fullDirPathParmName":     "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_into_synthetic_instance_of_directory-test_withValue_ofProperty_v_DirectoryOfUsedFullFilePath",
+                                                                            "fullDirPath":             "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_null",
+                                                                            "expandHome":              "ToBeInjectedByInstance_suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieveThumbnail-sub-writeFile_of_fileaccess-test_withValue_false",
+
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "tree":                    true,
+                                                                            "treeDirs":                true,
+                                                                            "treeLevel":               -1,
+                                                                            "treeFiles":               true,
+
+                                                                            "rmDir":                   false,
+                                                                            "rmDirContentsDirs":       false,
+                                                                            "rmDirContentsFiles":      false,
+                                                                            "failIfDirNotEmpty":       false,
+
+                                                                            "createDir":               true,
+                                                                            "createDirMode":           "0770",
+                                                                            "failIfDirNotExists":      false,
+                                                                            "failIfDirAlreadyExists":  false,
+
+                                                                            "dumppaths":               false,
+                                                                            "dumpstats":               false,
+                                                                            "dumpparseresult":         false,
+                                                                            "dumpreaddirs":            false,
+                                                                            "dumpdircontents":         false,
+                                                                            "dumptree":                false,
+                                                                            "dumptreeindented":        false,
+                                                                            "dumptreestats":           false,
+                                                                            "dumpremovals":            false,
+                                                                            "dumpmkdirs":              false
+                                                                        }
+                                                                    },
+                                                                    "exports": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_dicom-sub-writeFile-export-toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportAs": "toReleaseRequestReplyPayloadsAndFileaccessFileContents",
+                                                                            "exportOrigin": "TEST",
+                                                                            "exportSource": "*",
+                                                                            "exportTarget": ".",
+                                                                            "exportWhen": "OK",
+                                                                            "exportCompuExtraParms": "~requestReplyTestDicom",
+                                                                            "exportComputation": "function( theFileAccessTest, theRequestReplyTest) { return (  ( theFileAccessTest && theFileAccessTest._v_FileContentsBefore && theFileAccessTest._v_FileContentsBefore.pReleasePayload && theFileAccessTest._v_FileContentsBefore.pReleasePayload() )   ||  ( theRequestReplyTest && theRequestReplyTest._v_Reply && theRequestReplyTest._v_Reply.pReleasePayload && theRequestReplyTest._v_Reply.pReleasePayload() ) ); }"
+                                                                        }
+                                                                    ],
+                                                                    "checks": [
+                                                                        {
+                                                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-retrieve_dicom-sub-writeFile-check-_v_FullFileExists-true",
+                                                                            "checkWhen": "AFTER",
+                                                                            "checkNegate": false,
+                                                                            "checkKind": "EQ",
+                                                                            "checkOrigin": "TEST",
+                                                                            "checkSource": "_v_FullFileExists",
+                                                                            "checkValue": true
+                                                                        }
+                                                                    ]
+                                                                }
+
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "suite-15-query-php-study-list-iterateinstances-dicomwritefile-usepayloadholder-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-alldicoms-sub-collectgarbage",
+                                            "runnable": true,
+                                            "expectSuccess": true,
+                                            "module": "@cmppath/common-test/memory-test",
+                                            "constructorName": "Memory_Constructor",
+                                            "methodName": "pF_Memory",
+                                            "parms": {
+                                                "memory": {
+                                                    "minHeapAvailable":                -1,
+                                                    "maxHeapUsed":                     -1,
+                                                    "maxHeapTotal":                    -1,
+
+                                                    "failIfUnderMinHeapAvailable":      false,
+                                                    "failIfOverMaxHeapUsed":            false,
+                                                    "failIfOverMaxHeapTotal":           false,
+
+                                                    "garbageCollectIfMinHeapAvailable": false,
+                                                    "garbageCollectIfMaxHeapUsed":      false,
+                                                    "garbageCollectIfMaxHeapTotal":     false,
+                                                    "garbageCollectAlways":             true,
+
+                                                    "reportMemoryAfter":                true,
+
+                                                    "dumpmemoryreport":                 true,
+                                                    "dumpgarbagecollect":               true
+                                                }
+                                            },
+                                            "scheduleSubs": "SERIES"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

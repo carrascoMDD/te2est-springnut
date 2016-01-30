@@ -1,0 +1,7 @@
+[
+    "@testspath/springnut/aux-springnut/audit-springnut/audit-noautorizado/suite-50-auxaudit-noautorizado-eliminartodos-accesosoperadores-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/audit-noautorizado/suite-52-auxaudit-noautorizado-eliminartodos-accesosfallidos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/audit-noautorizado/suite-54-auxaudit-noautorizado-eliminartodos-ultimosaccesos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/audit-noautorizado/suite-56-auxaudit-noautorizado-eliminartodos-lecturasboletines-springnut-test.json",
+    "@testspath/springnut/aux-springnut/audit-springnut/audit-noautorizado/suite-90-auxaudit-noautorizado-eliminartodos-auditrecords-springnut-test.json"
+]

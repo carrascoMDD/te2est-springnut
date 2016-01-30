@@ -1,0 +1,17 @@
+[
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/edivalidaciones-instrumentacion-trials-browser-springnut/launchables.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-01-edivalidaciones-instrumentacion-inlineconf-18-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-02-edivalidaciones-instrumentacion-parmsconf-18-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-03-edivalidaciones-instrumentacion-parmsspec-18-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-04-edivalidaciones-instrumentacion-parmsspec-18-compositemodulename-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-05-edivalidaciones-instrumentacion-parmsspec-multiactions-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-06-edivalidaciones-instrumentacion-parmsspec-deleteifexists-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-07-edivalidaciones-instrumentacion-parmsspec-deletecreateall-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-08-edivalidaciones-instrumentacion-parmsspec-candidatesvalidacioncriterio-short-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-09-edivalidaciones-instrumentacion-parmsspec-candidatesvalidacioncriterio-withcriterios-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-10-edivalidaciones-instrumentacion-parmsspec-candidatesvalidacioncriterio-long-browsertest.json",
+    "@testspath/springnut/browser-springnut/edivalidaciones-browser-springnut/edivalidaciones-instrumentacion-browser-springnut/suite-20-edivalidaciones-instrumentacion-tododesdecero-browsertest.json"
+
+]
+
+

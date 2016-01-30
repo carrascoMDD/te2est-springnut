@@ -1,0 +1,11 @@
+[
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-20-definicionbloques-noautorizado-bloque-ine-crear-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-21-definicionbloques-noautorizado-bloque-judiciales-crear-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-26-definicionbloques-noautorizado-bloque-ine-eliminar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-27-definicionbloques-noautorizado-bloque-judiciales-eliminar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-40-definicionbloques-noautorizado-bloque-ine-cambiar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/suite-41-definicionbloques-noautorizado-bloque-judiciales-cambiar-springnut-test.json"
+
+
+
+]

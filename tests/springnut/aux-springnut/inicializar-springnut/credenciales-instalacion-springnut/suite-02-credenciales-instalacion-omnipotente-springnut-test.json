@@ -1,0 +1,56 @@
+{
+    "name": "suite-02-credenciales-instalacion-omnipotente-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/credencialesInstalacion/credencialesInstalacionOperador_omnipotenteJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "dumpurl":         true,
+            "dumprequestdata": true,
+            "dumpreply":       true,
+            "URLparms": {
+                "theTokenCredencialesInstalacion":  "TokenCredencialesInstalacionMagic7513176102"
+            },
+            "expectedresponsepart": {
+                "vSuccess": true,
+                "vTipo": "CredencialesInstalacion",
+                "vNombreOperador":   "omnipotente",
+                "vPasswordOperador": "omnipotentepswd2"
+            }
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "suite-02-credenciales-instalacion-omnipotente-springnut-test-passwordCodificadaomnipotente-export",
+            "exportAs": "passwordCodificadaomnipotente",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_Reply.vPasswordCodificada",
+            "exportTarget": ".",
+            "exportWhen": "OK"
+        }
+    ]
+}
+
+
+
+
+
+
+
+

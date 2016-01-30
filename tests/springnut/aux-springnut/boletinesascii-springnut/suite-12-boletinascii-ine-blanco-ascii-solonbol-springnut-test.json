@@ -1,0 +1,81 @@
+{
+    "name": "suite-12-boletinascii-ine-blanco-ascii-solonbol-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/aux/ascii/boletinINEBlancoASCIIJSON",
+            "URLparms": {
+                "theNbol":    "~nbol"
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": null
+        },
+        "nbol": "099000010"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "scheduleSubs": "SERIES",
+    "required": [
+        {
+            "name": "suite-12-boletinascii-ine-blanco-ascii-solonbol-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-12-boletinascii-ine-blanco-ascii-solonbol-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-sinperfiles-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-12-boletinascii-ine-blanco-ascii-solonbol-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "checks": [
+        {
+            "name": "12-boletinascii-ine-blanco-ascii-solonbol-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "12-boletinascii-ine-blanco-ascii-solonbol-check-_v_Reply.vTipo-BoletinINEASCII",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "BoletinINEASCII"
+        }
+
+    ]
+}

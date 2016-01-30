@@ -1,0 +1,79 @@
+{
+    "name": "suite-20-auxsecurityproperties-cambiar-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-20-auxsecurityproperties-cambiar. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/aux/securityProperties/cambiarSecurityPropertiesJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "requestdata": {
+                "theCuentaBloqueada":                      true,
+                "theUsuarioNoPuedeCambiarPswd":            true,
+                "theDiasCambioPwd":                        10,
+                "theUsuarioDebeCambiarPswdAInicioSesion":  true,
+                "theMaxAccesosGracia":                     1,
+                "theMaxFallos":                            1,
+                "theDiasCambioPwdMillisShrinkFactor":      2592000,
+                "theDiasCambioPwdMillisShrinkApply":       true,
+                "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+            },
+            "expectedresponsepart": {
+                "vSuccess": true,
+                "vTipo": "SecurityPropertiesDatos",
+                "vCuentaBloqueada":                      true,
+                "vUsuarioNoPuedeCambiarPswd":            true,
+                "vDiasCambioPwd":                        10,
+                "vUsuarioDebeCambiarPswdAInicioSesion":  true,
+                "vMaxAccesosGracia":                     1,
+                "vMaxFallos":                            1,
+                "vDiasCambioPwdMillisShrinkFactor":      2592000,
+                "vDiasCambioPwdMillisShrinkApply":       true
+            }
+        }
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instalador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

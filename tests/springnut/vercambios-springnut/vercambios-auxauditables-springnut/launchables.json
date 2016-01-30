@@ -1,0 +1,28 @@
+[
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-01-vercambios-auxauditables-veridscambiadas-lista-detipoconidentidadentrefechastrasfechahora-springnut-test.json",
+
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-11-vercambios-auxauditables-vercambios-lista-recientes-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-12-vercambios-auxauditables-vercambios-lista-enfecha-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-13-vercambios-auxauditables-vercambios-lista-entrefechas-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-14-vercambios-auxauditables-vercambios-lista-recientes-contipos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-15-vercambios-auxauditables-vercambios-lista-enfecha-contipos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-16-vercambios-auxauditables-vercambios-lista-entrefechas-contipos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-17-vercambios-auxauditables-vercambios-lista-recientes-conids-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-18-vercambios-auxauditables-vercambios-lista-enfecha-conids-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-19-vercambios-auxauditables-vercambios-lista-entrefechas-conids-springnut-test.json",
+
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-30-vercambios-auxauditables-vercambio-datos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-31-vercambios-auxauditables-vercambio-datos-fallo-noexiste-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-32-vercambios-auxauditables-vercambio-datos-contipos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-34-vercambios-auxauditables-vercambio-datos-conids-springnut-test.json",
+
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-40-vercambios-auxauditables-veridscambiadasdevercambio-lista-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-41-vercambios-auxauditables-veridscambiadasdevercambio-lista-fallo-noexiste-springnut-test.json",
+
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-50-vercambios-auxauditables-veridcambiada-datos-springnut-test.json",
+    "@testspath/springnut/vercambios-springnut/vercambios-auxauditables-springnut/suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test.json"
+
+
+
+
+]

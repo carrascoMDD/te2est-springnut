@@ -1,0 +1,1901 @@
+{
+    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-20-autentificacion-cuentadeshabilitada-pormaxfallos. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "nombreOperador":                        "@OPER45454545",
+        "nombreCompletoOperador":                "@OPER45454545 Nombre Completo",
+        "contrasena":                            "OPER45454545",
+        "descripcionOperador":                   "@OPER45454545 descripcion"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-omnipotente-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-omnipotenteConectadoDatos",
+            "parmNames": [
+                "omnipotenteConectadoDatos"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-omnipotenteConectadoDatos-supplier",
+                    "runnable": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "scheduleSubs": "SERIES",
+                    "expectSuccess": true,
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-omnipotenteConectadoDatos-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-omnipotenteConectadoDatos-supplier-export",
+                            "exportAs": "omnipotenteConectadoDatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiesrestablecerincondicionaltest",
+            "parmNames": [
+                "securitypropertiesrestablecerincondicionaltest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiesrestablecerincondicionaltest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theTokenSecurityProperties": "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiesrestablecerincondicionaltest-export",
+                            "exportAs": "securitypropertiesrestablecerincondicionaltest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiesrestablecerincondicionaltest-exportsecurityproperties",
+                            "exportAs": "securityproperties",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiescambiartest",
+            "parmNames": [
+                "securitypropertiescambiartest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiescambiartest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/cambiarSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theCuentaBloqueada":                      false,
+                                "theUsuarioNoPuedeCambiarPswd":            false,
+                                "theDiasCambioPwd":                        999,
+                                "theUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "theMaxAccesosGracia":                     99,
+                                "theMaxFallos":                            2,
+                                "theDiasCambioPwdMillisShrinkFactor":      1,
+                                "theDiasCambioPwdMillisShrinkApply":       false,
+                                "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos",
+                                "vCuentaBloqueada":                      false,
+                                "vUsuarioNoPuedeCambiarPswd":            false,
+                                "vDiasCambioPwd":                        999,
+                                "vUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "vMaxAccesosGracia":                     99,
+                                "vMaxFallos":                            2,
+                                "vDiasCambioPwdMillisShrinkFactor":      1,
+                                "vDiasCambioPwdMillisShrinkApply":       false
+                            }
+                        }
+
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiescambiartest-export",
+                            "exportAs": "securitypropertiescambiartest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-securitypropertiescambiartest-exportsecurityproperties",
+                            "exportAs": "securityproperties",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-idperfil",
+            "parmNames": [
+                "idperfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-idperfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "ADMINISTRADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "ADMINISTRADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-idperfil-export",
+                            "exportAs": "idperfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testcrearoperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfil",
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theDiasCambioPwd":                         999,
+                                "theExitoSiYaExiste":                       false
+                            },
+                            "expectedresponsepart": {
+                                "vTipo": "OperadorDatos",
+                                "vSuccess": true,
+                                "vNombreOperador": "@OPER45454545",
+                                "vNombreCompletoOperador": "@OPER45454545 Nombre Completo",
+                                "vDescripcionOperador": "@OPER45454545 descripcion",
+                                "vUsuarioNoPuedeCambiarPswd": false,
+                                "vDiasCambioPwd": 999,
+                                "vCuentaBloqueada": false,
+                                "vCuentaDeshabilitada": false,
+                                "vCredencialesExpiradas": false,
+                                "vNumeroAccesosFallidos": 0,
+                                "vNumeroAccesosGracia": 0,
+                                "vUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "vAccesosGraciaRestantes": 99,
+                                "vFallosRestantes": 2,
+                                "vMaxAccesosGracia": 99,
+                                "vMaxFallos": 2,
+                                "vPuedeConectarse": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+
+
+
+
+
+    "subs": [
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatosJSON",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest2",
+                    "expectedresponsepart": null,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatosJSON-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatosJSON-check-_v_Reply.vTipo-OperadorDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "OperadorDatos"
+                }
+            ],
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador",
+                    "parmNames": [
+                        "credentialsNuevoOperador"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentialsNuevoOperador",
+                                    "exportAs": "credentialsNuevoOperador",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-logintest2",
+                    "parmNames": [
+                        "logintest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-logintest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-logintest2-export",
+                                    "exportAs": "logintest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2",
+                    "parmNames": [
+                        "isauthenticatedtest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-export",
+                                    "exportAs": "isauthenticatedtest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-sessiontest2",
+                    "parmNames": [
+                        "sessiontest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest2",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-export",
+                                    "exportAs": "sessiontest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest2"
+                }
+            }
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest2"
+                }
+            }
+        },
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin",
+            "runnable": true,
+            "module": "@cmppath/general-test/fake-test",
+            "constructorName": "FakeTest_Constructor",
+            "methodName": "pF_Fake",            
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "fake": {
+                    "fakeResult":   { "fakeResult": "fakeResult"},
+                    "fakeSuccess":  true,
+                    "fakeRcvError": null,
+                    "fakeRcvStatus": 200,
+                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-credentialsNuevoOperador2erroneas",
+                    "parmNames": [
+                        "credentialsNuevoOperador2erroneas"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-credentialsNuevoOperador2erroneas-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "PASSWORDSEGURMENTEINCORRECTA1234"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-credentialsNuevoOperador2erroneas-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-credentialsNuevoOperador2erroneas-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-credentialsNuevoOperador2-export-credentialsNuevoOperador2",
+                                    "exportAs": "credentialsNuevoOperador2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+
+
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest3",
+                    "parmNames": [
+                        "logintest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest3-export",
+                                    "exportAs": "logintest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest3",
+                    "parmNames": [
+                        "isauthenticatedtest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest3"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest2-export",
+                                    "exportAs": "isauthenticatedtest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest3",
+                    "parmNames": [
+                        "sessiontest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest3",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest3"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest3-export",
+                                    "exportAs": "sessiontest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+
+
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest4",
+                    "parmNames": [
+                        "logintest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-logintest4-export",
+                                    "exportAs": "logintest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest4",
+                    "parmNames": [
+                        "isauthenticatedtest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest4"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-isauthenticatedtest2-export",
+                                    "exportAs": "isauthenticatedtest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest4",
+                    "parmNames": [
+                        "sessiontest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest4",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest4"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub2-falloslogin-require-sessiontest4-export",
+                                    "exportAs": "sessiontest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        
+        
+
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos",
+            "runnable": true,
+            "module": "@cmppath/general-test/fake-test",
+            "constructorName": "FakeTest_Constructor",
+            "methodName": "pF_Fake",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "fake": {
+                    "fakeResult":   { "fakeResult": "fakeResult"},
+                    "fakeSuccess":  true,
+                    "fakeRcvError": null,
+                    "fakeRcvStatus": 200,
+                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas",
+                    "parmNames": [
+                        "credentialsNuevoOperador3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-credentialsNuevoOperador3-correctas-export-credentialsNuevoOperador3",
+                                    "exportAs": "credentialsNuevoOperador3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+
+
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-logintest5",
+                    "parmNames": [
+                        "logintest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-logintest5-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-logintest5-export",
+                                    "exportAs": "logintest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-isauthenticatedtest5",
+                    "parmNames": [
+                        "isauthenticatedtest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-isauthenticatedtest5-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest5"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-isauthenticatedtest5-export",
+                                    "exportAs": "isauthenticatedtest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-sessiontest5",
+                    "parmNames": [
+                        "sessiontest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-sessiontest5-supplier",
+                            "runnable": true,
+                            "expectSuccess": false,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest5",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest5"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub3-fallopormaxfallos-require-sessiontest5-export",
+                                    "exportAs": "sessiontest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ]
+        },
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "logintestparmname": "logintest5",
+                    "lazy": false
+                }
+            }
+        },
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/administracionOperadores/cambiarOperadorAlgunosDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest6",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theIdOperador":                                    "~idOperador",
+                        "theNombreOperador_cambiar":                        false,
+                        "theNombreOperador":                                null,
+                        "theNombreCompletoOperador_cambiar":                false,
+                        "theNombreCompletoOperador":                        null,
+                        "theDescripcionOperador_cambiar":                   false,
+                        "theDescripcionOperador":                           null,
+                        "theCuentaBloqueada_cambiar":                       true,
+                        "theCuentaBloqueada":                               false,
+                        "theUsuarioDebeCambiarPswdAInicioDeSesion_cambiar": false,
+                        "theUsuarioDebeCambiarPswdAInicioDeSesion":         null,
+                        "theUsuarioNoPuedeCambiarPswd_cambiar":             false,
+                        "theUsuarioNoPuedeCambiarPswd":                     null,
+                        "theDiasCambioPwd_cambiar":                         false,
+                        "theDiasCambioPwd":                                 null
+                    },
+                    "expectedresponsepart": {
+                        "vSuccess": true,
+                        "vTipo": "CambiadoOperador",
+                        "vOperadorDespues": {
+                            "vCuentaBloqueada": false
+                        }
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2",
+                    "parmNames": [
+                        "credentialsOmnipotente2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "imports": [
+                                {
+                                    "name": "credentials-import",
+                                    "configurationPath": "@testspath/springnut-host/parms-credentials-omnipotente.json",
+                                    "importMode": "STATIC"
+                                }
+                            ],
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.username",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.password",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-credentialsOmnipotente2-export-credentialsOmnipotente2",
+                                    "exportAs": "credentialsOmnipotente2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-logintest6",
+                    "parmNames": [
+                        "logintest6"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-logintest6-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-logintest6-export",
+                                    "exportAs": "logintest6",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-isauthenticatedtest6",
+                    "parmNames": [
+                        "isauthenticatedtest6"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-isauthenticatedtest6-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest6"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-isauthenticatedtest6-export",
+                                    "exportAs": "isauthenticatedtest6",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-sessiontest3",
+                    "parmNames": [
+                        "sessiontest6"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-sessiontest6-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest6",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest6"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-desbloquearOperador-require-sessiontest6-export",
+                                    "exportAs": "sessiontest6",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest7",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-require-omnipotenteConectadoDatos-supplier-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                }
+            ],
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador4-correctas",
+                    "parmNames": [
+                        "credentialsNuevoOperador4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador4-correctas-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "PASSWORDSEGURMENTEINCORRECTA1244"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador4-correctas-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador4-correctas-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador3-correctas-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-credentialsNuevoOperador4-correctas-export-credentialsNuevoOperador4",
+                                    "exportAs": "credentialsNuevoOperador4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+
+
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-logintest7",
+                    "parmNames": [
+                        "logintest7"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-logintest7-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-logintest7-export",
+                                    "exportAs": "logintest7",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-isauthenticatedtest7",
+                    "parmNames": [
+                        "isauthenticatedtest7"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-isauthenticatedtest7-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest7"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-isauthenticatedtest7-export",
+                                    "exportAs": "isauthenticatedtest7",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-sessiontest7",
+                    "parmNames": [
+                        "sessiontest7"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-sessiontest7-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest7",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest7"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub4-trasdesbloquear-require-sessiontest7-export",
+                                    "exportAs": "sessiontest7",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest7"
+                }
+            }
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest7"
+                }
+            }
+        },
+
+        {
+            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest8",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theTokenSecurityProperties": "TokenSecurityPropertiesMagic7665132134"
+                    },
+                    "expectedresponsepart": {
+                        "vSuccess": true,
+                        "vTipo": "SecurityPropertiesDatos"
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3",
+                    "parmNames": [
+                        "credentialsOmnipotente3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "imports": [
+                                {
+                                    "name": "credentials-import",
+                                    "configurationPath": "@testspath/springnut-host/parms-credentials-omnipotente.json",
+                                    "importMode": "STATIC"
+                                }
+                            ],
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.username",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.password",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentialsOmnipotente3",
+                                    "exportAs": "credentialsOmnipotente3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-logintest8",
+                    "parmNames": [
+                        "logintest8"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-logintest8-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-logintest8-export",
+                                    "exportAs": "logintest8",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-isauthenticatedtest8",
+                    "parmNames": [
+                        "isauthenticatedtest8"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-isauthenticatedtest8-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest8"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-isauthenticatedtest8-export",
+                                    "exportAs": "isauthenticatedtest8",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-sessiontest3",
+                    "parmNames": [
+                        "sessiontest8"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-sessiontest8-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest8",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest8"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-autentificacion-cuentadeshabilitada-pormaxfallos-springnut-test-sub5-restablecerSecurityPropertiesFinal-require-sessiontest8-export",
+                                    "exportAs": "sessiontest8",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+
+
+
+
+
+    ]
+}
+
+
+
+
+
+
+
+

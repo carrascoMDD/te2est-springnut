@@ -1,0 +1,263 @@
+{
+    "name": "suite-54-session-noavanzado-obtener-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-54-session-noavanzado-obtener-springnut-test. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        },
+        "login": {
+            "lazy": false
+        },
+        "isauthenticated": {
+            "lazy": false
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-noavanzado-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-54-session-noavanzado-obtener-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_INSTALADOR_byApplicationContextSecurity",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_INSTALADOR_byApplicationContextSecurity_JSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_INSTALADOR_byapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_INSTALADOR_byapplicationcontextsecurity-check-_v_Reply.vTipo-SiAutorizado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "SiAutorizado"
+                }
+            ]
+        },
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-NOT-auxHasRole_AVANZADO_byApplicationContextSecurity",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_AVANZADO_byApplicationContextSecurity_JSON",
+                    "statuscode": 403,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-NOT-auxHasRole_AVANZADO_byapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-NOT-auxHasRole_AVANZADO_byapplicationcontextsecurity-check-_v_Reply.vTipo-NoAutorizado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "NoAutorizado"
+                }
+            ]
+        },
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_ADMINISTRADOR_byApplicationContextSecurity",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_ADMINISTRADOR_byApplicationContextSecurity_JSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_ADMINISTRADOR_byapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_ADMINISTRADOR_byapplicationcontextsecurity-check-_v_Reply.vTipo-SiAutorizado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "SiAutorizado"
+                }
+            ]
+        },
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_CODIFICADOR_byApplicationContextSecurity",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_CODIFICADOR_byApplicationContextSecurity_JSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_CODIFICADOR_byapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_CODIFICADOR_byapplicationcontextsecurity-check-_v_Reply.vTipo-SiAutorizado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "SiAutorizado"
+                }
+            ]
+        },
+        {
+            "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_GRABADOR_byApplicationContextSecurity",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_GRABADOR_byApplicationContextSecurity_JSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_GRABADOR_byapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-54-session-noavanzado-obtener-springnut-test-sub-auxHasRole_GRABADOR_byapplicationcontextsecurity-check-_v_Reply.vTipo-SiAutorizado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "SiAutorizado"
+                }
+            ]
+        }
+
+
+    ]
+}
+
+
+
+
+
+
+
+

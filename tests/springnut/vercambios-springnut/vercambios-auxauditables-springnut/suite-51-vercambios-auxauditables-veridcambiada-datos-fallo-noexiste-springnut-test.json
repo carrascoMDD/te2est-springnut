@@ -1,0 +1,1055 @@
+{
+    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/vercambios/veridcambiadaDatosJSON",
+            "URLparms": {
+                "theIdVeridcambiada": "~idveridcambiadainexistente",
+                "theIncluyeInformeCampos": false,
+                "theIncluyeCampos": false
+            },
+            "requestdata": null,
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "expectedresponsepart": {
+                "vTipo": "VeridcambiadaDatos",
+                "vSuccess": false
+            }
+        },
+        "auxkey": "@auxaudkeyvc51",
+        "auxnum": 120001,
+        "auxstr": "@auxaudstrvc51",
+        "auxtxt": "@auxaudtxtvc51\nauxaudtxtvc51l2\nauxaudtxtvc51l3\nauxaudtxtvc51l4\nauxaudtxtvc51l5",
+        "auxboo": true,
+        "auxtipoentidad": "Auxauditable",
+        "auxkeyCambiado": "@auxaudkeyvc51Cambiado",
+        "auxnumCambiado": 120051,
+        "auxstrCambiado": "@auxaudstrvc51Cambiado",
+        "auxtxtCambiado": "@auxaudtxtvc51Cambiado\nauxaudtxtvc51Cambiadol2\nauxaudtxtvc51Cambiadol3\nauxaudtxvc51tCambiadol4\nauxaudtxtvc51Cambiadol5",
+        "auxbooCambiado": false,
+        "idveridcambiadainexistente": 999999999
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-auxfecha",
+            "exportAs": "auxfecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahora",
+            "exportAs": "auxfechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaCambiado",
+            "exportAs": "auxfechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraCambiado",
+            "exportAs": "auxfechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaAyer",
+            "exportAs": "auxfechaAyer",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_YesterdayDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraAyer",
+            "exportAs": "auxfechahoraAyer",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_YesterdayTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechaManana",
+            "exportAs": "auxfechaManana",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-auxfechahoraManana",
+            "exportAs": "auxfechahoraManana",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": false
+        },
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-check-_v_Reply.vTipo-ListaVeridscambiadas",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "VeridcambiadaDatos"
+        },
+        {
+            "name": "suite-41-vercambios-auxauditables-veridscambiadasdevercambio-lista-fallo-noexiste-springnut-test-check-_v_Reply.vStatusOperacion-NOEXISTE",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vStatusOperacion",
+            "checkValue": "NOEXISTE"
+        },
+        {
+            "name": "suite-41-vercambios-auxauditables-veridscambiadasdevercambio-lista-fallo-noexiste-springnut-test-check-_v_Reply.vDetallesOperacion-theIdVercambio",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vDetallesOperacion",
+            "checkValue": "theIdVeridcambiada"
+        },
+        {
+            "name": "suite-41-vercambios-auxauditables-veridscambiadasdevercambio-lista-fallo-noexiste-springnut-test-check-_v_Reply.vId-idcambioinexistente",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vId",
+            "checkValue": "~idveridcambiadainexistente"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-auxfechahoraAntesDeCambios",
+            "parmNames": [
+                "auxfechahoraAntesDeCambios"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-auxfechahoraAntesDeCambios-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/FechaHora/auxFechaHoraJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theDeltaMillis":  -10,
+                                "theDeltaDays":    null
+                            },
+                            "expectedresponsepart": {
+                                "vTipo": "FechaHoraDatos",
+                                "vSuccess": true
+                            }
+                        }
+
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-auxfechahoraAntesDeCambios-export",
+                            "exportAs": "auxfechahoraAntesDeCambios",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vDeltaTimestampStr",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios",
+            "parmNames": [
+                "ocasionarCambios",
+                "fechaVercambio",
+                "fechaHoraVercambio"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/auditables/auxAuxauditableCambiarAlgunosDatosJSON",
+                            "URLparms": null,
+                            "requestdata": {
+                                "theIdAuxauditable": "~idauxauditable",
+                                "theAuxKey_cambiar": true,
+                                "theAuxKey": "~auxkeyCambiado",
+                                "theAuxNum_cambiar": true,
+                                "theAuxNum": "~auxnumCambiado",
+                                "theAuxStr_cambiar": true,
+                                "theAuxStr": "~auxstrCambiado",
+                                "theAuxTxt_cambiar": true,
+                                "theAuxTxt": "~auxtxtCambiado",
+                                "theAuxBoo_cambiar": true,
+                                "theAuxBoo": "~auxbooCambiado",
+                                "theAuxFecha_cambiar": true,
+                                "theAuxFechaStr": "~auxfechaCambiado",
+                                "theAuxFechaHora_cambiar": true,
+                                "theAuxFechaHoraStr": "~auxfechahoraCambiado",
+                                "theExitoSiNoCambiado": false
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CambiadoAuxauditable",
+                                "vSuccess":  true
+                            }
+                        }
+
+                    },
+                    "scheduleSubs": "SERIES",
+                    "exports": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-export",
+                            "exportAs": "ocasionarCambios",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CambiadoAuxauditable"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vIdAux-idaux",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vIdAux",
+                            "checkValue": "~idauxauditable"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxKey-auxkey",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxKey",
+                            "checkValue": "~auxkey"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxNum-auxnum",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxNum",
+                            "checkValue": "~auxnum"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxStr-auxstr",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxStr",
+                            "checkValue": "~auxstr"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxTxt-auxtxt",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTxt",
+                            "checkValue": "~auxtxt"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxBoo-auxboo",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxBoo",
+                            "checkValue": "~auxboo"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfecha",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxDateStr",
+                            "checkValue": "~auxfecha"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfechahora",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTimestampStr",
+                            "checkValue": "~auxfechahora"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vCambiado-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCambiado",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vCambiadoAuxkey-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCambiadoAuxKey",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vCambiadoAuxNum-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCambiadoAuxNum",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vCambiadoAuxStr-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCambiadoAuxStr",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vCambiadoAuxBoo-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCambiadoAuxBoo",
+                            "checkValue": true
+                        },
+
+
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vIdAux-idaux",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vIdAux",
+                            "checkValue": "~idauxauditable"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxKey-auxkeyCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxKey",
+                            "checkValue": "~auxkey"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxNum-auxnumCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxNum",
+                            "checkValue": "~auxnum"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxStr-auxstrCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxStr",
+                            "checkValue": "~auxstr"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxTxt-auxtxt",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTxt",
+                            "checkValue": "~auxtxt"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxBoo-auxboo",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxBoo",
+                            "checkValue": "~auxboo"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfecha",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxDateStr",
+                            "checkValue": "~auxfecha"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableAntes.vAuxDateStr-auxfechahora",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableAntes.vAuxTimestampStr",
+                            "checkValue": "~auxfechahora"
+                        },
+
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vTipo",
+                            "checkValue": "AuxauditableDatos"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vIdAux-idaux",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vIdAux",
+                            "checkValue": "~idauxauditable"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxKey-auxkeyCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxKey",
+                            "checkValue": "~auxkeyCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxNum-auxnumCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxNum",
+                            "checkValue": "~auxnumCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxStr-auxstrCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxStr",
+                            "checkValue": "~auxstrCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxTxt-auxtxt",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxTxt",
+                            "checkValue": "~auxtxtCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxBoo-auxboo",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxBoo",
+                            "checkValue": "~auxbooCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxDateStr-auxfecha",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxDateStr",
+                            "checkValue": "~auxfechaCambiado"
+                        },
+                        {
+                            "name": "suite-51-auxauditables-auxauditable-cambiar-check-vAuxauditableDespues.vAuxTimestampStr-auxfechahora",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAuxauditableDespues.vAuxTimestampStr",
+                            "checkValue": "~auxfechahoraCambiado"
+                        }
+                    ],
+                    "required": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste",
+                            "parmNames": [
+                                "eliminarauxauditablesiexiste"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                                            "URLparms": null,
+                                            "requestdata": {
+                                                "theAuxKey": "~auxkey",
+                                                "theExitoSiNoExiste": true
+                                            },
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "expectedresponsepart": {
+                                                "vTipo": "AuxauditableDatos",
+                                                "vSuccess": true
+                                            }
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiarspringnut-test-require-eliminarauxauditablesiexiste-check-vAuxKey-auxkey",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxKey",
+                                            "checkValue": "~auxkey"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditablesiexiste-export",
+                                            "exportAs": "eliminarauxauditablesiexiste",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable",
+                            "parmNames": [
+                                "crearauxauditable",
+                                "idauxauditable"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/aux/auditables/crearAuxauditableJSON",
+                                            "URLparms": null,
+                                            "requestdata": {
+                                                "theAuxKey": "~auxkey",
+                                                "theAuxNum": "~auxnum",
+                                                "theAuxStr": "~auxstr",
+                                                "theAuxTxt": "~auxtxt",
+                                                "theAuxBoo": "~auxboo",
+                                                "theAuxFechaStr": "~auxfecha",
+                                                "theAuxFechaHoraStr": "~auxfechahora",
+                                                "theExitoSiYaExiste": false
+                                            },
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "expectedresponsepart": {
+                                                "vTipo": "AuxauditableDatos",
+                                                "vSuccess": true
+                                            }
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-check-_v_Reply.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxKey-auxkey",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxKey",
+                                            "checkValue": "~auxkey"
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxNum-auxnum",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxNum",
+                                            "checkValue": "~auxnum"
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-check-vAuxStr-auxstr",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxStr",
+                                            "checkValue": "~auxstr"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiar-check.vAuxTxt-auxtxt",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxTxt",
+                                            "checkValue": "~auxtxt"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiar-check.vAuxBoo-auxboo",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxBoo",
+                                            "checkValue": "~auxboo"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfecha",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxDateStr",
+                                            "checkValue": "~auxfecha"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiar-check.vAuxDateStr-auxfechahora",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxTimestampStr",
+                                            "checkValue": "~auxfechahora"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-export",
+                                            "exportAs": "crearauxauditable",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-crearauxauditable-export-idauxauditable",
+                                            "exportAs": "idauxauditable",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vIdAux",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste",
+                            "parmNames": [
+                                "eliminarauxauditableOtrosiexiste"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                                            "URLparms": null,
+                                            "requestdata": {
+                                                "theAuxKey": "~auxkeyCambiado",
+                                                "theExitoSiNoExiste": true
+                                            },
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "expectedresponsepart": {
+                                                "vTipo": "AuxauditableDatos",
+                                                "vSuccess": true
+                                            }
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-check-_v_Reply.vTipo-AuxauditableDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "AuxauditableDatos"
+                                        },
+                                        {
+                                            "name": "suite-51-auxauditables-auxauditable-cambiarspringnut-test-require-eliminarauxauditableOtrosiexiste-check-vAuxKey-auxkeyCambiado",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAuxKey",
+                                            "checkValue": "~auxkeyCambiado"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-ocasionarCambios-supplier-require-eliminarauxauditableOtrosiexiste-export",
+                                            "exportAs": "eliminarauxauditableOtrosiexiste",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+            "parmNames": [
+                "listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahora",
+                "idvercambio",
+                "idveridcambiada"
+            ],
+            "suppliers": [
+
+                {
+                    "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/vercambios/listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON",
+                            "URLparms": {
+                                "theTipoEntidad":          "~auxtipoentidad",
+                                "theIdentidad":            "~idauxauditable",
+                                "theDesdeFecha":           "~auxfechaAyer",
+                                "theHastaFecha":           "~auxfechaManana",
+                                "theTrasFecha":            "~auxfechahoraAntesDeCambios",
+                                "theIncluyeInformeCampos": false,
+                                "theIncluyeCampos": false,
+                                "thePrimero": null,
+                                "theCuantos": 5
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "ListaVeridscambiadas",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vTipo-ListaVeridscambiadas",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "ListaVeridscambiadas"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipo-VeridcambiadaDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipo",
+                            "checkValue": "VeridcambiadaDatos"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipoRev-1",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipoRev",
+                            "checkValue": 1
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vIdentidad-idauxauditable",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVeridscambiadas.first.vIdentidad",
+                            "checkValue": "~idauxauditable"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vTipoentidad-auxtipoentidad",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVeridscambiadas.first.vTipoentidad",
+                            "checkValue": "~auxtipoentidad"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-check-_v_Reply.vVeridscambiadas.first.vClaves-auxkeyCambiado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vVeridscambiadas.first.vClaves",
+                            "checkValue": "~auxkeyCambiado"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export",
+                            "exportAs": "listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahora",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export-idvercambio",
+                            "exportAs": "idvercambio",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vVeridscambiadas.first.vIdCambio",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-51-vercambios-auxauditables-veridcambiada-datos-fallo-noexiste-springnut-test-require-listaVeridscambiadasDeTipoEntidadEIdentidadEntreFechasTrasFechahoraJSON-supplier-export-idveridcambiada",
+                            "exportAs": "idveridcambiada",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vVeridscambiadas.first.vId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

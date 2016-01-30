@@ -1,0 +1,5 @@
+[
+    "@testspath/springnut/aux-springnut/excepciones-springnut/suite-01-auxexcepcion-simular-springnut-test.json",
+    "@testspath/springnut/aux-springnut/excepciones-springnut/suite-02-auxexcepcion-simular-conrequestreply-springnut-test.json",
+    "@testspath/springnut/aux-springnut/excepciones-springnut/suite-04-auxexcepcion-simular-outerinnermessages-springnut-test.json"
+]

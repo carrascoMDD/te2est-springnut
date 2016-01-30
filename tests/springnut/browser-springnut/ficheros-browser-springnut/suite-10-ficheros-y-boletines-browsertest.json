@@ -1,0 +1,426 @@
+{
+    "name": "suite-10-ficheros-y-boletines-browsertest-springnut",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-10-ficheros-y-boletines-browsertest-. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-fecha",
+            "exportAs": "fecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahora",
+            "exportAs": "fechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaCambiado",
+            "exportAs": "fechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraCambiado",
+            "exportAs": "fechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaOtro",
+            "exportAs": "fechaOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraOtro",
+            "exportAs": "fechahoraOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalle",
+            "exportAs": "fechaDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalle",
+            "exportAs": "fechahoraDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleCambiado",
+            "exportAs": "fechaDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleCambiado",
+            "exportAs": "fechahoraDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleOtro",
+            "exportAs": "fechaDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleOtro",
+            "exportAs": "fechahoraDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-10-ficheros-y-boletines-browsertest-springnut-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ficheros-y-boletines-browsertest-springnut-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-ficheros-y-boletines-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-ficheros-y-boletines-browsertest-springnut-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-ficheros-y-boletines-browsertest-springnut-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "require-ficheroConBoletines",
+            "parmNames": [
+                "ficheroConBoletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-ficheros-ine-lista-springnut-test-require-ficheroConBoletines-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-ficheros-ine-lista-springnut-test-require-ficheroConBoletines-export",
+                            "exportAs": "ficheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-10-ficheros-y-boletines-browsertest-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+
+
+        {
+            "name": "suite-10-ficheros-y-boletines-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Ficheros",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "Visit-Springnut-Ficheros",
+                                "visitURL": "/app/ficheros_tFic_INE.html",
+                                "isAngular": true,
+                                "expectedPageTitle": "Ficheros - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Ficheros",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutFicheros",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Ficheros",
+                                "domIdPrefix": "didSpringnut_Ficheros"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Ficheros",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutFicheros"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Ficheros",
+                                "compositeSpecs" : [
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ficheros-ListaFicheros",
+                                        "gridName": "ListaFicheros",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": false,
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  {
+                                                    "multiColumns": [
+                                                        { "columnIndex":  2, "spanIndex":  0, "value": "~anoFichero"},
+                                                        { "columnIndex":  3, "spanIndex":  0, "value": "~mesFichero"},
+                                                        { "columnIndex":  4, "spanIndex":  0, "value": "~provinciaFichero"}
+                                                    ]
+                                                },
+                                                "actions": [
+
+                                                    { "actionKind": "EDIT", "editorName": "Fichero"},
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "MultiAction-Springnut-Ficheros-ListaBoletinesFicheroSeleccionado",
+                                                        "gridName": "ListaBoletinesDeFichero",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":   { "columnIndex": 0, "spanIndex":  0, "valueIndex":  0},
+                                                                "actions": [
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinDeFichero"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "InscripcionDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinInscripcion"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "PersonalesDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinPersonales"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "CausasDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinCausas"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "CodigosDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinCodigos"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "DemograficosDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinDemograficos"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "OtrosDatosDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinOtra"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "OrigenDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinOrigen"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "JudicialesDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinJudiciales"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "ImagenDeBoletin"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "GrabacionDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinGrabacion"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "CodificacionDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinCodificacion"},
+
+                                                                    { "actionKind": "SHOWTAB", "tabName": "ExtraDatosDeBoletin"},
+
+                                                                    { "actionKind": "EDIT", "editorName": "BoletinExtra"}
+
+
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

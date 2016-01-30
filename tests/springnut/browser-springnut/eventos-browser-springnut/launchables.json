@@ -1,0 +1,8 @@
+[
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/eventos-excepciones-browser-springnut/launchables.json",
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/eventos-accesosoperadores-browser-springnut/launchables.json",
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/eventos-accesosfallidos-browser-springnut/launchables.json",
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/eventos-lecturasboletines-browser-springnut/launchables.json",
+    "@testspath/springnut/browser-springnut/eventos-browser-springnut/eventos-cambios-browser-springnut/launchables.json"
+]
+

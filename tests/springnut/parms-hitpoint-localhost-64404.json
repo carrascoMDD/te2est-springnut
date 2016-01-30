@@ -1,0 +1,12 @@
+{
+    "name": "parms-hitpoint",
+    "parms": {
+        "hitpoint": {
+            "baseURL": "http://localhost:64404/springnut",
+            "XXXbaseURL": "http://localhost:64404/springnut"
+        }
+    }
+}
+
+
+

@@ -1,0 +1,1030 @@
+{
+    "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-20-definicionbloques-instrumentacion-browsertest-. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "nombreOperador":                                "@OPBLBWR11111",
+        "nombreCompletoOperador":                        "@OPBLBWR11111 Nombre Completo",
+        "descripcionOperador":                           "@OPBLBWR11111 descripcion",
+        "contrasena":                                    "OPBLBWR11111",
+        "cuentaBloqueada":                               false,
+        "usuarioDebeCambiarPswdAInicioDeSesion":         false,
+        "usuarioNoPuedeCambiarPswd":                     false,
+        "nombreOperador2":                                "@OPBLBWR11112",
+        "nombreCompletoOperador2":                        "@OPBLBWR11112 Nombre Completo",
+        "descripcionOperador2":                           "@OPBLBWR11112 descripcion",
+        "contrasena2":                                    "OPBLBWR11112",
+        "cuentaBloqueada2":                               false,
+        "usuarioDebeCambiarPswdAInicioDeSesion2":         false,
+        "usuarioNoPuedeCambiarPswd2":                     false
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-fecha",
+            "exportAs": "fecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahora",
+            "exportAs": "fechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaCambiado",
+            "exportAs": "fechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraCambiado",
+            "exportAs": "fechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaOtro",
+            "exportAs": "fechaOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraOtro",
+            "exportAs": "fechahoraOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalle",
+            "exportAs": "fechaDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalle",
+            "exportAs": "fechahoraDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleCambiado",
+            "exportAs": "fechaDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleCambiado",
+            "exportAs": "fechahoraDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleOtro",
+            "exportAs": "fechaDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleOtro",
+            "exportAs": "fechahoraDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-springnut-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "require-ficheroConBoletines",
+            "parmNames": [
+                "ficheroConBoletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-ficheroConBoletines-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "require-ficheroConBoletines-export",
+                            "exportAs": "ficheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "require-idFicheroConBoletines",
+            "parmNames": [
+                "idFicheroConBoletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-ficheros-obtener-fichero-ine-corto-paraeliminar-springnut-test-require-idFicheroParaEliminar-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theAno":       "~anoFichero",
+                                "theMes":       "~mesFichero",
+                                "theProvincia": "~provinciaFichero"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-ficheros-obtener-fichero-ine-corto-paraeliminar-springnut-test-require-idFicheroParaEliminar-supplier-export-idFichero",
+                            "exportAs": "idFicheroAnosMesProvinciaSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-01-ficheros-obtener-fichero-ine-corto-paraeliminar-springnut-test-require-idFicheroParaEliminar-supplier-export-idFichero",
+                            "exportAs": "idFicheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+        {
+            "name": "require-identificasFichero",
+            "parmNames": [
+                "identificaDesde",
+                "identificaHasta"
+            ],
+            "suppliers": [
+                {
+                    "name": "require-identificasFichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": "SUCCEEDALWAYS",
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod":  "GET",
+                            "statuscode":      200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLpath": "/ficheros/ficheroDatosJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theIdFichero":   "~idFicheroConBoletines"
+                            }
+                        },
+                        "tipoBoletin": "ine",
+                        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "require-identificasFichero-supplier-check-vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "require-identificasFichero-supplier-check-vTipo-FicheroConIdentificas",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroConIdentificas"
+                        },
+                        {
+                            "name": "require-identificasFichero-supplier-check-vAnoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "require-identificasFichero-supplier-check-vMesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "require-identificasFichero-supplier-check-vCodigoProvinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        },
+                        {
+                            "name": "require-identificasFichero-supplier-check-vNumBoletines-4",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vNumBoletines",
+                            "checkValue": 4
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-require-ficheroSiYaExiste-export",
+                            "exportAs": "ficheroSiYaExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-require-identificaDesde-export",
+                            "exportAs": "identificaDesde",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaDesde",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-require-identificaHasta-export",
+                            "exportAs": "identificaHasta",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdentificaHasta",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-idOperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       "~cuentaBloqueada",
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": "~usuarioDebeCambiarPswdAInicioDeSesion",
+                                "theUsuarioNoPuedeCambiarPswd":             "~usuarioNoPuedeCambiarPswd"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste2",
+            "parmNames": [
+                "testeliminaroperadorsiexiste2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador2",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-idOperador",
+            "parmNames": [
+                "testcrearoperador2",
+                "idOperador2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "~nombreOperador2",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador2",
+                                "theDescripcionOperador":                   "~descripcionOperador2",
+                                "theContrasena":                            "~contrasena2",
+                                "theRepetirContrasena":                     "~contrasena2",
+                                "theCuentaBloqueada":                       "~cuentaBloqueada2",
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": "~usuarioDebeCambiarPswdAInicioDeSesion2",
+                                "theUsuarioNoPuedeCambiarPswd":             "~usuarioNoPuedeCambiarPswd2"
+                            }
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-definicionbloques-instrumentacion-browsertest-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+
+
+        {
+            "name": "suite-20-definicionbloques-instrumentacion-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Definicionbloques",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "VisitSpringnutDefinicionbloques",
+                                "visitURL": "/app/definicionbloques.html?theTipoBoletin=ine#/definicionbloquesINEInstrumentacion",
+                                "isAngular": true,
+                                "expectedPageTitle": "Bloques - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Definicionbloques",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutDefinicionbloques",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Definicionbloques",
+                                "domIdPrefix": "didSpringnut_Definicionbloques"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Definicionbloques",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutDefinicionbloques"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Definicionbloques",
+                                "compositeSpecs" : [
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Definicionbloques-ListaOperadores",
+                                        "gridName": "ListaOperadores",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECTIFEXISTS",
+                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11111"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Definicionbloques-ListaOperadores-ListaBloquesDeOperador",
+                                                        "gridName": "ListaBloquesDeOperador",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECTIFEXISTS",
+                                                                "finder":  {
+                                                                    "multiColumns": [
+                                                                        { "columnIndex":  2, "spanIndex":  0, "value": "~anoFichero"},
+                                                                        { "columnIndex":  3, "spanIndex":  0, "value": "~mesFichero"},
+                                                                        { "columnIndex":  4, "spanIndex":  0, "value": "~provinciaFichero"}
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Definicionbloques-ListaOperadores-deselect",
+                                                        "gridName": "ListaOperadores",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11111"}
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Definicionbloques-ListaFicheros",
+                                        "gridName": "ListaFicheros",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  {
+                                                    "multiColumns": [
+                                                        { "columnIndex":  2, "spanIndex":  0, "value": "~anoFichero"},
+                                                        { "columnIndex":  3, "spanIndex":  0, "value": "~mesFichero"},
+                                                        { "columnIndex":  4, "spanIndex":  0, "value": "~provinciaFichero"}
+                                                    ]
+                                                },
+                                                "actions": [
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Definicionbloques-ListaFicheros-ListaBloquesDeFichero",
+                                                        "gridName": "ListaBloquesDeFichero",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECTIFEXISTS",
+                                                                "finder":   { "columnIndex": 1, "spanIndex":  0, "value":  "@OPBLBWR11111"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "DELETE"
+                                                                    }
+                                                                ]
+                                                            },
+
+                                                            {
+                                                                "actionKind": "CREATE",
+                                                                "creatorName": "CrearBloqueDeFichero",
+                                                                "fieldInits": [
+                                                                    {
+                                                                        "fieldName": "vNombreOperador",
+                                                                        "type":      "String",
+                                                                        "candidates": true,
+                                                                        "candidatesGridName": "BloqueDeFichero_Crear__vNombreOperador_Candidatos_ListaOperadores",
+                                                                        "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11111"}
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vIdentificaDesde",
+                                                                        "type":      "Int",
+                                                                        "value":     0
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vIdentificaHasta",
+                                                                        "type":      "Int",
+                                                                        "value":     0
+                                                                    }
+                                                                ]
+                                                            },
+
+                                                            {
+                                                                "actionKind": "SELECTIFEXISTS",
+                                                                "finder":   { "columnIndex": 1, "spanIndex":  0, "value":  "@OPBLBWR11112"},
+                                                                "actions": [
+                                                                    {
+                                                                        "actionKind": "DELETE"
+                                                                    }
+                                                                ]
+                                                            },
+
+                                                            {
+                                                                "actionKind": "CREATE",
+                                                                "creatorName": "CrearBloqueDeFichero",
+                                                                "fieldInits": [
+                                                                    {
+                                                                        "fieldName": "vNombreOperador",
+                                                                        "type":      "String",
+                                                                        "candidates": true,
+                                                                        "candidatesGridName": "BloqueDeFichero_Crear__vNombreOperador_Candidatos_ListaOperadores",
+                                                                        "candidateFinder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11112"}
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vIdentificaDesde",
+                                                                        "type":      "Int",
+                                                                        "value":     "~identificaDesde"
+                                                                    },
+                                                                    {
+                                                                        "fieldName": "vIdentificaHasta",
+                                                                        "type":      "Int",
+                                                                        "value":     "~identificaHasta"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Definicionbloques-ListaOperadores-2",
+                                        "gridName": "ListaOperadores",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11111"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Definicionbloques-ListaOperadores-2-ListaBloquesDeOperador",
+                                                        "gridName": "ListaBloquesDeOperador",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  {
+                                                                    "multiColumns": [
+                                                                        { "columnIndex":  6, "spanIndex":  0, "value": "~anoFichero"},
+                                                                        { "columnIndex":  7, "spanIndex":  0, "value": "~mesFichero"},
+                                                                        { "columnIndex":  8, "spanIndex":  0, "value": "~provinciaFichero"}
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Definicionbloques-ListaOperadores-3",
+                                        "gridName": "ListaOperadores",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  1, "spanIndex":  0, "value":  "@OPBLBWR11112"},
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Definicionbloques-ListaOperadores-3-ListaBloquesDeOperador",
+                                                        "gridName": "ListaBloquesDeOperador",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  {
+                                                                    "multiColumns": [
+                                                                        { "columnIndex":  6, "spanIndex":  0, "value": "~anoFichero"},
+                                                                        { "columnIndex":  7, "spanIndex":  0, "value": "~mesFichero"},
+                                                                        { "columnIndex":  8, "spanIndex":  0, "value": "~provinciaFichero"}
+                                                                    ]
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Definicionbloques-ListaFicheros2",
+                                        "gridName": "ListaBloquesDeFichero",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":   { "columnIndex": 11, "spanIndex":  0, "value":  "@OPBLBWR11111"},
+                                                "actions": [
+                                                    {
+                                                        "actionKind": "DELETE"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,546 @@
+{
+    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-listavalidacionescriterio-springnut-test",
+    "constructorName": "EdivalidacionesListaValidacionesCriterioSpringnutTest_Constructor",
+    "methodName": "pF_EdivalidacionesListaValidacionesCriterioSpringnut",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "login": {
+            "lazy": true
+        },
+        "isauthenticated": {
+            "lazy": true
+        },
+        "session": {
+            "lazy": true
+        },
+        "edivalidaciones_listavalidacionescriterio_springnut": {
+        },
+        "crnombre":      "@CRAUX73",
+        "crdescripcion": "@CRAUX73 Descripcion"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-each-springnut-test-require-edivalidaciones-listavalidacionescriterio-export-listavalidacionescriteriotest",
+            "exportAs": "edivalidaciones-listavalidacionescriteriotest",
+            "exportOrigin": "TEST",
+            "exportSource": "*",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-each-springnut-test-require-edivalidaciones-listavalidacionescriterio-export-idserror",
+            "exportAs": "idserror",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_ValidacionesCriterio.all.iderror",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-each-springnut-test-require-edivalidaciones-listavalidacionescriterio-export-sessiontest",
+            "exportAs": "sessiontest",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_Session",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste",
+            "parmNames": [
+                "eliminarCriterioSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioPorNombreEliminarJSON",
+                            "requestdata": {
+                                "theNombre": "~crnombre",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-eliminarCriterioSiExiste-export",
+                            "exportAs": "eliminarCriterioSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista",
+            "parmNames": [
+                "crearCriterioParaQueYaExista",
+                "idcriterio"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioCrearContandoJSON",
+                            "requestdata": {
+                                "theNombre":      "~crnombre",
+                                "theDescripcion": "~crdescripcion"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-crNombre-crDescripcion",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crDescripcion",
+                            "checkValue": "~crdescripcion"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "crearCriterioParaQueYaExista",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-springnut-test-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "idcriterio",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.crId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-eliminarvalidacion-siexiste",
+            "parmNames": [
+                "eliminarvalidaciontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-eliminarvalidacion-siexiste-supplier",
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-eliminarvalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesEliminarValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesEliminarValidacionSpringnut",
+                    "parms": {
+                        "edivalidaciones_eliminarvalidacion_springnut": {
+                            "iderror":    "@E11111111",
+                            "exitosinoexiste": true
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-idcriterio-export-idcriterio",
+                            "exportAs": "eliminarvalidaciontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearvalidacion",
+            "parmNames": [
+                "crearvalidaciontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearvalidacion-supplier",
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-crearvalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesCrearValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesCrearValidacionSpringnut",
+                    "parms": {
+                        "edivalidaciones_crearvalidacion_springnut": {
+                            "iderror":    "@E11111111",
+                            "descripcion": "descripcion @E11111111",
+                            "severidad":   0,
+                            "activa":      true
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-idcriterio-export-crearvalidaciontest",
+                            "exportAs": "crearvalidaciontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-edivalidaciones-listavalidacionescriterio-export-iderror",
+                            "exportAs": "iderror",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_ValidacionDatos.iderror",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearcondicionvalidacion",
+            "parmNames": [
+                "crearcondicionvalidaciontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearcondicionvalidacion-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-crearcondiciondevalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesCrearCondicionDeValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesCrearCondicionDeValidacionSpringnut",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "salutation": "Hello suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-require-crearcondicionvalidacion. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                        "login": {
+                            "lazy": true
+                        },
+                        "isauthenticated": {
+                            "lazy": true
+                        },
+                        "session": {
+                            "lazy": true
+                        },
+                        "edivalidaciones_crearcondiciondevalidacion_springnut": {
+                            "condicion": "NBOL IS NOT NULL"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearcondicionvalidacion-export-crearcondicionvalidaciontest",
+                            "exportAs": "crearcondicionvalidaciontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-eliminarvalidacion-2-siexiste",
+            "parmNames": [
+                "eliminarvalidaciontest-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-eliminarvalidacion-siexiste-supplier",
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-eliminarvalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesEliminarValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesEliminarValidacionSpringnut",
+                    "parms": {
+                        "edivalidaciones_eliminarvalidacion_springnut": {
+                            "iderror":    "@E22222222",
+                            "exitosinoexiste": true
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-eliminarvalidacion-2-siexiste-export-eliminarvalidaciontest",
+                            "exportAs": "eliminarvalidaciontest-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearvalidacion-2",
+            "parmNames": [
+                "crearvalidaciontest-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearvalidacion-2-supplier",
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-crearvalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesCrearValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesCrearValidacionSpringnut",
+                    "parms": {
+                        "edivalidaciones_crearvalidacion_springnut": {
+                            "iderror":    "@E22222222",
+                            "descripcion": "descripcion @E22222222",
+                            "severidad":   0,
+                            "activa":      true
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-idcriterio-export-crearvalidaciontest-2",
+                            "exportAs": "crearvalidaciontest-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-edivalidaciones-listavalidacionescriterio-export-iderror-2",
+                            "exportAs": "iderror",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_ValidacionDatos.iderror",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearcondicionvalidacion-2",
+            "parmNames": [
+                "crearcondicionvalidaciontest-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-crearcondicionvalidacion-2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-crearcondiciondevalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesCrearCondicionDeValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesCrearCondicionDeValidacionSpringnut",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "salutation": "Hello suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-require-crearcondicionvalidacion-2. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                        "login": {
+                            "lazy": true
+                        },
+                        "isauthenticated": {
+                            "lazy": true
+                        },
+                        "session": {
+                            "lazy": true
+                        },
+                        "edivalidaciones_crearcondiciondevalidacion_springnut": {
+                            "condicion": "NBOL IS NULL"
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test-require-sessiontest-idcriterio-export-crearcondicionvalidaciontest-2",
+                            "exportAs": "crearcondicionvalidaciontest-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-each-iterator-condiciones-springnut-test",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/iterator-test",
+            "constructorName": "IteratorTest_Constructor",
+            "methodName": "pF_Iterator",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "salutation": "Hello suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-each-iterator-condiciones-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                "login": {
+                    "lazy": true
+                },
+                "isauthenticated": {
+                    "lazy": true
+                },
+                "session": {
+                    "lazy": true
+                },
+                "iterator": {
+                    "rangeParm": "idserror",
+                    "eachParm":  "iderror",
+                    "endidx":    10
+                }
+            },
+            "subs": [
+                {
+                    "name": "suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones-test",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-listacondicionesvalidacion-springnut-test",
+                    "constructorName": "EdivalidacionesListaCondicionesValidacionSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesListaCondicionesValidacionSpringnut",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "salutation": "Hello suite-73-edivalidaciones-listacondicionesvalidacion-todasvalidaciones. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                        "login": {
+                            "lazy": true
+                        },
+                        "isauthenticated": {
+                            "lazy": true
+                        },
+                        "session": {
+                            "lazy": true
+                        },
+                        "edivalidaciones_listacondicionesvalidacion_springnut": {
+                        }
+                    },
+                    "imports": [
+                        {
+                            "name": "hitpoint-import",
+                            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                            "importMode": "STATIC"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

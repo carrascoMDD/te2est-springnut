@@ -1,0 +1,11 @@
+[
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-01-boletinascii-ine-blanco-objeto-customcomponent-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-02-boletinascii-ine-blanco-objeto-customcomponent-obtener-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-10-boletinascii-ine-blanco-objeto-solonbol-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-12-boletinascii-ine-blanco-ascii-solonbol-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-20-boletinascii-ine-deejemplo-objeto-springnut-test.json",
+    "@testspath/springnut/aux-springnut/boletinesascii-springnut/suite-22-boletinascii-ine-deejemplo-ascii-springnut-test.json"
+
+]

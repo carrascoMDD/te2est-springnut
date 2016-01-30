@@ -1,0 +1,466 @@
+{
+    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-18-auxhasrole-sininstalador-bymethodannotation. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "nombreOperador":                        "@OPER03030303",
+        "nombreCompletoOperador":                "@OPER03030303 Nombre Completo",
+        "contrasena":                            "OPER03030303",
+        "descripcionOperador":                   "@OPER03030303 descripcion",
+        "cuentaBloqueada":                       false,
+        "usuarioDebeCambiarPswdAInicioDeSesion":         false,
+        "usuarioNoPuedeCambiarPswd":             false
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-administradorConectadoDatos",
+            "parmNames": [
+                "administradorConectadoDatos"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-administradorConectadoDatos-supplier",
+                    "runnable": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "scheduleSubs": "SERIES",
+                    "expectSuccess": true,
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-administradorConectadoDatos-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-administradorConectadoDatos-supplier-export",
+                            "exportAs": "administradorConectadoDatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testcrearoperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       "~cuentaBloqueada",
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": "~usuarioDebeCambiarPswdAInicioDeSesion",
+                                "theUsuarioNoPuedeCambiarPswd":             "~usuarioNoPuedeCambiarPswd"
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+        {
+            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-testauxHasRoleadministradorbyapplicationcontextsecurity",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/aux/hasRole/auxHasRole_CODIFICADOR_byApplicationContextSecurity_JSON",
+                    "statuscode": 403,
+                    "sessiontestparmname": "sessiontest2",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-testauxHasRoleadministradorbyapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": false
+                },
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-testauxHasRoleadministradorbyapplicationcontextsecurity-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "NoAutorizado"
+                }
+            ],
+            "required": [
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador",
+                    "parmNames": [
+                        "credentialsNuevoOperador"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentialsNuevoOperador",
+                                    "exportAs": "credentialsNuevoOperador",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-logintest2",
+                    "parmNames": [
+                        "logintest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-logintest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-logintest2-export",
+                                    "exportAs": "logintest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2",
+                    "parmNames": [
+                        "isauthenticatedtest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-export",
+                                    "exportAs": "isauthenticatedtest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-sessiontest2",
+                    "parmNames": [
+                        "sessiontest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest2",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-18-auxhasrole-sininstalador-bymethodannotation-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-export",
+                                    "exportAs": "sessiontest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

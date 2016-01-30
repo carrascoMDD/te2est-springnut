@@ -1,0 +1,310 @@
+{
+    "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/iterator-test",
+    "constructorName": "IteratorTest_Constructor",
+    "methodName": "pF_Iterator",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "login": {
+            "lazy": true
+        },
+        "isauthenticated": {
+            "lazy": true
+        },
+        "session": {
+            "lazy": true
+        },
+        "iterator": {
+            "rangeParm": "idscriterios",
+            "eachParm":  "idcriterio",
+            "endidx":    10
+        },
+        "crnombre":      "@CRAUX63",
+        "crdescripcion": "@CRAUX63 Descripcion"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-51-edivalidaciones-listacriterios-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-51-edivalidaciones-listacriterios-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-51-edivalidaciones-listacriterios-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste",
+            "parmNames": [
+                "eliminarCriterioSiExiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioPorNombreEliminarJSON",
+                            "requestdata": {
+                                "theNombre": "~crnombre",
+                                "theExitoSiNoExiste": true
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-eliminarCriterioSiExiste-export",
+                            "exportAs": "eliminarCriterioSiExiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista",
+            "parmNames": [
+                "crearCriterioParaQueYaExista",
+                "idcriterio"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/criterios/auxCriterioCrearContandoJSON",
+                            "requestdata": {
+                                "theNombre":      "~crnombre",
+                                "theDescripcion": "~crdescripcion"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "expectedresponsepart": {
+                                "vTipo": "CriterioDatos",
+                                "vSuccess": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-_v_Reply.vTipo-AuxauditableDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "CriterioDatos"
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-crNombre-crnombre",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crNombre",
+                            "checkValue": "~crnombre"
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-supplier-check-crNombre-crDescripcion",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.crDescripcion",
+                            "checkValue": "~crdescripcion"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "crearCriterioParaQueYaExista",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-crearCriterioParaQueYaExista-export",
+                            "exportAs": "idcriterio",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.crId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-springnut-test-require-edivalidaciones-listacriterios",
+            "parmNames": [
+                "edivalidaciones-listacriteriostest",
+                "idscriterios"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-63-edivalidaciones-listavalidacionescriterio-springnut-test-require-edivalidaciones-listacriterios-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-listacriterios-springnut-test",
+                    "constructorName": "EdivalidacionesListaCriteriosSpringnutTest_Constructor",
+                    "methodName": "pF_EdivalidacionesListaCriteriosSpringnut",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "edivalidaciones_listacriterios_springnut": {
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-springnut-test-require-edivalidaciones-listacriterios-export-listacriteriostest",
+                            "exportAs": "edivalidaciones-listacriteriostest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-63-edivalidaciones-listavalidacionescriterio-springnut-test-require-edivalidaciones-listacriterios-export-idscriterios",
+                            "exportAs": "idscriterios",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Criterios.all.crId",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-each-springnut-test",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/springnut-test/edivalidaciones-test/edivalidaciones-listavalidacionescriterio-springnut-test",
+            "constructorName": "EdivalidacionesListaValidacionesCriterioSpringnutTest_Constructor",
+            "methodName": "pF_EdivalidacionesListaValidacionesCriterioSpringnut",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "salutation": "Hello suite-63-edivalidaciones-listavalidacionescriterio-todoscriterios-each-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+                "login": {
+                    "lazy": true
+                },
+                "isauthenticated": {
+                    "lazy": true
+                },
+                "session": {
+                    "lazy": true
+                },
+                "edivalidaciones_listavalidacionescriterio_springnut": {
+                }
+            },
+            "imports": [
+                {
+                    "name": "hitpoint-import",
+                    "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                    "importMode": "STATIC"
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

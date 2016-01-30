@@ -1,0 +1,9 @@
+[
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/securityproperties-noautorizado/launchables.json",
+
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-10-auxsecurityproperties-datos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-20-auxsecurityproperties-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-30-auxsecurityproperties-restablecer-springnut-test.json",
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-31-auxsecurityproperties-restablecer-incondicional-springnut-test.json"
+
+]

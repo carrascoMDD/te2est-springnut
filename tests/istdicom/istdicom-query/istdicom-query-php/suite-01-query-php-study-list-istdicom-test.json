@@ -1,0 +1,122 @@
+{
+    "name": "suite-01-query-php-study-list-istdicom-test",
+    "runnable": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "expectSuccess": true,
+    "parms": {
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-php-import",
+            "configurationPath": "@testspath/istdicom-host/parms-hitpoint-php.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-millis",
+            "exportAs": "millis",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_MillisStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-01-query-php-study-list-istdicom-test-sub-querylist",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "baseURLparmName": "hitpointphp.baseURLphp",
+                    "requestmethod": "GET",
+                    "URLpath": "/solrQuery/consultaSolrNew.php",
+                    "URLparms": {
+                        "_dc": "~millis",
+                        "serverHostname": "solr.desknova.com",
+                        "serverPort": 8983,
+                        "ruta": "solr/mia_dcm",
+                        "todo": false,
+                        "q": "TIPOFICHERO_scustom:DICOM Study",
+                        "limit": 25,
+                        "rows": 25,
+                        "caller": "getIndexedFiles",
+                        "comboFilterProperty": null,
+                        "comboFilterValue": null,
+                        "query": null,
+                        "deleteRecords": false,
+                        "page": 1,
+                        "start": 0,
+                        "lang": "en"
+                    },
+                    "NOTUSED_URLfull": "http://paragon.desknova.com/php/commons/solrQuery/consultaSolrNew.php?_dc=1436921057943&serverHostname=solr.desknova.com&serverPort=8983&ruta=solr%2Fmia_dcm&todo=false&q=TIPOFICHERO_scustom%3ADICOM%20Study&limit=25&rows=25&caller=getIndexedFiles&comboFilterProperty=&comboFilterValue=&query=&deleteRecords=false&page=1&start=0&lang=en",
+                    "statuscode": 200,
+                    "dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "dumpreply":       true
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-01-query-php-study-list-istdicom-test-sub-querylist-check-_v_Reply.success-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.success",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-01-query-php-study-list-istdicom-test-sub-querylist-check-_v_Reply.message-Documentos recuperados satisfactoriamente",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.message",
+                    "checkValue": "Documentos recuperados satisfactoriamente"
+                },
+                {
+                    "name": "suite-01-query-php-study-list-istdicom-test-sub-querylist-check-_v_Reply.action-Consulta",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.action",
+                    "checkValue": "Consulta"
+                },
+                {
+                    "name": "suite-01-query-php-study-list-istdicom-test-sub-querylist-check-_v_Reply.consulta-TIPOFICHERO_scustom:DICOM Study",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.consulta",
+                    "checkValue": "TIPOFICHERO_scustom:DICOM Study"
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

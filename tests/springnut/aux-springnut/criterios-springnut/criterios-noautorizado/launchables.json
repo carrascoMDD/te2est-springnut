@@ -1,0 +1,7 @@
+[
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/suite-01-auxcriterio-noautorizado-crearcontando-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/suite-02-auxcriterio-noautorizado-cambiar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/suite-03-auxcriterio-noautorizado-cambiaralgunosdatos-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/suite-10-auxcriterio-noautorizado-eliminar-springnut-test.json",
+    "@testspath/springnut/aux-springnut/criterios-springnut/criterios-noautorizado/suite-50-auxcriterio-noautorizado-eliminarcriteriosdeprueba-springnut-test.json"
+]

@@ -1,0 +1,19 @@
+[
+
+    "@testspath/springnut/ficheros-springnut/suite-01-ficheros-obtener-fichero-ine-corto-paraeliminar-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-02-ficheros-obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json",
+
+    "@testspath/springnut/ficheros-springnut/suite-03-ficheros-obtener-fichero-ine-corto-otroparaeliminar-springnut-test",
+    "@testspath/springnut/ficheros-springnut/suite-04-ficheros-obtener-fichero-ine-corto-otroparaeliminar-importarsinoexistecorrecto-springnut-test.json",
+
+    "@testspath/springnut/ficheros-springnut/suite-05-ficheros-obtener-fichero-ine-corto-paraqueexistannbols-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-06-ficheros-obtener-fichero-ine-corto-paraqueexistannbols-importarsinoexistecorrecto-springnut-test.json",
+
+    "@testspath/springnut/ficheros-springnut/suite-10-ficheros-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-12-ficheros-conalgunboletin-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-20-fichero-ine-datos-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-30-ficheros-conidentificas-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-40-fichero-conidentificas-ine-datos-springnut-test.json"
+
+
+]

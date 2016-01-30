@@ -1,0 +1,141 @@
+{
+    "name": "suite-10-eventos-accesosoperadores-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "protractor": {
+            "allScriptsTimeout": 240000,
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+            {
+                "name": "VisitPage-Springnut-Eventos",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "Visit-Springnut-Eventos",
+                        "visitURL": "/app/eventos.html#/eventos",
+                        "isAngular": true,
+                        "expectedPageTitle": "Eventos - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+
+
+
+            {
+                "name": "WidgetCtrls-Springnut-Eventos",
+                "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                "methodName": "pDoPtr_InitWithHelperParms",
+                "reuseInstanceAsExtraParm": "widgetctrlSpringnutEventos",
+                "helperParms": {
+                    "widgetctrls": {
+                        "name":        "WidgetCtrls-Springnut-Eventos",
+                        "domIdPrefix": "didSpringnut_Eventos"
+                    }
+                }
+            },
+
+
+            {
+                "name": "MultiComposite-Springnut-Eventos",
+                "module": "@cmppath/browser-test/multicomposite-testhelper",
+                "constructorName": "MultiCompositeTestHelper_Constructor",
+                "methodName": "pDoPtr_MultiComposite",
+                "extraConstructorParms": [ "widgetctrlSpringnutEventos"],
+                "helperParms": {
+                    "multiComposite": {
+                        "name": "Eventos",
+                        "compositeSpecs" : [
+
+                            {
+                                "name": "MultiAction-Springnut-Eventos-ListaAccesosoperadores",
+                                "gridName": "ListaAccesosoperadores",
+                                "module": "@cmppath/browser-test/multiaction-testhelper",
+                                "constructorName": "MultiActionTestHelper_Constructor",
+                                "methodName": "fDoPtr_MultiAction",
+                                "noRefresh": true,
+                                "actions": [
+
+                                    { "actionKind": "ANYARGUMENTS", "argumentsName": "FechasListaAccesosoperadores"},
+
+                                    {
+                                        "actionKind": "SELECT",
+                                        "finder":  { "columnIndex":  4, "spanIndex":  0, "value":  "testinstaladministrador"}
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+
+
+
+
+
+
+
+

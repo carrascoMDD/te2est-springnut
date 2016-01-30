@@ -1,0 +1,1108 @@
+{
+    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello 10-trabajos-generales-importacionficheroascii-exito-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod":  "GET",
+            "statuscode":      200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLpath": "/trabajos/trabajoDatosJSON",
+            "URLparms": {
+                "theIdTrabajo": "~idTrabajoTerminado"
+            },
+            "expectedresponsepart": {
+                "vTipo": "TrabajoDatos",
+                "vSuccess": true
+            }
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroHombres": 2,
+        "numeroMujeres": 2
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-check-vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-check-vTipo-TrabajoDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "TrabajoDatos"
+        },
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-check-vTrEstadoTrabajo-Terminado",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTrEstado",
+            "checkValue": "Terminado"
+        },
+        {
+            "name": "suite-01-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineacorrecta-springnut-check-vTrExito-1",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTrExito",
+            "checkValue": 1
+        }
+
+    ],
+    "subs": [
+
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod":  "GET",
+                    "statuscode":      200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "URLpath": "/trabajos/trabajoDatosMiembrosJSON",
+                    "URLparms": {
+                        "theIdTrabajo": "~idTrabajoTerminado",
+                        "theNombresParametros": "theTipoBoletin,theAno,theMes,theProvincia",
+                        "theNombresParakilometros": "theContenidoFichero",
+                        "theNombresResultados": "theNumeroLineas,theNumeroNBOLs,theNumeroNBOLs_Creados,theNumeroNBOLs_YaExistentes,theNLineas_Aceptables,theNLineas_Alteradas,theNLineas_ConDefectos,theNLineas_FDefuncionIncompleta,theNLineas_FNacimientoIncompleta,theNLineas_Ilegibles,theNLineas_NBOLrepetido,theNLineas_NoAceptables,theNLineas_SinEdad,theNLineas_SinNBOL,theNLineas_SinSexo,theNLineas_Vacias,theNumIdentificasCreados",
+                        "theNombresResulkilotados": "theNBOLs,theNBOLs_Creados",
+                        "theIncluyeBlobs": true
+                    }
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vTipo-TrabajoDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "TrabajoDatos"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vTrEstadoTrabajo-Terminado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrEstado",
+                    "checkValue": "Terminado"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vTrExito-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrExito",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theTipoBoletin}.vPaParstr-tipoBoletin",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theTipoBoletin.vPaParstr",
+                    "checkValue": "~tipoBoletin"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theAno}.vPaPardec-anoFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theAno.vPaPardec",
+                    "checkValue": "~anoFichero"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theMes}.vPaPardec-mesFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theMes.vPaPardec",
+                    "checkValue": "~mesFichero"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theProvincia}.vPaPardec-provinciaFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theProvincia.vPaPardec",
+                    "checkValue": "~provinciaFichero"
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroLineas}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroLineas.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Aceptables}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Aceptables.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Alteradas}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Alteradas.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_ConDefectos}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_ConDefectos.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_FDefuncionIncompleta}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_FDefuncionIncompleta.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_FNacimientoIncompleta}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_FNacimientoIncompleta.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Ilegibles}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Ilegibles.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NBOLrepetido}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NBOLrepetido.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NoAceptables}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NoAceptables.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinEdad}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinEdad.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinNBOL}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinNBOL.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinSexo}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinSexo.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Vacias}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Vacias.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs_Creados}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs_Creados.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs_YaExistentes}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs_YaExistentes.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_Creados.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_Creados.vRkResulkilotado",
+                    "checkValue": null
+                }
+            ]
+        },
+
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-sub-Logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES"
+        },
+
+
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-sub-protractor",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "VisitPage-Springnut-Trabajos",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "Visit-Springnut-Trabajos",
+                                "visitURL": "/app/trabajos.html#/trabajos",
+                                "isAngular": true,
+                                "expectedPageTitle": "Trabajos - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Trabajos",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutTrabajos",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Trabajos",
+                                "domIdPrefix": "didSpringnut_Trabajos"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Trabajos",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutTrabajos"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Trabajos",
+                                "compositeSpecs" : [
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Trabajos-Trabajos",
+                                        "gridName": "ListaTrabajos",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "actions": [
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  {
+                                                    "columnToClick": 1,
+                                                    "multiColumns": [
+                                                        { "columnIndex":  0, "spanIndex":  0, "value": "~idTrabajoTerminado"},
+                                                        { "columnIndex":  1, "spanIndex":  0, "value": "ImportacionFicherosASCII"}
+                                                    ]
+                                                },
+                                                "actions": [
+
+                                                    {
+                                                        "actionKind": "EDIT",
+                                                        "editorName": "Trabajo"
+                                                    },
+
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Trabajos-Progresos",
+                                                        "gridName": "Progresos",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+
+                                                            {   "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "LEERLINEAS"},
+                                                                "actions": [
+                                                                    {   "actionKind": "EDIT", "editorName": "Progreso" },
+
+                                                                    {
+                                                                        "actionKind": "GRID",
+                                                                        "name": "Grid-Springnut-Trabajos-Progresos-LEERLINEAS-Muestras",
+                                                                        "gridName": "Muestras",
+                                                                        "noRefresh": true,
+                                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                                        "methodName": "fDoPtr_MultiAction",
+                                                                        "actions": [
+                                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroLineasLeidasDeContenidoFichero"} }
+                                                                        ]
+                                                                    },
+
+                                                                    { "actionKind": "SHOWGRID", "gridName": "Progresos"}
+                                                                ]
+                                                            },
+
+                                                            {   "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "ELIMINARBOLETINESEXISTENTES"},
+                                                                "actions": [
+                                                                    {   "actionKind": "EDIT", "editorName": "Progreso" },
+
+                                                                    {
+                                                                        "actionKind": "GRID",
+                                                                        "name": "Grid-Springnut-Trabajos-Progresos-ELIMINARBOLETINESEXISTENTES-Muestras",
+                                                                        "gridName": "Muestras",
+                                                                        "noRefresh": true,
+                                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                                        "methodName": "fDoPtr_MultiAction",
+                                                                        "actions": [
+                                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroBedsBedcodsBedlitsEliminados"} }
+                                                                        ]
+                                                                    },
+
+                                                                    { "actionKind": "SHOWGRID", "gridName": "Progresos"}
+                                                                ]
+                                                            },
+
+
+                                                            {   "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "ELIMINARFICHEROEXISTENTE"},
+                                                                "actions": [
+                                                                    {   "actionKind": "EDIT", "editorName": "Progreso" },
+
+                                                                    {
+                                                                        "actionKind": "GRID",
+                                                                        "name": "Grid-Springnut-Trabajos-Progresos-ELIMINARFICHEROEXISTENTE-Muestras",
+                                                                        "gridName": "Muestras",
+                                                                        "noRefresh": true,
+                                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                                        "methodName": "fDoPtr_MultiAction",
+                                                                        "actions": [
+                                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroFicheroFasesErroresBloquesEliminados"} }
+                                                                        ]
+                                                                    },
+
+
+                                                                    {
+                                                                        "actionKind": "GRID",
+                                                                        "name": "Grid-Springnut-Trabajos-Progresos-ELIMINARFICHEROEXISTENTE-Mueskilotras",
+                                                                        "gridName": "Mueskilotras",
+                                                                        "noRefresh": true,
+                                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                                        "methodName": "fDoPtr_MultiAction",
+                                                                        "actions": [
+                                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdsFicheroFasesErroresBloquesEliminados"} }
+                                                                        ]
+                                                                    },
+
+                                                                    { "actionKind": "SHOWGRID", "gridName": "Progresos"}
+                                                                ]
+                                                            },
+
+
+                                                            {   "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "CREARFICHEROYBOLETINES"},
+                                                                "actions": [
+                                                                    {   "actionKind": "EDIT", "editorName": "Progreso" },
+
+                                                                    {
+                                                                        "actionKind": "GRID",
+                                                                        "name": "Grid-Springnut-Trabajos-Progresos-CREARFICHEROYBOLETINES-Muestras",
+                                                                        "gridName": "Muestras",
+                                                                        "noRefresh": true,
+                                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                                        "methodName": "fDoPtr_MultiAction",
+                                                                        "actions": [
+                                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroCreados"} }
+                                                                        ]
+                                                                    },
+
+                                                                    { "actionKind": "SHOWGRID", "gridName": "Progresos"}
+                                                                ]
+                                                            },
+
+
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "GUARDARTRABAJOS"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "PLANEARTRABAJOS"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "VALIDARBOLETINES"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  26, "spanIndex":  0, "value":  "INFORMEIMPORTACION"} }
+                                                        ]
+                                                    },
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Trabajos-Parametros",
+                                                        "gridName": "Parametros",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theAno"}
+                                                            },
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theMes"}
+                                                            },
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNombreFichero"}
+                                                            },
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theProvincia"}
+                                                            },
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theTipoBoletin"}
+                                                            }
+                                                        ]
+                                                    },
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Trabajos-Parakilometros",
+                                                        "gridName": "Parakilometros",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+                                                            {
+                                                                "actionKind": "SELECT",
+                                                                "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theContenidoFichero"}
+                                                            }
+                                                        ]
+                                                    },
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Trabajos-Resultados",
+                                                        "gridName": "Resultados",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdFicheroCreado"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdFicheroEliminado"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theMayorNBOL"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theMenorNBOL"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_Aceptables"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_Alteradas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_ConDefectos"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_FDefuncionIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_FNacimientoIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_Ilegibles"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_NBOLrepetido"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_NoAceptables"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_SinEdad"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_SinNBOL"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_SinSexo"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNLineas_Vacias"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumAmbitosCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumAmbitosGuardados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedImagenesEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedcodsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedcodsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedlitsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedlitsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBedsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumBloquesEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumErroresDeBedEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumErroresDeFaseEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumErroresValidacion"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumFasesEliminadas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumFicherosEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumIdentificasCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumIdentificasEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumNBOLsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumPMejorasEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumTrabajosCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumTrabajosGuardados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroLineas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroNBOLs"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroNBOLs_Creados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNumeroNBOLs_YaExistentes"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "thePrimerIdentificaCreado"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "thePrimerNBOL"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theUltimoIdentificaCreado"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theUltimoNBOL"} }
+                                                        ]
+                                                    },
+
+
+
+
+                                                    {
+                                                        "actionKind": "GRID",
+                                                        "name": "Grid-Springnut-Trabajos-Resulkilotados",
+                                                        "gridName": "Resulkilotados",
+                                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                                        "methodName": "fDoPtr_MultiAction",
+                                                        "actions": [
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "Informe"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theDefectosLineas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theEstadosLineas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedImagenesEliminadas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedcodsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedcodsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedlitsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedlitsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedsCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBedsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdBloquesEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdErroresDeFaseEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdErroresEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdErroresEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdFasesEliminadas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdentificasEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdentificas_Creados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdsAmbitosCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIdsTrabajosCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_Aceptables"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_Alteradas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_ConDefectos"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_FDefuncionIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_FNacimientoIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_Ilegibles"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_NBOLrepetido"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_NoAceptables"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_SinEdad"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_SinNBOL"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_SinSexo"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theIndLineas_Vacias"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theLineas"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theLineasDesdeBoletin"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLsEliminados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_ConDefectos"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_Creados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_FDefuncionIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_FNacimientoIncompleta"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_Repetidos"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_SinSexo"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theNBOLs_YaExistentes"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theRutasAmbitosCreados"} },
+                                                            { "actionKind": "SELECT",  "finder":  { "columnIndex":  2, "spanIndex":  0, "value":  "theRutasTrabajosCreados"} }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado",
+            "parmNames": [
+                "idTrabajoTerminado"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/poll-test",
+                    "constructorName": "PollTest_Constructor",
+                    "methodName": "pF_Poll",
+                    "parms": {
+                        "poll": {
+                            "eachParm":     "theNumPolls",
+                            "maxPolls":     100,
+                            "pollInterval": 2000
+                        },
+                        "theNumPolls": null
+                    },
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "hitpoint-import",
+                            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                            "importMode": "STATIC"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-export-idTrabajoTerminado",
+                            "exportAs": "idTrabajoTerminado",
+                            "exportOrigin": "PARMS",
+                            "exportSource": "idTrabajoUltimo",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-subs-trabajoDatosJSON-vTrEstadoTrabajo-Terminado",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod":  "GET",
+                                    "statuscode":      200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "URLpath": "/trabajos/trabajoDatosJSON",
+                                    "URLparms": {
+                                        "theIdTrabajo": "~idTrabajo"
+                                    }
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-sessiontest-export",
+                                    "exportAs": "idTrabajoUltimo",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idTrabajo",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ],
+                            "checks": [
+                                {
+                                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-subs-trabajoDatos-check-vTrEstadoTrabajo-Terminado",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vTrEstado",
+                                    "checkValue": "Terminado"
+                                }
+                            ]
+                        }
+                    ],
+                    "required": [
+
+                        {
+                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-idTrabajo-idEjecucion",
+                            "parmNames": [
+                                "creadolanzadoimportacionficheroascii",
+                                "idTrabajo",
+                                "idEjecucion"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-idTrabajo-idEjecucion-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/importacionficherosascii/crearYLanzarTrabajoImportacionFicheroASCIIJSON",
+                                            "URLparms": null,
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "multiparts": [
+                                                {
+                                                    "parmName" : "theTipoBoletin",
+                                                    "parmValue": "ine",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theFileEncoding",
+                                                    "parmValue": "UTF-8",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theForzar",
+                                                    "parmValue": "true",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theLanzar",
+                                                    "parmValue": "true",
+                                                    "contentType": null
+                                                }
+                                            ],
+                                            "uploads": [
+                                                {
+                                                    "parmName":    "theUploadedFile",
+                                                    "uploadBytes": "~contenidoficheroascii",
+                                                    "contentType": "text/plain"
+                                                }
+                                            ],
+                                            "expectedresponsepart": null
+                                        }
+                                    },
+                                    "checks": [
+                                        {
+                                            "name": "creadolanzadoimportacionficheroascii-check-vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "creadolanzadoimportacionficheroascii-check-vTipo-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-export",
+                                            "exportAs": "creadolanzadoimportacionficheroascii",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-idTrabajo-export",
+                                            "exportAs": "idTrabajo",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vTrIdtrabajo",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-idEjecucion-export",
+                                            "exportAs": "idEjecucion",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vTrIdejecucion",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ],
+                                    "required": [
+                                        {
+                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii",
+                                            "parmNames": [
+                                                "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                                                "contenidoficheroascii"
+                                            ],
+                                            "suppliers": [
+                                                {
+                                                    "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier",
+                                                    "runnable": true,
+                                                    "expectSuccess": true,
+                                                    "module": "@cmppath/common-test/requestreply-test",
+                                                    "constructorName": "RequestReply_Constructor",
+                                                    "methodName": "pF_RequestReply",
+                                                    "parms": {
+                                                        "requestreply": {
+                                                            "requestmethod": "GET",
+                                                            "URLpath": "/aux/ficherosascii/ficheroASCIIDeEjemploParaFicheroDeAnoMesProvinciaJSON",
+                                                            "URLparms": {
+                                                                "theTipoBoletin":          "~tipoBoletin",
+                                                                "theAno":                  "~anoFichero",
+                                                                "theMes":                  "~mesFichero",
+                                                                "theProvincia":            "~provinciaFichero",
+                                                                "theNumeroHombres":        "~numeroHombres",
+                                                                "theNumeroMujeres":        "~numeroMujeres",
+                                                                "theNumNBOLsRepetidos":    0,
+                                                                "theNumNBOLsYaExistentes": 0,
+                                                                "theFechasHombresSpec":    null,
+                                                                "theFechasMujeresSpec":    null,
+                                                                "theReutilizarExistentes": false
+                                                            },
+                                                            "statuscode": 200,
+                                                            "UNUSED_dumpurl":         true,
+                                                            "UNUSED_dumprequestdata": true,
+                                                            "UNUSED_dumpreply":       true
+                                                        }
+                                                    },
+                                                    "scheduleSubs": "SERIES",
+                                                    "checks": [
+                                                        {
+                                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier-check-_v_Reply.vSuccess-true",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vSuccess",
+                                                            "checkValue": true
+                                                        },
+                                                        {
+                                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-contenidoficheroascii-supplier-check-_v_Reply.vTipo-BoletinDatos",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vTipo",
+                                                            "checkValue": "FicheroASCII"
+                                                        }
+
+                                                    ],
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-export",
+                                                            "exportAs": "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "*",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        },
+                                                        {
+                                                            "name": "suite-10-trabajos-generales-importacionficheroascii-exito-browsertest-springnut-require-idTrabajoTerminado-supplier-require-creadolanzadoimportacionficheroascii-require-export-contenidoficheroascii",
+                                                            "exportAs": "contenidoficheroascii",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "_v_Reply.vFicheroASCII",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}
+
+
+
+
+
+
+
+

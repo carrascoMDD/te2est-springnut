@@ -1,0 +1,2219 @@
+{
+    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "nombreOperador":                        "@OPER45454545",
+        "nombreCompletoOperador":                "@OPER45454545 Nombre Completo",
+        "contrasena":                            "OPER45454545",
+        "descripcionOperador":                   "@OPER45454545 descripcion",
+        "nuevaContrasena":                       "OPER45454545x"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-omnipotente-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-omnipotenteConectadoDatos",
+            "parmNames": [
+                "omnipotenteConectadoDatos"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-omnipotenteConectadoDatos-supplier",
+                    "runnable": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "scheduleSubs": "SERIES",
+                    "expectSuccess": true,
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-omnipotenteConectadoDatos-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-omnipotenteConectadoDatos-supplier-export",
+                            "exportAs": "omnipotenteConectadoDatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiesrestablecerincondicionaltest",
+            "parmNames": [
+                "securitypropertiesrestablecerincondicionaltest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiesrestablecerincondicionaltest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theTokenSecurityProperties": "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiesrestablecerincondicionaltest-export",
+                            "exportAs": "securitypropertiesrestablecerincondicionaltest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiesrestablecerincondicionaltest-exportsecurityproperties",
+                            "exportAs": "securityproperties",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiescambiartest",
+            "parmNames": [
+                "securitypropertiescambiartest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiescambiartest-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/cambiarSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theCuentaBloqueada":                      false,
+                                "theUsuarioNoPuedeCambiarPswd":            false,
+                                "theDiasCambioPwd":                        999,
+                                "theUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "theMaxAccesosGracia":                     3,
+                                "theMaxFallos":                            99,
+                                "theDiasCambioPwdMillisShrinkFactor":      2592000,
+                                "theDiasCambioPwdMillisShrinkApply":       false,
+                                "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos",
+                                "vCuentaBloqueada":                      false,
+                                "vUsuarioNoPuedeCambiarPswd":            false,
+                                "vDiasCambioPwd":                        999,
+                                "vUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "vMaxAccesosGracia":                     3,
+                                "vMaxFallos":                            99,
+                                "vDiasCambioPwdMillisShrinkFactor":      2592000,
+                                "vDiasCambioPwdMillisShrinkApply":       false
+                            }
+                        }
+
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiescambiartest-export",
+                            "exportAs": "securitypropertiescambiartest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-securitypropertiescambiartest-exportsecurityproperties",
+                            "exportAs": "securityproperties",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-idperfil",
+            "parmNames": [
+                "idperfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-idperfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "ADMINISTRADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "ADMINISTRADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-idperfil-export",
+                            "exportAs": "idperfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testeliminaroperadorsiexiste",
+            "parmNames": [
+                "testeliminaroperadorsiexiste"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testeliminaroperadorsiexiste-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarOperadorConNombreJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":  "~nombreOperador",
+                                "theExitoSiNoExiste": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testeliminaroperadorsiexiste-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testeliminaroperadorsiexiste-supplier-export",
+                            "exportAs": "testeliminaroperadorsiexiste",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testcrearoperador",
+            "parmNames": [
+                "testcrearoperador",
+                "idOperador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testcrearoperador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfil",
+                                "theNombreOperador":                        "~nombreOperador",
+                                "theNombreCompletoOperador":                "~nombreCompletoOperador",
+                                "theDescripcionOperador":                   "~descripcionOperador",
+                                "theContrasena":                            "~contrasena",
+                                "theRepetirContrasena":                     "~contrasena",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theDiasCambioPwd":                         999,
+                                "theExitoSiYaExiste":                       false
+                            },
+                            "expectedresponsepart": {
+                                "vTipo": "OperadorDatos",
+                                "vSuccess": true,
+                                "vNombreOperador": "@OPER45454545",
+                                "vNombreCompletoOperador": "@OPER45454545 Nombre Completo",
+                                "vDescripcionOperador": "@OPER45454545 descripcion",
+                                "vUsuarioNoPuedeCambiarPswd": false,
+                                "vDiasCambioPwd": 999,
+                                "vCuentaBloqueada": false,
+                                "vCuentaDeshabilitada": false,
+                                "vCredencialesExpiradas": false,
+                                "vNumeroAccesosGracia": 0,
+                                "vUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "vAccesosGraciaRestantes": 3,
+                                "vMaxAccesosGracia": 3,
+                                "vPuedeConectarse": true
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testcrearoperador-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testcrearoperador-supplier-export",
+                            "exportAs": "testcrearoperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-require-testcrearoperador-supplier-export-idOperador",
+                            "exportAs": "idOperador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "subs": [
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatosJSON",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest2",
+                    "expectedresponsepart": null,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatosJSON-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatosJSON-check-_v_Reply.vTipo-OperadorDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "OperadorDatos"
+                }
+            ],
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador",
+                    "parmNames": [
+                        "credentialsNuevoOperador"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-credentialsNuevoOperador-export-credentialsNuevoOperador",
+                                    "exportAs": "credentialsNuevoOperador",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-logintest2",
+                    "parmNames": [
+                        "logintest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-logintest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-logintest2-export",
+                                    "exportAs": "logintest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2",
+                    "parmNames": [
+                        "isauthenticatedtest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-isauthenticatedtest2-export",
+                                    "exportAs": "isauthenticatedtest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-sessiontest2",
+                    "parmNames": [
+                        "sessiontest2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest2",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest2"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-operadorConectadoDatos-require-sessiontest2-export",
+                                    "exportAs": "sessiontest2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest2"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "logintestparmname": "logintest2",
+                    "lazy": false
+                }
+            }
+        },
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/administracionOperadores/cambiarOperadorAlgunosDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest3",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theIdOperador":                                    "~idOperador",
+                        "theNombreOperador_cambiar":                        false,
+                        "theNombreOperador":                                null,
+                        "theNombreCompletoOperador_cambiar":                false,
+                        "theNombreCompletoOperador":                        null,
+                        "theDescripcionOperador_cambiar":                   false,
+                        "theDescripcionOperador":                           null,
+                        "theCuentaBloqueada_cambiar":                       false,
+                        "theCuentaBloqueada":                               null,
+                        "theUsuarioDebeCambiarPswdAInicioDeSesion_cambiar": false,
+                        "theUsuarioDebeCambiarPswdAInicioDeSesion":         null,
+                        "theUsuarioNoPuedeCambiarPswd_cambiar":             false,
+                        "theUsuarioNoPuedeCambiarPswd":                     null,
+                        "theDiasCambioPwd_cambiar":                         true,
+                        "theDiasCambioPwd":                                 1
+                    },
+                    "expectedresponsepart": {
+                        "vSuccess": true,
+                        "vTipo": "CambiadoOperador",
+                        "vOperadorDespues": {
+                            "vCuentaBloqueada": false
+                        }
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2",
+                    "parmNames": [
+                        "credentialsOmnipotente2"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "imports": [
+                                {
+                                    "name": "credentials-import",
+                                    "configurationPath": "@testspath/springnut-host/parms-credentials-omnipotente.json",
+                                    "importMode": "STATIC"
+                                }
+                            ],
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.username",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.password",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-credentialsOmnipotente2-export-credentialsOmnipotente2",
+                                    "exportAs": "credentialsOmnipotente2",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-logintest3",
+                    "parmNames": [
+                        "logintest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-logintest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-logintest3-export",
+                                    "exportAs": "logintest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-isauthenticatedtest3",
+                    "parmNames": [
+                        "isauthenticatedtest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-isauthenticatedtest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest3"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-isauthenticatedtest3-export",
+                                    "exportAs": "isauthenticatedtest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-sessiontest3",
+                    "parmNames": [
+                        "sessiontest3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-sessiontest3-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest3",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest3"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-require-sessiontest3-export",
+                                    "exportAs": "sessiontest3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "subs": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub1-cambiarDiasCambioPwdOperadorYSecurityProperties-sub-cambiarSecurityProperties",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/securityProperties/cambiarSecurityPropertiesJSON",
+                            "statuscode": 200,
+                            "sessiontestparmname": "sessiontest3",
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theCuentaBloqueada":                      false,
+                                "theUsuarioNoPuedeCambiarPswd":            false,
+                                "theDiasCambioPwd":                        999,
+                                "theUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "theMaxAccesosGracia":                     3,
+                                "theMaxFallos":                            99,
+                                "theDiasCambioPwdMillisShrinkFactor":      864000000000,
+                                "theDiasCambioPwdMillisShrinkApply":       true,
+                                "theTokenSecurityProperties":              "TokenSecurityPropertiesMagic7665132134"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "SecurityPropertiesDatos",
+                                "vCuentaBloqueada":                      false,
+                                "vUsuarioNoPuedeCambiarPswd":            false,
+                                "vDiasCambioPwd":                        999,
+                                "vUsuarioDebeCambiarPswdAInicioSesion":  false,
+                                "vMaxAccesosGracia":                     3,
+                                "vMaxFallos":                            99,
+                                "vDiasCambioPwdMillisShrinkFactor":      864000000000,
+                                "vDiasCambioPwdMillisShrinkApply":       true
+                            }
+                        }
+
+                    }
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest3"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest3"
+                }
+            }
+        },
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest4",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "expectedresponsepart": {
+                        "vTipo": "OperadorDatos",
+                        "vSuccess": true,
+                        "vNombreOperador": "@OPER45454545",
+                        "vNombreCompletoOperador": "@OPER45454545 Nombre Completo",
+                        "vDescripcionOperador": "@OPER45454545 descripcion",
+                        "vUsuarioNoPuedeCambiarPswd": false,
+                        "vDiasCambioPwd": 1,
+                        "vCuentaBloqueada": false,
+                        "vCuentaDeshabilitada": false,
+                        "vCredencialesExpiradas": false,
+                        "vNumeroAccesosFallidos": 0,
+                        "vNumeroAccesosGracia": 1,
+                        "vUsuarioDebeCambiarPswdAInicioDeSesion": true,
+                        "vAccesosGraciaRestantes": 2,
+                        "vMaxAccesosGracia": 3,
+                        "vPuedeConectarse": true
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas",
+                    "parmNames": [
+                        "credentialsNuevoOperador2correctas"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-credentialsNuevoOperador2correctas-export-credentialsNuevoOperador2correctas",
+                                    "exportAs": "credentialsNuevoOperador2correctas",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-logintest4",
+                    "parmNames": [
+                        "logintest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-logintest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-logintest4-export",
+                                    "exportAs": "logintest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-isauthenticatedtest4",
+                    "parmNames": [
+                        "isauthenticatedtest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-isauthenticatedtest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest4"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-isauthenticatedtest4-export",
+                                    "exportAs": "isauthenticatedtest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-sessiontest4",
+                    "parmNames": [
+                        "sessiontest4"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-sessiontest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest4",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest4"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub2-accesogracia1-require-sessiontest4-export",
+                                    "exportAs": "sessiontest4",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest4"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest4"
+                }
+            }
+        },
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest5",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "expectedresponsepart": {
+                        "vTipo": "OperadorDatos",
+                        "vSuccess": true,
+                        "vNombreOperador": "@OPER45454545",
+                        "vNombreCompletoOperador": "@OPER45454545 Nombre Completo",
+                        "vDescripcionOperador": "@OPER45454545 descripcion",
+                        "vUsuarioNoPuedeCambiarPswd": false,
+                        "vDiasCambioPwd": 1,
+                        "vCuentaBloqueada": false,
+                        "vCuentaDeshabilitada": false,
+                        "vCredencialesExpiradas": false,
+                        "vNumeroAccesosGracia": 2,
+                        "vUsuarioDebeCambiarPswdAInicioDeSesion": true,
+                        "vAccesosGraciaRestantes": 1,
+                        "vMaxAccesosGracia": 3,
+                        "vPuedeConectarse": true
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas",
+                    "parmNames": [
+                        "credentialsNuevoOperador3correctas"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-credentialsNuevoOperador3correctas-export-credentialsNuevoOperador3correctas",
+                                    "exportAs": "credentialsNuevoOperador3correctas",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-logintest5",
+                    "parmNames": [
+                        "logintest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-logintest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-logintest4-export",
+                                    "exportAs": "logintest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-isauthenticatedtest5",
+                    "parmNames": [
+                        "isauthenticatedtest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-isauthenticatedtest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest5"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-isauthenticatedtest4-export",
+                                    "exportAs": "isauthenticatedtest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-sessiontest5",
+                    "parmNames": [
+                        "sessiontest5"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-sessiontest4-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest5",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest5"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub3-accesogracia2-require-sessiontest4-export",
+                                    "exportAs": "sessiontest5",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinallogout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest5"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalisauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest5"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/aux/securityProperties/restablecerSecurityPropertiesJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontest9",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theTokenSecurityProperties": "TokenSecurityPropertiesMagic7665132134"
+                    },
+                    "expectedresponsepart": {
+                        "vSuccess": true,
+                        "vTipo": "SecurityPropertiesDatos"
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3",
+                    "parmNames": [
+                        "credentialsOmnipotente3"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "imports": [
+                                {
+                                    "name": "credentials-import",
+                                    "configurationPath": "@testspath/springnut-host/parms-credentials-omnipotente.json",
+                                    "importMode": "STATIC"
+                                }
+                            ],
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.username",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentials-contrasena",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsOmnipotente.password",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-credentialsOmnipotente3-export-credentialsOmnipotente3",
+                                    "exportAs": "credentialsOmnipotente3",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-logintest9",
+                    "parmNames": [
+                        "logintest9"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-logintest9-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-logintest9-export",
+                                    "exportAs": "logintest9",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-isauthenticatedtest9",
+                    "parmNames": [
+                        "isauthenticatedtest9"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-isauthenticatedtest9-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintest9"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-isauthenticatedtest9-export",
+                                    "exportAs": "isauthenticatedtest9",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-sessiontest9",
+                    "parmNames": [
+                        "sessiontest9"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-sessiontest9-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintest9",
+                                    "isauthenticatedtestparmname": "isauthenticatedtest9"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-restablecerSecurityPropertiesFinalrestablecerSecurityPropertiesFinal-require-sessiontest9-export",
+                                    "exportAs": "sessiontest9",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-subcambiarcontrasena-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintest9"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-subcambiarcontrasena-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintest9"
+                }
+            }
+        },
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/administracionOperadores/cambiarContrasenaOperadorConectadoJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontestcambiarcontrasena",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theContrasenaActual":  "~contrasena",
+                        "theContrasena":        "~nuevaContrasena",
+                        "theRepetirContrasena": "~nuevaContrasena"
+                    },
+                    "expectedresponsepart": {
+                        "vTipo": "CambiadaContrasena",
+                        "vSuccess": true
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena",
+                    "parmNames": [
+                        "credentialsNuevoOperadorCorrectasCambiarContrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "contrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-credentialsNuevoOperadorCorrectasCambiarContrasena-export-credentialsNuevoOperadorCorrectasCambiarContrasena",
+                                    "exportAs": "credentialsNuevoOperadorCorrectasCambiarContrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-logintestcambiarcontrasena",
+                    "parmNames": [
+                        "logintestcambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-logintestcambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-logintestcambiarcontrasena-export",
+                                    "exportAs": "logintestcambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-isauthenticatedtestcambiarcontrasena",
+                    "parmNames": [
+                        "isauthenticatedtestcambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-isauthenticatedtestcambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintestcambiarcontrasena"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-isauthenticatedtestcambiarcontrasena-export",
+                                    "exportAs": "isauthenticatedtestcambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-sessiontestcambiarcontrasena",
+                    "parmNames": [
+                        "sessiontestcambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-sessiontestcambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintestcambiarcontrasena",
+                                    "isauthenticatedtestparmname": "isauthenticatedtestcambiarcontrasena"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-cambiarcontrasena-require-sessiontestcambiarcontrasena-export",
+                                    "exportAs": "sessiontestcambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-logout",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/general-test/security-test/logout-test",
+            "constructorName": "LogoutTest_Constructor",
+            "methodName": "pF_Logout",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "logout": {
+                    "logintestparmname": "logintestcambiarcontrasena"
+                }
+            }
+        },
+
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false,
+                    "logintestparmname": "logintestcambiarcontrasena"
+                }
+            }
+        },
+        {
+            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena",
+            "runnable": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "expectSuccess": true,
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "GET",
+                    "URLpath": "/administracionOperadores/operadorConectadoDatosJSON",
+                    "statuscode": 200,
+                    "sessiontestparmname": "sessiontesttrascambiarcontrasena",
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": null,
+                    "expectedresponsepart": {
+                        "vTipo": "OperadorDatos",
+                        "vSuccess": true,
+                        "vNombreOperador": "@OPER45454545",
+                        "vNombreCompletoOperador": "@OPER45454545 Nombre Completo",
+                        "vDescripcionOperador": "@OPER45454545 descripcion",
+                        "vUsuarioNoPuedeCambiarPswd": false,
+                        "vDiasCambioPwd": 1,
+                        "vCuentaBloqueada": false,
+                        "vCuentaDeshabilitada": false,
+                        "vCredencialesExpiradas": false,
+                        "vNumeroAccesosFallidos": 0,
+                        "vNumeroAccesosGracia": 0,
+                        "vUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                        "vAccesosGraciaRestantes": 2,
+                        "vMaxAccesosGracia": 2,
+                        "vPuedeConectarse": true
+                    }
+                }
+            },
+            "required": [
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena",
+                    "parmNames": [
+                        "credentialsNuevoOperadorCorrectasTrasCambiarContrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "credentialsToExport": {
+                                    "username": "usernametobesetbyexport",
+                                    "password": "passwordtobesetbyexport"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena-export-credentials",
+                                    "exportAs": "credentials",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "credentialsToExport",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena-export-credentials-username",
+                                    "exportAs": "credentials.username",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nombreOperador",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena-export-credentials-username",
+                                    "exportAs": "credentials.password",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nuevaContrasena",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-credentialsNuevoOperadorCorrectasTrasCambiarContrasena-export-credentialsNuevoOperadorCorrectasTrasCambiarContrasena",
+                                    "exportAs": "credentialsNuevoOperadorCorrectasTrasCambiarContrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-logintesttrascambiarcontrasena",
+                    "parmNames": [
+                        "logintesttrascambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-logintesttrascambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/login-springnut-test",
+                            "constructorName": "LoginSpringnutTest_Constructor",
+                            "methodName": "pF_Login",
+                            "scheduleSubs": "SERIES",
+                            "parms": {
+                                "login": {
+                                    "lazy": false
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-logintesttrascambiarcontrasena-export",
+                                    "exportAs": "logintesttrascambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-isauthenticatedtesttrascambiarcontrasena",
+                    "parmNames": [
+                        "isauthenticatedtesttrascambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-isauthenticatedtesttrascambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/isauthenticated-springnut-test",
+                            "constructorName": "IsAuthenticatedSpringnutTest_Constructor",
+                            "methodName": "pF_IsAuthenticated",
+                            "parms": {
+                                "isauthenticated": {
+                                    "lazy": false,
+                                    "logintestparmname": "logintesttrascambiarcontrasena"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-isauthenticatedtesttrascambiarcontrasena-export",
+                                    "exportAs": "isauthenticatedtesttrascambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-sessiontesttrascambiarcontrasena",
+                    "parmNames": [
+                        "sessiontestcambiarcontrasena"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-sessiontesttrascambiarcontrasena-supplier",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/springnut-test/security-test/session-springnut-test",
+                            "constructorName": "SessionSpringnutTest_Constructor",
+                            "methodName": "pF_Session",
+                            "parms": {
+                                "session": {
+                                    "lazy": false,
+                                    "logintestparmname":           "logintesttrascambiarcontrasena",
+                                    "isauthenticatedtestparmname": "isauthenticatedtesttrascambiarcontrasena"
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-31-autentificacion-credencialesexpiradas-evitarantesmaxaccesosgracia-springnut-test-sub-trascambiarcontrasena-require-sessiontesttrascambiarcontrasena-export",
+                                    "exportAs": "sessiontestcambiarcontrasena",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

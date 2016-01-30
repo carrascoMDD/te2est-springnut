@@ -1,0 +1,12 @@
+[
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-01-perfilespaginas-sinperfiles-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-11-perfilespaginas-administrador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-12-perfilespaginas-codificador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-13-perfilespaginas-grabador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-21-perfilespaginas-noadministrador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-22-perfilespaginas-nocodificador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-23-perfilespaginas-nograbador-fail-browsertest.json",
+    "@testspath/springnut/browser-springnut/perfilespaginas-browser-springnut/suite-51-perfilespaginas-sinperfiles-ok-browsertest.json"
+
+]
+

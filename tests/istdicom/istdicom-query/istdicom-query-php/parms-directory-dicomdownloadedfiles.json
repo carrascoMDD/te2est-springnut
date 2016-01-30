@@ -1,0 +1,10 @@
+{
+    "name": "parms-directory-dicomdownloadedfiles",
+    "parms": {
+        "parmsfordirectorydicomdownloadedfiles": {
+            "baseDirectoryIstStudyInstanceItems":    "~/ISTdownloads/queryPHP/ISTstudyInstanceItems",
+            "directoryIstStudyInstanceItemImages":   "ISTstudyInstanceItemImages"
+        }
+    }
+}
+

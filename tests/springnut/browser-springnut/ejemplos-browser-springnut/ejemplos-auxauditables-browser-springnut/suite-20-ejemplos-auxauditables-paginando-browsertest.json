@@ -1,0 +1,742 @@
+{
+    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/security-test/logout-test",
+    "constructorName": "LogoutTest_Constructor",
+    "methodName": "pF_Logout",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-20-ejemplos-auxauditables-paginando-browsertest-. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "auxkey": "@auxkeyui20",
+        "auxnum": 6200020,
+        "auxstr": "@auxaudstrui20",
+        "auxtxt": "@auxaudtxtui\nauxaudtxtuil2\nauxaudtxtuil3\nauxaudtxtuil4\nauxaudtxtuil5",
+        "auxboo": true,
+        "auxkeyCambiado": "@auxkeyui20Cambiado",
+        "auxnumCambiado": 6200220,
+        "auxstrCambiado": "@auxaudstrui20Cambiado",
+        "auxtxtCambiado": "@auxaudtxtuiCambiado\nauxaudtxtuiCambiadol2\nauxaudtxtuiCambiadol3\nauxaudtxtuiCambiadol4\nauxaudtxtuiCambiadol5",
+        "auxbooCambiado": true,
+        "auxkeyOtro": "@auxkeyui20Otro",
+        "auxnumOtro": 6200320,
+        "auxstrOtro": "@auxaudstrui20Otro",
+        "auxtxtOtro": "@auxaudtxtuiOtro\nauxaudtxtuiOtrol2\nauxaudtxtuiOtrol3\nauxaudtxtuiOtrol4\nauxaudtxtuiOtrol5",
+        "auxbooOtro": true,
+        "auxkeyDetalle": "@auxkeyDetalle",
+        "auxnumDetalle": 6200220,
+        "auxstrDetalle": "@auxaudstrui20Detalle",
+        "auxtxtDetalle": "@auxaudtxtuiDetalle\nauxaudtxtuiDetallel2\nauxaudtxtuiDetallel3\nauxaudtxtuiDetallel4\nauxaudtxtuiDetallel5",
+        "auxbooDetalle": true,
+        "auxkeyDetalleCambiado": "@auxkeyDetalleCambiado",
+        "auxnumDetalleCambiado": 6200220,
+        "auxstrDetalleCambiado": "@auxaudstrui20DetalleCambiado",
+        "auxtxtDetalleCambiado": "@auxaudtxtuiDetalleCambiado\nauxaudtxtuiDetalleCambiadol2\nauxaudtxtuiDetalleCambiadol3\nauxaudtxtuiDetalleCambiadol4\nauxaudtxtuiDetalleCambiadol5",
+        "auxbooDetalleCambiado": true,
+        "auxkeyDetalleOtro": "@auxkeyDetalleOtro",
+        "auxnumDetalleOtro": 6200420,
+        "auxstrDetalleOtro": "@auxaudstrui20DetalleOtro",
+        "auxtxtDetalleOtro": "@auxaudtxtuiDetalleOtro\nauxaudtxtuiDetalleOtrol2\nauxaudtxtuiDetalleOtrol3\nauxaudtxtuiDetalleOtrol4\nauxaudtxtuiDetalleOtrol5",
+        "auxbooDetalleOtro": true,
+        "todasauxkeys": [
+            "@auxkeyui20-01",
+            "@auxkeyui20-02",
+            "@auxkeyui20-03",
+            "@auxkeyui20-04",
+            "@auxkeyui20-05",
+            "@auxkeyui20-06",
+            "@auxkeyui20-07",
+            "@auxkeyui20-08",
+            "@auxkeyui20-09",
+            "@auxkeyui20-10"
+        ]
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instaladministrador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-fecha",
+            "exportAs": "fecha",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahora",
+            "exportAs": "fechahora",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaCambiado",
+            "exportAs": "fechaCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraCambiado",
+            "exportAs": "fechahoraCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaOtro",
+            "exportAs": "fechaOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraOtro",
+            "exportAs": "fechahoraOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalle",
+            "exportAs": "fechaDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_DateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalle",
+            "exportAs": "fechahoraDetalle",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleCambiado",
+            "exportAs": "fechaDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleCambiado",
+            "exportAs": "fechahoraDetalleCambiado",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechaDetalleOtro",
+            "exportAs": "fechaDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowDateStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        },
+        {
+            "name": "export-fechahoraDetalleOtro",
+            "exportAs": "fechahoraDetalleOtro",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_TomorrowTimestampStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFOREREQUIREDS"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut-require-sessiontest",
+            "parmNames": [
+                "sessiontest",
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut-require-sessiontest-supplier",
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instaladministrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_IsAuthenticated",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-browsertest-springnut-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Login",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables",
+            "parmNames": [
+                "eliminarSiExistenYCrearAuxauditables"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-browsertest-springnut",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/iterator-test",
+                    "constructorName": "IteratorTest_Constructor",
+                    "methodName": "pF_Iterator",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "iterator": {
+                            "rangeParm": "todasauxkeys",
+                            "eachParm":  "unaauxkey",
+                            "endidx":    null
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-export",
+                            "exportAs": "eliminarSiExistenYCrearAuxauditables",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-auxAuxauditablePorKeyEliminar-browsertest-springnut",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod": "POST",
+                                    "URLpath": "/aux/auditables/auxAuxauditablePorKeyEliminarJSON",
+                                    "requestdata": {
+                                        "theAuxKey": "~unaauxkey",
+                                        "theExitoSiNoExiste": true
+                                    },
+                                    "statuscode": 200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "expectedresponsepart": {
+                                        "vTipo":   "AuxauditableDatos",
+                                        "vSuccess": true
+                                    }
+                                }
+                            },
+                            "checks": [
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-auxAuxauditablePorKeyEliminar-check-vTipo-AuxauditableDatos",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vTipo",
+                                    "checkValue": "AuxauditableDatos"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-auxAuxauditablePorKeyEliminar-check-vSuccess-true",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vSuccess",
+                                    "checkValue": true
+                                }
+                            ]
+                        },
+                        {
+                            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod": "POST",
+                                    "URLpath": "/aux/auditables/crearAuxauditableJSON",
+                                    "requestdata": {
+                                        "theAuxKey": "~unaauxkey",
+                                        "theAuxNum": "~auxnum",
+                                        "theAuxStr": "~unaauxkey",
+                                        "theAuxTxt": "~unaauxkey",
+                                        "theAuxBoo": "~auxboo",
+                                        "theAuxFechaStr": "~fecha",
+                                        "theAuxFechaHoraStr": "~fechahora",
+                                        "theExitoSiYaExiste": false
+                                    },
+                                    "statuscode": 200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "expectedresponsepart": {
+                                        "vTipo": "AuxauditableDatos",
+                                        "vSuccess": true
+                                    }
+                                }
+                            },
+                            "scheduleSubs": "SERIES",
+                            "checks": [
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-_v_Reply.vSuccess-true",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vSuccess",
+                                    "checkValue": true
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-_v_Reply.vTipo-AuxauditableDatos",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vTipo",
+                                    "checkValue": "AuxauditableDatos"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxKey-auxkey",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxKey",
+                                    "checkValue": "~unaauxkey"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxNum-auxnum",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxNum",
+                                    "checkValue": "~auxnum"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxStr-auxstr",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxStr",
+                                    "checkValue": "~unaauxkey"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxTxt-auxtxt",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxTxt",
+                                    "checkValue": "~unaauxkey"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxBoo-auxboo",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxBoo",
+                                    "checkValue": "~auxboo"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxDateStr-auxfecha",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxDateStr",
+                                    "checkValue": "~fecha"
+                                },
+                                {
+                                    "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-springnut-require-eliminarSiExistenYCrearAuxauditables-supplier-sub-crearAuxauditable-check-vAuxTimestampStr-auxfechahora",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vAuxTimestampStr",
+                                    "checkValue": "~fechahora"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest-isauthenticated-mustfail",
+            "runnable": true,
+            "expectSuccess": false,
+            "module": "@cmppath/general-test/security-test/isauthenticated-test",
+            "constructorName": "IsAuthenticatedTest_Constructor",
+            "methodName": "pF_IsAuthenticated",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "isauthenticated": {
+                    "lazy": false
+                }
+            }
+        },
+
+
+        {
+            "name": "suite-20-ejemplos-auxauditables-paginando-browsertest",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/browser-test/protractor-parmsspec-test",
+            "constructorName": "ProtractorParmsSpecTest_Constructor",
+            "methodName": "pF_ProtractorTest",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "protractor": {
+                    "allScriptsTimeout": 240000,
+                    "seleniumAddress": "http://localhost:4444/wd/hub",
+                    "jasmineNodeOpts": {
+                        "defaultTimeoutInterval": 300000
+                    },
+                    "capabilities":  {
+                        "browserName": "chrome",
+                        "count": 1,
+                        "shardTestFiles": false,
+                        "maxInstances": 1
+                    },
+                    "specs": [ "~someProtractorHelpers"]
+                },
+                "someProtractorHelpers": [
+
+
+                    {
+                        "name": "Login",
+                        "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                        "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                        "methodName": "pDoPtr_SpringnutLogin",
+                        "helperParms": {
+                            "login": {
+                                "name":                    "LoginToSpringnut",
+                                "loginURL":                "/login",
+                                "isAngular":               false,
+                                "userNameLocatorKind":     "css",
+                                "userNameLocator":         "input[name='j_username']",
+                                "passwordLocatorKind":     "css",
+                                "passwordLocator":         "input[name='j_password']",
+                                "loginButtonLocatorKind":  "css",
+                                "loginButtonLocator":      "button[name='login']",
+                                "userName":                null,
+                                "password":                null,
+                                "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                                "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+                    {
+                        "name": "VisitPage-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/visitpage-testhelper",
+                        "constructorName": "VisitPageTestHelper_Constructor",
+                        "methodName": "pDoPtr_VisitPage",
+                        "helperParms": {
+                            "visit": {
+                                "name": "Visit-Springnut-Ejemplos",
+                                "visitURL": "/app/ejemplos.html#/ejemplos",
+                                "isAngular": true,
+                                "expectedPageTitle": "Ejemplos - Ejemplo de instrumentación SpringNut"
+                            }
+                        }
+                    },
+
+
+
+
+
+
+                    {
+                        "name": "WidgetCtrls-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/widgetctrls-testhelper",
+                        "constructorName": "WidgetCtrlsTestHelper_Constructor",
+                        "methodName": "pDoPtr_InitWithHelperParms",
+                        "reuseInstanceAsExtraParm": "widgetctrlSpringnutEjemplos",
+                        "helperParms": {
+                            "widgetctrls": {
+                                "name":        "WidgetCtrls-Springnut-Ejemplos",
+                                "domIdPrefix": "didSpringnut_Ejemplos"
+                            }
+                        }
+                    },
+
+
+                    {
+                        "name": "MultiComposite-Springnut-Ejemplos",
+                        "module": "@cmppath/browser-test/multicomposite-testhelper",
+                        "constructorName": "MultiCompositeTestHelper_Constructor",
+                        "methodName": "pDoPtr_MultiComposite",
+                        "extraConstructorParms": [ "widgetctrlSpringnutEjemplos"],
+                        "helperParms": {
+                            "multiComposite": {
+                                "name": "Ejemplos",
+                                "compositeSpecs" : [
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-ListaAuxauditables-editarAuxauditablesEnPrimeraYSegundaPagina",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            { "actionKind": "PAGEMAXSIZE", "pageMaxSize": 5},
+
+
+                                            { "actionKind": "ALLARGUMENTS", "argumentsName": "FechasListaAuxauditables"},
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-10"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-09"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-08"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-07"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-06"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+
+
+
+
+
+
+
+                                            { "actionKind": "NEXTPAGE"},
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-05"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-04"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-03"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-02"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-01"},
+                                                "actions": [ { "actionKind": "EDIT", "editorName": "Auxauditable"}]
+                                            }
+                                        ]
+                                    },
+
+
+
+
+
+                                    {
+                                        "name": "MultiAction-Springnut-Ejemplos-ListaAuxauditables-eliminarAuxauditablesEnSegundaYPrimeraPagina",
+                                        "gridName": "ListaAuxauditables",
+                                        "module": "@cmppath/browser-test/multiaction-testhelper",
+                                        "constructorName": "MultiActionTestHelper_Constructor",
+                                        "methodName": "fDoPtr_MultiAction",
+                                        "noRefresh": true,
+                                        "actions": [
+
+                                            { "actionKind": "PAGEMAXSIZE", "pageMaxSize": 5},
+
+
+                                            { "actionKind": "ALLARGUMENTS", "argumentsName": "FechasListaAuxauditables"},
+
+
+
+                                            { "actionKind": "NEXTPAGE"},
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-01"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            { "actionKind": "NEXTPAGE"},
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-02"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            { "actionKind": "NEXTPAGE"},
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-03"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            { "actionKind": "NEXTPAGE"},
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-04"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            { "actionKind": "NEXTPAGE"},
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-05"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+
+
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-06"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-07"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-08"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-09"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            },
+
+                                            {
+                                                "actionKind": "SELECT",
+                                                "finder":  { "columnIndex":  3, "spanIndex":  0, "value":  "@auxkeyui20-10"},
+                                                "actions": [ { "actionKind": "DELETE"}]
+                                            }
+
+
+
+
+
+
+
+
+                                        ]
+                                    }
+
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+[
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-10-edivalidaciones-noautorizado-crearvalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-11-edivalidaciones-noautorizado-cambiarvalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-12-edivalidaciones-noautorizado-eliminarvalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-14-edivalidaciones-noautorizado-cambiaralgunosdatosvalidacion-springnut-test.json",
+
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-20-edivalidaciones-noautorizado-crearcondiciondevalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-21-edivalidaciones-noautorizado-cambiarcondiciondevalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-22-edivalidaciones-noautorizado-eliminarcondiciondevalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-25-edivalidaciones-noautorizado-cambiaralgunosdatoscondiciondevalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-26-edivalidaciones-noautorizado-verificarcondiciondevalidacion-springnut-test.json",
+
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-28-edivalidaciones-noautorizado-actualizarcondiciondevalidacion-springnut-test.json",
+
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-46-edivalidaciones-noautorizado-verificartodascondicionesdevalidacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-47-edivalidaciones-noautorizado-listaverificacionescondiciondevalidacion-necesitandoactualizacion-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-48-edivalidaciones-noautorizado-actualizartodascondicionesdevalidacion-springnut-test.json",
+
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-30-edivalidaciones-noautorizado-crearlistacodigos-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-31-edivalidaciones-noautorizado-cambiarlistacodigos-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-32-edivalidaciones-noautorizado-eliminarlistacodigos-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-34-edivalidaciones-noautorizado-cambiaralgunosdatoslistacodigos-springnut-test.json",
+
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-35-edivalidaciones-noautorizado-crearcodigodelista-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-37-edivalidaciones-noautorizado-eliminarcodigodelista-springnut-test.json",
+    "@testspath/springnut/edivalidaciones-springnut/edivalidaciones-noautorizado/suite-38-edivalidaciones-noautorizado-cambiarcodigodelista-springnut-test.json"
+
+
+]
+
+

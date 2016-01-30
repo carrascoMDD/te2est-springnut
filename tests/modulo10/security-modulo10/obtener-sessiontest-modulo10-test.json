@@ -1,0 +1,59 @@
+{
+    "name": "obtener-sessiontest-modulo10-test",
+    "expectSuccess": true,
+    "module": "@cmppath/modulo10-test/security-test/session-modulo10-test",
+    "constructorName": "SessionModulo10Test_Constructor",
+    "methodName": "pF_Session",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "login": {
+            "lazy": true
+        },
+        "isauthenticated": {
+            "lazy": true
+        },
+        "session": {
+            "lazy": true
+        }
+    },
+    "required": [
+        {
+            "name": "obtener-sessiontest-modulo10-require-isauthenticatedtest-logintest",
+            "parmNames": [
+                "isauthenticatedtest",
+                "logintest"
+            ],
+            "suppliers": [
+                {
+                    "name": "obtener-sessiontest-modulo10-require-isauthenticatedtest-logintest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-isauthenticated-test-imported",
+                            "configurationPath": "@testspath/modulo10/security-modulo10/obtener-isauthenticatedtest-modulo10-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "obtener-sessiontest-modulo10-require-isauthenticatedtest-export",
+                            "exportAs": "isauthenticatedtest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "obtener-sessiontest-modulo10-require-logintest-export",
+                            "exportAs": "logintest",
+                            "exportOrigin": "PARMS",
+                            "exportSource": "logintest",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+

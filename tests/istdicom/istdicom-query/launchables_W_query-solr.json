@@ -1,0 +1,4 @@
+[
+    "@testspath/istdicom/istdicom-query/istdicom-query-solr/launchables.json",
+    "@testspath/istdicom/istdicom-query/istdicom-query-php/launchables.json"
+]

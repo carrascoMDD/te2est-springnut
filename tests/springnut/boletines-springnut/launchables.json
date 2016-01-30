@@ -1,0 +1,15 @@
+[
+
+    "@testspath/springnut/boletines-springnut/suite-10-boletines-lista-ligera-ine-springnut-test.json",
+
+    "@testspath/springnut/boletines-springnut/suite-12-boletines-lista-detallada-ine-springnut-test.json",
+
+    "@testspath/springnut/boletines-springnut/suite-14-boletines-lista-detallada-conbaseendetalles-ine-springnut-test.json",
+
+    "@testspath/springnut/boletines-springnut/suite-22-boletines-datos-detallados-ine-springnut-test.json",
+
+    "@testspath/springnut/boletines-springnut/suite-24-boletines-datos-detallados-conbaseendetalles-ine-springnut-test.json"
+
+
+]
+

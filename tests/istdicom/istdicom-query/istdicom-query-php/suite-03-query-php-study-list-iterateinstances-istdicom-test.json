@@ -1,0 +1,264 @@
+{
+    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test",
+    "runnable": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "expectSuccess": true,
+    "parms": {
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-php-import",
+            "configurationPath": "@testspath/istdicom-host/parms-hitpoint-php.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "iterators-php-import",
+            "configurationPath": "@testspath/istdicom-host/istdicom-query/istdicom-query-php/parms-iterators-php-some.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "exports": [
+        {
+            "name": "export-millis",
+            "exportAs": "millis",
+            "exportOrigin": "TEST",
+            "exportSource": "_v_MillisStr",
+            "exportTarget": ".",
+            "exportWhen": "EXBEFORESUBS"
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "baseURLparmName": "hitpointphp.baseURLphp",
+                    "requestmethod": "GET",
+                    "URLpath": "/solrQuery/consultaSolrNew.php",
+                    "URLparms": {
+                        "_dc": "~millis",
+                        "serverHostname": "solr.desknova.com",
+                        "serverPort": 8983,
+                        "ruta": "solr/mia_dcm",
+                        "todo": false,
+                        "q": "TIPOFICHERO_scustom:DICOM Study",
+                        "limit": 25,
+                        "rows": 25,
+                        "caller": "getIndexedFiles",
+                        "comboFilterProperty": null,
+                        "comboFilterValue": null,
+                        "query": null,
+                        "deleteRecords": false,
+                        "page": 1,
+                        "start": 0,
+                        "lang": "en"
+                    },
+                    "NOTUSED_URLfull": "http://paragon.desknova.com/php/commons/solrQuery/consultaSolrNew.php?_dc=1436921057943&serverHostname=solr.desknova.com&serverPort=8983&ruta=solr%2Fmia_dcm&todo=false&q=TIPOFICHERO_scustom%3ADICOM%20Study&limit=25&rows=25&caller=getIndexedFiles&comboFilterProperty=&comboFilterValue=&query=&deleteRecords=false&page=1&start=0&lang=en",
+                    "statuscode": 200,
+                    "dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true
+                }
+            },
+            "scheduleSubs": "SERIES",
+            "checks": [
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-check-_v_Reply.success-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.success",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-check-_v_Reply.message-Documentos recuperados satisfactoriamente",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.message",
+                    "checkValue": "Documentos recuperados satisfactoriamente"
+                },
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-check-_v_Reply.action-Consulta",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.action",
+                    "checkValue": "Consulta"
+                },
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-check-_v_Reply.consulta-TIPOFICHERO_scustom:DICOM Study",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.consulta",
+                    "checkValue": "TIPOFICHERO_scustom:DICOM Study"
+                }
+            ],
+            "exports": [
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-export-study-items",
+                    "exportAs": "studyItems",
+                    "exportOrigin": "TEST",
+                    "exportSource": "_v_Reply.items",
+                    "exportTarget": ".",
+                    "exportWhen": "EXBEFORESUBS"
+                }
+            ],
+            "subs": [
+                {
+                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/iterator-test",
+                    "constructorName": "IteratorTest_Constructor",
+                    "methodName": "pF_Iterator",
+                    "scheduleSubs": "SERIES",
+                    "parms": {
+                        "iterator": {
+                            "rangeParm": "studyItems",
+                            "eachParm":  "studyItem",
+                            "endidx":    "~istdicomquerylist.studyItemsEndIdx"
+                        }
+                    },
+                    "subs": [
+                        {
+                            "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-computeStudyRetrievalParms",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "exports": [
+                                {
+                                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-computeStudyRetrievalParms-export-q",
+                                    "exportAs": "computedStudyRetrievalParm_q",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "studyItem",
+                                    "exportTarget": ".",
+                                    "exportWhen": "EXBEFORESUBS",
+                                    "exportComputation": "function( theStudyItem) { return '(StudyInstanceUID_scustom:'.concat('' + theStudyItem.id).concat(' AND RUTATHUMBNAIL_scustom:*)');}"
+                                },
+                                {
+                                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-computeStudyRetrievalParms-export-millissub",
+                                    "exportAs": "millissub",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "_v_MillisStr",
+                                    "exportTarget": ".",
+                                    "exportWhen": "EXBEFORESUBS"
+                                }
+                            ],
+                            "subs": [
+                                {
+                                    "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "baseURLparmName": "hitpointphp.baseURLphp",
+                                            "requestmethod": "GET",
+                                            "URLpath": "/solrQuery/consultaSolrNew.php",
+                                            "URLparms": {
+                                                "_dc": "~millissub",
+                                                "serverHostname": "solr.desknova.com",
+                                                "serverPort": 8983,
+                                                "ruta": "solr/mia_dcm",
+                                                "todo": false,
+                                                "q": "~computedStudyRetrievalParm_q",
+                                                "limit": 25,
+                                                "rows": 25,
+                                                "caller": "onSelectItem",
+                                                "comboFilterProperty": null,
+                                                "comboFilterValue": null,
+                                                "query": null,
+                                                "deleteRecords": false,
+                                                "page": 1,
+                                                "start": 0,
+                                                "lang": "en"
+                                            },
+                                            "NOTUSED_URLfull": "http://paragon.desknova.com/php/commons/solrQuery/consultaSolrNew.php?_dc=1436923121489&serverHostname=solr.desknova.com&serverPort=8983&ruta=solr%2Fmia_dcm&todo=false&q=(StudyInstanceUID_scustom%3A270920%20AND%20RUTATHUMBNAIL_scustom%3A*)&limit=25&rows=25&caller=onSelectItem&deleteRecords=false&page=1&start=0&lang=en",
+                                            "statuscode": 200,
+                                            "dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true
+                                        }
+                                    },
+                                    "scheduleSubs": "SERIES",
+                                    "checks": [
+                                        {
+                                            "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.success-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.success",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.message-Documentos recuperados satisfactoriamente",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.message",
+                                            "checkValue": "Documentos recuperados satisfactoriamente"
+                                        },
+                                        {
+                                            "name":"suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.action-Consulta",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.action",
+                                            "checkValue": "Consulta"
+                                        },
+                                        {
+                                            "name": "suite-03-query-php-study-list-iterateinstances-istdicom-test-sub-querylist-sub-allinstances-sub-oneinstance-check-_v_Reply.consulta-(StudyInstanceUID_scustom:270920 AND RUTATHUMBNAIL_scustom:*)",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.consulta",
+                                            "checkValue": "~computedStudyRetrievalParm_q"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

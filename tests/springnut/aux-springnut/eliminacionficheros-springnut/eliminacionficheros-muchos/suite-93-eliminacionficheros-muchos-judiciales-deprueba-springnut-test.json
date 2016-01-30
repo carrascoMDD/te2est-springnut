@@ -1,0 +1,396 @@
+{
+    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/iterator-test",
+    "constructorName": "IteratorTest_Constructor",
+    "methodName": "pF_Iterator",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "iterator": {
+            "rangeParm": "ficherosaeliminar",
+            "eachParm":  "ficheroaeliminar",
+            "endidx":    null
+        },
+        "tipoBoletin": "judiciales"
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-idsficherosaeliminar",
+            "parmNames": [
+                "idsficherosaeliminar",
+                "ficherosaeliminar"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-idsficherosaeliminar-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/aux/ficheros/listaFicherosDePruebaJSON",
+                            "URLparms": {
+                                "theTipoBoletin":          "~tipoBoletin",
+                                "thePrimero":              null,
+                                "theCuantos":              null
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-require-ficherosaeliminar-export",
+                            "exportAs": "ficherosaeliminar",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vFicheros",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-ficherodatos",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "scheduleSubs": "SERIES",
+            "parms": {
+                "requestreply": {
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "URLpath": "/ficheros/ficheroDatosJSON",
+                    "URLparms": {
+                        "theTipoBoletin": "~tipoBoletin",
+                        "theIdFichero": "~ficheroaeliminar.vIdFichero"
+                    }
+                }
+            }
+        },
+
+
+
+
+
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-crearTrabajoEliminacionFichero",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/eliminacionficheros/crearTrabajoEliminacionFicheroAnoMesProvinciaJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theTipoBoletin": "~tipoBoletin",
+                        "theAno":         "~ficheroaeliminar.vAnoFichero",
+                        "theMes":         "~ficheroaeliminar.vMesFichero",
+                        "theProvincia":   "~ficheroaeliminar.vCodigoProvinciaFichero",
+                        "theForzar":      true
+                    },
+                    "URLparms": null
+                }
+            },
+            "checks": [
+                {
+                    "name": "creadoeliminacionfichero-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "creadoeliminacionfichero-check-vTipo-CreadoEliminacionFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreadoEliminacionFichero"
+                }
+            ],
+            "exports": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-crearTrabajoEliminacionFichero-export-idTrabajo",
+                    "exportAs": "idTrabajo",
+                    "exportOrigin": "TEST",
+                    "exportSource": "_v_Reply.vTrIdtrabajo",
+                    "exportTarget": "..",
+                    "exportWhen": "OK"
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-lanzarEjecucionTrabajo",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/trabajos/lanzarEjecucionTrabajoJSON",
+                    "requestdata": {
+                        "theIdTrabajo": "~idTrabajo"
+                    },
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "multiparts":      null,
+                    "uploads":         null,
+                    "URLparms": null
+                }
+            },
+            "checks": [
+                {
+                    "name": "lanzadoeliminacionfichero-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "lanzadoeliminacionfichero-check-vTipo-CreacionTrabajoLanzamientoEjecucion",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "CreacionTrabajoLanzamientoEjecucion"
+                }
+            ],
+            "exports": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-trabajoeliminarfichero-require-trabajoEliminacionFicheroTerminado-supplier-require-lanzadoeliminacionfichero-export",
+                    "exportAs": "lanzadoeliminacionfichero",
+                    "exportOrigin": "TEST",
+                    "exportSource": "*",
+                    "exportTarget": ".",
+                    "exportWhen": "OK"
+                },
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-trabajoeliminarfichero-require-trabajoEliminacionFicheroTerminado-supplier-require-idEjecucion-export",
+                    "exportAs": "idEjecucion",
+                    "exportOrigin": "TEST",
+                    "exportSource": "_v_Reply.vIdejecucion",
+                    "exportTarget": "..",
+                    "exportWhen": "OK"
+                }
+            ]
+        },
+
+
+
+
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-poll-trabajoterminado",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/poll-test",
+            "constructorName": "PollTest_Constructor",
+            "methodName": "pF_Poll",
+            "parms": {
+                "poll": {
+                    "eachParm":     "theNumPolls",
+                    "maxPolls":     100,
+                    "pollInterval": 2000
+                },
+                "theNumPolls": null
+            },
+            "scheduleSubs": "SERIES",
+            "imports": [
+                {
+                    "name": "hitpoint-import",
+                    "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                    "importMode": "STATIC"
+                }
+            ],
+            "exports": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-poll-trabajoterminado-export",
+                    "exportAs": "idTrabajoTerminado",
+                    "exportOrigin": "PARMS",
+                    "exportSource": "idTrabajo",
+                    "exportTarget": "..",
+                    "exportWhen": "OK"
+                }
+            ],
+            "subs": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-poll-trabajoterminado-subs-trabajoDatosJSON-vTrEstadoTrabajo-Terminado",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod":  "GET",
+                            "statuscode":      200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLpath": "/trabajos/trabajoDatosJSON",
+                            "URLparms": {
+                                "theIdTrabajo": "~idTrabajo"
+                            }
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-sub-poll-trabajoterminado-subs-trabajoDatos-check-vTrEstadoTrabajo-Terminado",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTrEstado",
+                            "checkValue": "Terminado"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-trabajoDatosIncluyendoJSON",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod":  "GET",
+                    "statuscode":      200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "URLpath": "/trabajos/trabajoDatosJSON",
+                    "URLparms": {
+                        "theIdTrabajo": "~idTrabajo"
+                    }
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTipo-TrabajoDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "TrabajoDatos"
+                },
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrEstadoTrabajo-Terminado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrEstado",
+                    "checkValue": "Terminado"
+                },
+                {
+                    "name": "suite-93-eliminacionficheros-muchos-judiciales-deprueba-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrExito-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrExito",
+                    "checkValue": 1
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

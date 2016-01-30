@@ -1,0 +1,302 @@
+{
+    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-01-inicializar-predefinidos-perfiles-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "login": {
+            "lazy": false
+        },
+        "isauthenticated": {
+            "lazy": false
+        },
+        "session": {
+            "lazy": false
+        },
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-omnipotente-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilINSTALADOR",
+            "parmNames": [
+                "idperfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilINSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "INSTALADOR",
+                                "theDescripcionPerfil":  "Personal especializado en la informatica de la aplicacion.",
+                                "theExitoSiYaExiste":    true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "INSTALADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilINSTALADOR-export",
+                            "exportAs": "idperfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilAVANZADO",
+            "parmNames": [
+                "idperfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilAVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "AVANZADO",
+                                "theDescripcionPerfil":  "Pueden acceder a opciones de menú adicionales.",
+                                "theExitoSiYaExiste":    true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "AVANZADO"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilAVANZADO-export",
+                            "exportAs": "idperfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilADMINISTRADOR",
+            "parmNames": [
+                "idperfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "ADMINISTRADOR",
+                                "theDescripcionPerfil":  "Pueden realizar operaciones privilegiadas.",
+                                "theExitoSiYaExiste":    true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "ADMINISTRADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilADMINISTRADOR-export",
+                            "exportAs": "idperfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilCODIFICADOR",
+            "parmNames": [
+                "idperfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilCODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "CODIFICADOR",
+                                "theDescripcionPerfil":  "Pueden modificar los Boletines.",
+                                "theExitoSiYaExiste":    true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "CODIFICADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilCODIFICADOR-export",
+                            "exportAs": "idperfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilGRABADOR",
+            "parmNames": [
+                "idperfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilGRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "GRABADOR",
+                                "theDescripcionPerfil":  "Pueden grabar Boletines.",
+                                "theExitoSiYaExiste":    true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "GRABADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-01-inicializar-predefinidos-perfiles-springnut-test-require-idperfilGRABADOR-export",
+                            "exportAs": "idperfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

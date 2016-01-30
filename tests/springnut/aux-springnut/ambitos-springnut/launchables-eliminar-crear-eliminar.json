@@ -1,0 +1,12 @@
+[
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-00-auxambito-eliminartrabajosyambitosdesderuta-raiz-springnut-test.json",
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-20-auxambito-creartrabajosyambitoshastaruta-raiz-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-16-auxambito-eliminartrabajosyambitosdesderuta-instancia-springnut-test.json",
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-36-auxambito-creartrabajosyambitoshastaruta-instancia-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-18-auxambito-eliminartrabajosyambitosdesderuta-unidad-springnut-test.json",
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-38-auxambito-creartrabajosyambitoshastaruta-unidad-springnut-test.json",
+
+    "@testspath/springnut/aux-springnut/ambitos-springnut/suite-01-auxambito-eliminartrabajosyambitosdesderuta-raiz-tansolootronombreparapoderrepetirtest-springnut-test.json"
+]

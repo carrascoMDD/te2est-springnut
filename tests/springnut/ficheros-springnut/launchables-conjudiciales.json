@@ -1,0 +1,24 @@
+[
+
+    "@testspath/springnut/ficheros-springnut/suite-01-ficheros-obtener-fichero-ine-corto-paraeliminar-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-02-ficheros-obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json",
+
+
+
+    "@testspath/springnut/ficheros-springnut/suite-10-ficheros-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-11-ficheros-judiciales-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-12-ficheros-conalgunboletin-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-13-ficheros-conalgunboletin-judiciales-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-20-fichero-ine-datos-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-21-fichero-judiciales-datos-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-30-ficheros-conidentificas-ine-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-31-ficheros-conidentificas-judiciales-lista-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-40-fichero-conidentificas-ine-datos-springnut-test.json",
+    "@testspath/springnut/ficheros-springnut/suite-41-fichero-conidentificas-judiciales-datos-springnut-test.json",
+
+    "@testspath/springnut/ficheros-springnut/suite-50-fichero-ine-deanomesprovincia-importarsinoexiste-springnut-test.json",
+
+    "@testspath/springnut/ficheros-springnut/suite-60-ficheros-ine-lista-importarsinoexisteanomesprovincia-springnut-test.json"
+
+
+]

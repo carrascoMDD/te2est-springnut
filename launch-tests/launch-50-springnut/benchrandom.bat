@@ -1,0 +1,4 @@
+
+launchrandom.bat > benchrandom.txt
+
+

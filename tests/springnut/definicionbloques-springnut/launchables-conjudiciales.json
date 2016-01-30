@@ -1,0 +1,28 @@
+[
+    "@testspath/springnut/definicionbloques-springnut/definicionbloques-noautorizado/launchables.json",
+
+    "@testspath/springnut/definicionbloques-springnut/suite-20-definicionbloques-bloque-ine-crear-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-21-definicionbloques-bloque-judiciales-crear-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-22-definicionbloques-bloque-ine-crear-sinidentificas-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-23-definicionbloques-bloque-judiciales-crear-sinidentificas-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-24-definicionbloques-bloque-ine-crear-cuantosidentificas-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-25-definicionbloques-bloque-judiciales-crear-cuantosidentificas-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-26-definicionbloques-bloque-ine-eliminar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-27-definicionbloques-bloque-judiciales-eliminar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-30-definicionbloques-bloque-ine-datos-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-31-definicionbloques-bloque-judiciales-datos-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-40-definicionbloques-bloque-ine-cambiar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-41-definicionbloques-bloque-judiciales-cambiar-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-42-definicionbloques-bloque-ine-cambiar-identificas-desdehasta-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-43-definicionbloques-bloque-judiciales-cambiar-identificas-desdehasta-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-44-definicionbloques-bloque-ine-cambiar-identificas-cuantos-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-45-definicionbloques-bloque-judiciales-cambiar-identificas-cuantos-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-46-definicionbloques-bloque-ine-cambiar-identificas-cuantoszero-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-47-definicionbloques-bloque-judiciales-cambiar-identificas-cuantoszero-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-60-definicionbloques-bloquesdefichero-ine-lista-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-61-definicionbloques-bloquesdefichero-judiciales-lista-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-70-definicionbloques-bloquesdeoperador-ine-lista-springnut-test.json",
+    "@testspath/springnut/definicionbloques-springnut/suite-71-definicionbloques-bloquesdeoperador-judiciales-lista-springnut-test.json"
+
+
+]

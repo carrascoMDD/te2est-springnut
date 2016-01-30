@@ -1,0 +1,41 @@
+[
+    "@testspath/springnut/aux-springnut/securityproperties-springnut/suite-31-auxsecurityproperties-restablecer-incondicional-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/adminoperadores-noautorizado/launchables.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-01-adminoperadores-perfil-datos-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-02-adminoperadores-eliminarporid-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-04-adminoperadores-eliminarpornombre-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-10-adminoperadores-operador-crear-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-12-adminoperadores-operador-crearysession-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-15-adminoperadores-operador-datos-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-20-adminoperadores-operador-cambiar-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-22-adminoperadores-operador-cambiarcontrasena-poradministrador-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-24-adminoperadores-operador-cambiarcontrasena-poroperador-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-25-adminoperadores-operador-cambiarcontrasena-poroperador-actualincorrecta-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-26-adminoperadores-operador-cambiarcontrasena-poroperador-nopuedecambiar-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-30-adminoperadores-autorizaciondeoperador-crear-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-35-adminoperadores-autorizaciondeoperador-datos-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-40-adminoperadores-autorizaciondeoperador-cambiar-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-50-adminoperadores-autorizaciondeoperador-eliminar-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-52-adminoperadores-autorizaciondeoperador-eliminar-connombreperfil-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-61-adminoperadores-perfiles-lista-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-62-adminoperadores-operadores-lista-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-63-adminoperadores-operadoresconperfil-lista-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-64-adminoperadores-autorizacionesdeoperador-lista-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-71-adminoperadores-autorizaciondeoperador-eliminar-autodesautorizacion-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-72-adminoperadores-autorizaciondeoperador-cambiar-autodesautorizacion-springnut-test.json",
+
+    "@testspath/springnut/adminoperadores-springnut/suite-81-adminoperadores-operador-cambiar-ultidentifica-ine-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-82-adminoperadores-operador-cambiar-ultidentifica-judiciales-springnut-test.json",
+    "@testspath/springnut/adminoperadores-springnut/suite-85-adminoperadores-operador-obtener-ultidentificas-springnut-test.json"
+
+]
+
+

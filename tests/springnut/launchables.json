@@ -1,0 +1,19 @@
+[
+    "@testspath/springnut/aux-springnut/launchables.json",
+    "@testspath/springnut/excepciones-springnut/launchables.json",
+    "@testspath/springnut/security-springnut/launchables.json",
+    "@testspath/springnut/adminoperadores-springnut/launchables.json",
+    "@testspath/springnut/autentificacion-springnut/launchables.json",
+    "@testspath/springnut/accesos-springnut/launchables.json",
+    "@testspath/springnut/importacionficherosascii-springnut/launchables.json",
+    "@testspath/springnut/bedids-springnut/launchables.json",
+    "@testspath/springnut/boletines-springnut/launchables.json",
+    "@testspath/springnut/trabajos-springnut/launchables.json",
+    "@testspath/springnut/ambitos-springnut/launchables.json",
+    "@testspath/springnut/ficheros-springnut/launchables.json",
+    "@testspath/springnut/definicionbloques-springnut/launchables.json",
+    "@testspath/springnut/edivalidaciones-springnut/launchables.json",
+    "@testspath/springnut/ine-springnut/launchables.json",
+    "@testspath/springnut/lecturasboletines-springnut/launchables.json",
+    "@testspath/springnut/vercambios-springnut/launchables.json"
+]

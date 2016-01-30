@@ -1,0 +1,3396 @@
+{
+    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/general-test/fake-test",
+    "constructorName": "FakeTest_Constructor",
+    "methodName": "pF_Fake",
+    "scheduleSubs": "SERIES",
+    "parms": {
+        "salutation": "Hello suite-11-inicializar-paratest-operadores-crear-springnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "login": {
+            "lazy": false
+        },
+        "isauthenticated": {
+            "lazy": false
+        },
+        "session": {
+            "lazy": false
+        },
+        "fake": {
+            "fakeResult":   { "fakeResult": "fakeResult"},
+            "fakeSuccess":  true,
+            "fakeRcvError": null,
+            "fakeRcvStatus": 200,
+            "fakeRcvBody": { "fakeBody": "fakeBody"}
+        }
+    },
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-omnipotente-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilINSTALADOR",
+            "parmNames": [
+                "idperfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilINSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "INSTALADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "INSTALADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilINSTALADOR-export",
+                            "exportAs": "idperfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilAVANZADO",
+            "parmNames": [
+                "idperfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilAVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "AVANZADO"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "AVANZADO"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilAVANZADO-export",
+                            "exportAs": "idperfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilADMINISTRADOR",
+            "parmNames": [
+                "idperfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "ADMINISTRADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "ADMINISTRADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilADMINISTRADOR-export",
+                            "exportAs": "idperfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilCODIFICADOR",
+            "parmNames": [
+                "idperfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilCODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "CODIFICADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "CODIFICADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilCODIFICADOR-export",
+                            "exportAs": "idperfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilGRABADOR",
+            "parmNames": [
+                "idperfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilGRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "URLparms": {
+                                "theNombrePerfil":       "GRABADOR"
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "PerfilDatos",
+                                "vNombrePerfil": "GRABADOR"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idperfilGRABADOR-export",
+                            "exportAs": "idperfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstalador",
+            "parmNames": [
+                "idoperadortestinstalador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstalador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorConPerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfilINSTALADOR",
+                                "theNombreOperador":                        "testinstalador",
+                                "theNombreCompletoOperador":                "testinstalador",
+                                "theDescripcionOperador":                   "testinstalador operador para test con autorizacion de perfil INSTALADOR",
+                                "theContrasena":                            "testinstaladorpswd2",
+                                "theRepetirContrasena":                     "testinstaladorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "CreadoOperadorConPerfil",
+                                "vNombreOperador": "testinstalador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstalador-export",
+                            "exportAs": "idoperadortestinstalador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstalador",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstalador",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstalador",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstalador",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladorConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoinstalador",
+            "parmNames": [
+                "idoperadortestnoinstalador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoinstalador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testnoinstalador",
+                                "theNombreCompletoOperador":                "testnoinstalador",
+                                "theDescripcionOperador":                   "testnoinstalador operador para test SIN autorizacion de perfil ADMINISTRADOR",
+                                "theContrasena":                            "testnoinstaladorpswd2",
+                                "theRepetirContrasena":                     "testnoinstaladorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testnoinstalador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoinstalador-export",
+                            "exportAs": "idoperadortestnoinstalador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoinstaladorConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestnoinstaladorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoinstaladorConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoinstalador",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoinstaladorConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestnoinstaladorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-AVANZADO",
+            "parmNames": [
+                "testcrearAutorizaciontestnoinstaladorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoinstalador",
+                                "theIdPerfil":    "~idperfilAVANZADO",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-AVANZADO-export",
+                            "exportAs": "testcrearAutorizaciontestnoinstaladorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-ADMINISTRADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoinstaladorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoinstalador",
+                                "theIdPerfil":    "~idperfilADMINISTRADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-ADMINISTRADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoinstaladorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-CODIFICADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoinstaladorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoinstalador",
+                                "theIdPerfil":    "~idperfilCODIFICADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-CODIFICADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoinstaladorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-GRABADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoinstaladorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoinstalador",
+                                "theIdPerfil":    "~idperfilGRABADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoinstalador-GRABADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoinstaladorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestavanzado",
+            "parmNames": [
+                "idoperadortestavanzado"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestavanzado-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorConPerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfilAVANZADO",
+                                "theNombreOperador":                        "testavanzado",
+                                "theNombreCompletoOperador":                "testavanzado",
+                                "theDescripcionOperador":                   "testavanzado operador para test con autorizacion de perfil AVANZADO",
+                                "theContrasena":                            "testavanzadopswd2",
+                                "theRepetirContrasena":                     "testavanzadopswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "CreadoOperadorConPerfil",
+                                "vNombreOperador": "testavanzado"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestavanzado-export",
+                            "exportAs": "idoperadortestavanzado",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestavanzadoConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestavanzado",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestavanzadoConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestavanzadoConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestavanzado",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestavanzadoConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestavanzadoConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestavanzado",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestavanzadoConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestavanzadoConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestavanzado",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestavanzadoConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestavanzadoConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoavanzado",
+            "parmNames": [
+                "idoperadortestnoavanzado"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoavanzado-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testnoavanzado",
+                                "theNombreCompletoOperador":                "testnoavanzado",
+                                "theDescripcionOperador":                   "testnoavanzado operador para test SIN autorizacion de perfil AVANZADO",
+                                "theContrasena":                            "testnoavanzadopswd2",
+                                "theRepetirContrasena":                     "testnoavanzadopswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testnoavanzado"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoavanzado-export",
+                            "exportAs": "idoperadortestnoavanzado",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoavanzadoConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestnoavanzadoConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoavanzadoConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoavanzado",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoavanzadoConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestnoavanzadoConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-INSTALADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoavanzadoConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoavanzado",
+                                "theIdPerfil":    "~idperfilINSTALADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-INSTALADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoavanzadoConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-ADMINISTRADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoavanzadoConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoavanzado",
+                                "theIdPerfil":    "~idperfilADMINISTRADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-ADMINISTRADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoavanzadoConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-CODIFICADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoavanzadoConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoavanzado",
+                                "theIdPerfil":    "~idperfilCODIFICADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-CODIFICADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoavanzadoConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-GRABADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoavanzadoConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoavanzado",
+                                "theIdPerfil":    "~idperfilGRABADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoavanzado-GRABADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoavanzadoConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestadministrador",
+            "parmNames": [
+                "idoperadortestadministrador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestadministrador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorConPerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfilADMINISTRADOR",
+                                "theNombreOperador":                        "testadministrador",
+                                "theNombreCompletoOperador":                "testadministrador",
+                                "theDescripcionOperador":                   "testadministrador operador para test con autorizacion de perfil ADMINISTRADOR",
+                                "theContrasena":                            "testadministradorpswd2",
+                                "theRepetirContrasena":                     "testadministradorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "CreadoOperadorConPerfil",
+                                "vNombreOperador": "testadministrador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestadministrador-export",
+                            "exportAs": "idoperadortestadministrador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestadministradorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestadministrador",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestadministradorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestadministradorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestadministrador",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestadministradorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestadministradorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestadministrador",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestadministradorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestadministradorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestadministrador",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestadministradorConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestadministradorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoadministrador",
+            "parmNames": [
+                "idoperadortestnoadministrador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoadministrador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testnoadministrador",
+                                "theNombreCompletoOperador":                "testnoadministrador",
+                                "theDescripcionOperador":                   "testnoadministrador operador para test SIN autorizacion de perfil ADMINISTRADOR",
+                                "theContrasena":                            "testnoadministradorpswd2",
+                                "theRepetirContrasena":                     "testnoadministradorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testnoadministrador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnoadministrador-export",
+                            "exportAs": "idoperadortestnoadministrador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoadministradorConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestnoadministradorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoadministradorConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoadministrador",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnoadministradorConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestnoadministradorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-INSTALADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoadministradorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoadministrador",
+                                "theIdPerfil":    "~idperfilINSTALADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-INSTALADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoadministradorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-AVANZADO",
+            "parmNames": [
+                "testcrearAutorizaciontestnoadministradorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoadministrador",
+                                "theIdPerfil":    "~idperfilAVANZADO",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-AVANZADO-export",
+                            "exportAs": "testcrearAutorizaciontestnoadministradorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-CODIFICADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoadministradorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoadministrador",
+                                "theIdPerfil":    "~idperfilCODIFICADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-CODIFICADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoadministradorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-GRABADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnoadministradorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnoadministrador",
+                                "theIdPerfil":    "~idperfilGRABADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnoadministrador-GRABADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnoadministradorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestcodificador",
+            "parmNames": [
+                "idoperadortestcodificador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestcodificador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorConPerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfilCODIFICADOR",
+                                "theNombreOperador":                        "testcodificador",
+                                "theNombreCompletoOperador":                "testcodificador",
+                                "theDescripcionOperador":                   "testcodificador operador para test con autorizacion de perfil ADMINISTRADOR",
+                                "theContrasena":                            "testcodificadorpswd2",
+                                "theRepetirContrasena":                     "testcodificadorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "CreadoOperadorConPerfil",
+                                "vNombreOperador": "testcodificador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestcodificador-export",
+                            "exportAs": "idoperadortestcodificador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestcodificadorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestcodificador",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestcodificadorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestcodificadorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestcodificador",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestcodificadorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestcodificadorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestcodificador",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestcodificadorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestcodificadorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestcodificador",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestcodificadorConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestcodificadorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnocodificador",
+            "parmNames": [
+                "idoperadortestnocodificador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnocodificador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testnocodificador",
+                                "theNombreCompletoOperador":                "testnocodificador",
+                                "theDescripcionOperador":                   "testnocodificador operador para test SIN autorizacion de perfil CODIFICADOR",
+                                "theContrasena":                            "testnocodificadorpswd2",
+                                "theRepetirContrasena":                     "testnocodificadorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testnocodificador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnocodificador-export",
+                            "exportAs": "idoperadortestnocodificador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnocodificadorConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestnocodificadorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnocodificadorConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnocodificador",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnocodificadorConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestnocodificadorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-INSTALADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnocodificadorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnocodificador",
+                                "theIdPerfil":    "~idperfilINSTALADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-INSTALADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnocodificadorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-AVANZADO",
+            "parmNames": [
+                "testcrearAutorizaciontestnocodificadorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnocodificador",
+                                "theIdPerfil":    "~idperfilAVANZADO",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-AVANZADO-export",
+                            "exportAs": "testcrearAutorizaciontestnocodificadorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-ADMINISTRADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnocodificadorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnocodificador",
+                                "theIdPerfil":    "~idperfilADMINISTRADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-ADMINISTRADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnocodificadorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-GRABADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnocodificadorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnocodificador",
+                                "theIdPerfil":    "~idperfilGRABADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnocodificador-GRABADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnocodificadorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestgrabador",
+            "parmNames": [
+                "idoperadortestgrabador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestgrabador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorConPerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdPerfil":                              "~idperfilGRABADOR",
+                                "theNombreOperador":                        "testgrabador",
+                                "theNombreCompletoOperador":                "testgrabador",
+                                "theDescripcionOperador":                   "testgrabador operador para test con autorizacion de perfil GRABADOR",
+                                "theContrasena":                            "testgrabadorpswd2",
+                                "theRepetirContrasena":                     "testgrabadorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "CreadoOperadorConPerfil",
+                                "vNombreOperador": "testgrabador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestgrabador-export",
+                            "exportAs": "idoperadortestgrabador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestgrabadorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestgrabador",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestgrabadorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestgrabadorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestgrabador",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestgrabadorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestgrabadorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestgrabador",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestgrabadorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestgrabadorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestgrabador",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestgrabadorConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestgrabadorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnograbador",
+            "parmNames": [
+                "idoperadortestnograbador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnograbador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testnograbador",
+                                "theNombreCompletoOperador":                "testnograbador",
+                                "theDescripcionOperador":                   "testnograbador operador para test SIN autorizacion de perfil CODIFICADOR",
+                                "theContrasena":                            "testnograbadorpswd2",
+                                "theRepetirContrasena":                     "testnograbadorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testnograbador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestnograbador-export",
+                            "exportAs": "idoperadortestnograbador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnograbadorConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestnograbadorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnograbadorConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnograbador",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestnograbadorConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestnograbadorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-INSTALADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnograbadorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnograbador",
+                                "theIdPerfil":    "~idperfilINSTALADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-INSTALADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnograbadorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-AVANZADO",
+            "parmNames": [
+                "testcrearAutorizaciontestnograbadorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnograbador",
+                                "theIdPerfil":    "~idperfilAVANZADO",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-AVANZADO-export",
+                            "exportAs": "testcrearAutorizaciontestnograbadorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-ADMINISTRADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnograbadorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnograbador",
+                                "theIdPerfil":    "~idperfilADMINISTRADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-ADMINISTRADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnograbadorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-CODIFICADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestnograbadorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestnograbador",
+                                "theIdPerfil":    "~idperfilCODIFICADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestnograbador-CODIFICADOR-export",
+                            "exportAs": "testcrearAutorizaciontestnograbadorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstaladministrador",
+            "parmNames": [
+                "idoperadortestinstaladministrador"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstaladministrador-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testinstaladministrador",
+                                "theNombreCompletoOperador":                "testinstaladministrador",
+                                "theDescripcionOperador":                   "testinstaladministrador operador para test con autorizaciones de perfiles INSTALADOR Y ADMINISTRADOR",
+                                "theContrasena":                            "testinstaladministradorpswd2",
+                                "theRepetirContrasena":                     "testinstaladministradorpswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testinstaladministrador"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestinstaladministrador-export",
+                            "exportAs": "idoperadortestinstaladministrador",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladministradorConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstaladministrador",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladministradorConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladministradorConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstaladministrador",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladministradorConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestinstaladministradorConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstaladministrador",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestinstaladministradorConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestinstaladministradorConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-INSTALADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestinstaladministradorConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstaladministrador",
+                                "theIdPerfil":    "~idperfilINSTALADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-INSTALADOR-export",
+                            "exportAs": "testcrearAutorizaciontestinstaladministradorConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-ADMINISTRADOR",
+            "parmNames": [
+                "testcrearAutorizaciontestinstaladministradorConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearAutorizacionJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestinstaladministrador",
+                                "theIdPerfil":    "~idperfilADMINISTRADOR",
+                                "theExitoSiYaExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testcrearAutorizaciontestinstaladministrador-ADMINISTRADOR-export",
+                            "exportAs": "testcrearAutorizaciontestinstaladministradorConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestsinperfiles",
+            "parmNames": [
+                "idoperadortestsinperfiles"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestsinperfiles-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/crearOperadorJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombreOperador":                        "testsinperfiles",
+                                "theNombreCompletoOperador":                "testsinperfiles",
+                                "theDescripcionOperador":                   "testsinperfiles operador para test con autorizaciones de perfiles INSTALADOR Y ADMINISTRADOR",
+                                "theContrasena":                            "testsinperfilespswd2",
+                                "theRepetirContrasena":                     "testsinperfilespswd2",
+                                "theCuentaBloqueada":                       false,
+                                "theUsuarioDebeCambiarPswdAInicioDeSesion": false,
+                                "theUsuarioNoPuedeCambiarPswd":             false,
+                                "theExitoSiYaExiste":                       true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "OperadorDatos",
+                                "vNombreOperador": "testsinperfiles"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-idoperadortestsinperfiles-export",
+                            "exportAs": "idoperadortestsinperfiles",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdOperador",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-INSTALADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestsinperfilesConNombrePerfilINSTALADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-INSTALADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestsinperfiles",
+                                "theNombrePerfil":    "INSTALADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-INSTALADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestsinperfilesConNombrePerfilINSTALADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-AVANZADO",
+            "parmNames": [
+                "testeliminarAutorizaciontestsinperfilesConNombrePerfilAVANZADO"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-AVANZADO-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestsinperfiles",
+                                "theNombrePerfil":    "AVANZADO",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-AVANZADO-export",
+                            "exportAs": "testeliminarAutorizaciontestsinperfilesConNombrePerfilAVANZADO",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-ADMINISTRADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestsinperfilesConNombrePerfilADMINISTRADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-ADMINISTRADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestsinperfiles",
+                                "theNombrePerfil":    "ADMINISTRADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-ADMINISTRADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestsinperfilesConNombrePerfilADMINISTRADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-CODIFICADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestsinperfilesConNombrePerfilCODIFICADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-CODIFICADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestsinperfiles",
+                                "theNombrePerfil":    "CODIFICADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-CODIFICADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestsinperfilesConNombrePerfilCODIFICADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-GRABADOR",
+            "parmNames": [
+                "testeliminarAutorizaciontestsinperfilesConNombrePerfilGRABADOR"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-GRABADOR-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/administracionOperadores/eliminarAutorizacionConNombrePerfilJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theIdOperador":      "~idoperadortestsinperfiles",
+                                "theNombrePerfil":    "GRABADOR",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": {
+                                "vSuccess": true,
+                                "vTipo": "AutorizacionDatos"
+                            }
+                        }
+                    },
+                    "exports": [
+                        {
+                            "name": "suite-11-inicializar-paratest-operadores-crear-springnut-test-require-testeliminarAutorizaciontestsinperfilesConNombrePerfil-GRABADOR-export",
+                            "exportAs": "testeliminarAutorizaciontestsinperfilesConNombrePerfilGRABADOR",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

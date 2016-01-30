@@ -1,0 +1,7 @@
+[
+    "@testspath/modulo10/security-modulo10/suite-00-global-sessiontest-clear-modulo10-test.json",
+    "@testspath/modulo10/security-modulo10/suite-01-login-modulo10-test.json",
+    "@testspath/modulo10/security-modulo10/suite-11-isauthenticated-requiredlogin-inline-modulo10-test.json",
+    "@testspath/modulo10/security-modulo10/suite-21-session-modulo10-test.json",
+    "@testspath/modulo10/security-modulo10/suite-22-session-obtener-modulo10-test.json"
+]

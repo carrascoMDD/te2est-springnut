@@ -1,0 +1,7 @@
+[
+    "@testspath/springnut/excepciones-springnut/suite-10-excepciones-lista-recientes-springnut-test.json",
+    "@testspath/springnut/excepciones-springnut/suite-12-excepciones-lista-enfecha-springnut-test.json",
+    "@testspath/springnut/excepciones-springnut/suite-14-excepciones-lista-entrefechas-springnut-test.json",
+    "@testspath/springnut/excepciones-springnut/suite-20-excepciones-excepcion-datos-springnut-test.json"
+
+]

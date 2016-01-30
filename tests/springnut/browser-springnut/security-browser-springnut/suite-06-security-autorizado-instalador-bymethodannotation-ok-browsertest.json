@@ -1,0 +1,107 @@
+{
+    "name": "suite-06-security-autorizado-instalador-bymethodannotation-ok-browsertest",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/browser-test/protractor-parmsspec-test",
+    "constructorName": "ProtractorParmsSpecTest_Constructor",
+    "methodName": "pF_ProtractorTest",
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        },
+        {
+            "name": "credentials-import",
+            "configurationPath": "@testspath/springnut-host/parms-credentials-instalador.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "parms": {
+        "salutation": "Hello suite-06-security-autorizado-instalador-bymethodannotation-ok-browsertest. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "protractor": {
+            "seleniumAddress": "http://localhost:4444/wd/hub",
+            "jasmineNodeOpts": {
+                "defaultTimeoutInterval": 300000
+            },
+            "capabilities":  {
+                "browserName": "chrome",
+                "count": 1,
+                "shardTestFiles": false,
+                "maxInstances": 1
+            },
+            "specs": [ "~someProtractorHelpers"]
+        },
+        "someProtractorHelpers": [
+
+
+            {
+                "name": "Login",
+                "module": "@cmppath/springnut-test/springnutbrowser-test/browserlogin-springnut-testhelper",
+                "constructorName": "BrowserLoginSpringnutTestHelper_Constructor",
+                "methodName": "pDoPtr_SpringnutLogin",
+                "helperParms": {
+                    "login": {
+                        "name":                    "LoginToSpringnut",
+                        "loginURL":                "/login",
+                        "isAngular":               false,
+                        "userNameLocatorKind":     "css",
+                        "userNameLocator":         "input[name='j_username']",
+                        "passwordLocatorKind":     "css",
+                        "passwordLocator":         "input[name='j_password']",
+                        "loginButtonLocatorKind":  "css",
+                        "loginButtonLocator":      "button[name='login']",
+                        "userName":                null,
+                        "password":                null,
+                        "expectedLoginPageTitle":  "SpringNut ejemplo de instrumentacion - Identificación",
+                        "expectedLoggedPageTitle": "Comienzo - Ejemplo de instrumentación SpringNut"
+                    }
+                }
+            },
+
+
+
+            {
+                "name": "VisitPage-Springnut-auxHasRole_INSTALADOR_byMethodAnnotation_HTML",
+                "module": "@cmppath/browser-test/visitpage-testhelper",
+                "constructorName": "VisitPageTestHelper_Constructor",
+                "methodName": "pDoPtr_VisitPage",
+                "helperParms": {
+                    "visit": {
+                        "name": "VisitauxHasRole_INSTALADOR_byMethodAnnotation_HTML",
+                        "visitURL": "/aux/hasRole/auxHasRole_INSTALADOR_byMethodAnnotation_HTML",
+                        "isAngular": false,
+                        "expectedPageTitle": "AUTORIZADO - Ejemplo de instrumentación SpringNut",
+                        "domElementChecks": [
+                            {
+                                "name": "Check_did_autorizado_message",
+                                "domId": "did_autorizado_message",
+                                "text":  "OPERADOR AUTORIZADO PARA LA ACCIÓN SOLICITADA"
+                            },
+                            {
+                                "name": "Check_did_httpMethod_span",
+                                "domId": "did_httpMethod_span",
+                                "text":  "GET"
+                            },
+                            {
+                                "name": "Check_did_rutaSolicitud_span",
+                                "domId": "did_rutaSolicitud_span",
+                                "text": "auxHasRole_INSTALADOR_byMethodAnnotation_HTML$",
+                                "isRegexp": true
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+
+
+
+
+
+
+
+

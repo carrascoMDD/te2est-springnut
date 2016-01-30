@@ -1,0 +1,257 @@
+{
+    "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-32-auxperfiles-cambiar-autodesautorizacion. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/aux/perfiles/auxPerfilCambiarAlgunosDatosJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "requestdata": {
+                "theIdPerfil":                 "~idPerfil",
+                "theNombrePerfil_cambiar":      true,
+                "theNombrePerfil":              "~nombrePerfil2",
+                "theDescripcionPerfil_cambiar": false,
+                "theDescripcionPerfil":         null
+            },
+            "expectedresponsepart": {
+                "vSuccess": false,
+                "vTipo": "CambiadoPerfil",
+                "vStatusOperacion": "AUTODESAUTORIZACION",
+                "vDetallesOperacion": "INSTALADOR"
+            }
+        },
+        "nombrePerfil":               "INSTALADOR",
+        "nombrePerfil2":       "@PERF22222222",
+        "descripcionPerfil2":  "@PERF22222222 descripcion cambiada"
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-instalador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-30-auxperfiles-cambiar-springnut-test-require-testperfilPorNombreDatos-idPerfil",
+            "parmNames": [
+                "testperfilPorNombreDatos",
+                "idPerfil"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-30-auxperfiles-cambiar-springnut-test-require-testperfilPorNombreDatos-idPerfil-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/administracionOperadores/perfilPorNombreDatosJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": null,
+                            "URLparms": {
+                                "theNombrePerfil":  "~nombrePerfil"
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-30-auxperfiles-cambiar-springnut-test-require-testperfilPorNombreDatos-idPerfil-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-30-auxperfiles-cambiar-springnut-test-require-testperfilPorNombreDatos-supplier-export-testperfilPorNombreDatos",
+                            "exportAs": "testperfilPorNombreDatos",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-30-auxperfiles-cambiar-springnut-test-require-testperfilPorNombreDatos-supplier-export-idPerfil",
+                            "exportAs": "idPerfil",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testeliminarperfilsiexiste-2",
+            "parmNames": [
+                "testeliminarperfilsiexiste-2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testeliminarperfilsiexiste-2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilConNombreEliminarJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":  "~nombrePerfil2",
+                                "theExitoSiNoExiste": true
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testeliminarperfilsiexiste-2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testeliminarperfilsiexiste-2-supplier-export",
+                            "exportAs": "testeliminarperfilsiexiste-2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testcrearperfil2-idPerfil2",
+            "parmNames": [
+                "testcrearperfil2",
+                "idPerfil2"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testcrearperfil2-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "POST",
+                            "URLpath": "/aux/perfiles/auxPerfilCrearJSON",
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true,
+                            "requestdata": {
+                                "theNombrePerfil":       "~nombrePerfil2",
+                                "theDescripcionPerfil":  "~descripcionPerfil2"
+                            },
+                            "expectedresponsepart": null
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testcrearperfil2-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testcrearperfil2-supplier-export",
+                            "exportAs": "testcrearperfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-32-auxperfiles-cambiar-autodesautorizacion-springnut-test-require-testcrearperfil2-supplier-export-idPerfil",
+                            "exportAs": "idPerfil2",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdPerfil",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

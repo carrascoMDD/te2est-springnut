@@ -1,0 +1,996 @@
+{
+    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompletaspringnut. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod":  "GET",
+            "statuscode":      200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLpath": "/trabajos/trabajoDatosJSON",
+            "URLparms": {
+                "theIdTrabajo": "~idTrabajoTerminado"
+            }
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroHombres": 0,
+        "numeroMujeres": 2
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-check-vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-check-vTipo-TrabajoDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "TrabajoDatos"
+        },
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-check-vTrEstadoTrabajo-Terminado",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTrEstado",
+            "checkValue": "Terminado"
+        },
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-check-vTrExito-1",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTrExito",
+            "checkValue": 1
+        }
+
+    ],
+    "subs": [
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod":  "GET",
+                    "statuscode":      200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "URLpath": "/trabajos/trabajoDatosMiembrosJSON",
+                    "URLparms": {
+                        "theIdTrabajo": "~idTrabajoTerminado",
+                        "theNombresParametros": "theTipoBoletin,theAno,theMes,theProvincia",
+                        "theNombresParakilometros": "theContenidoFichero",
+                        "theNombresResultados":     "theIdFicheroCreado,theNumFicherosCreados,theMayorNBOL,theMenorNBOL,theNLineas_Aceptables,theNLineas_Alteradas,theNLineas_BoletinesASCIIDiferentes,theNLineas_ConDefectos,theNLineas_ConDiferencias,theNLineas_FDefuncionIncompleta,theNLineas_FNacimientoIncompleta,theNLineas_Ilegibles,theNLineas_NBOLalterado,theNLineas_NBOLcorto,theNLineas_NBOLrepetido,theNLineas_NoAceptables,theNLineas_SinEdad,theNLineas_SinNBOL,theNLineas_SinSexo,theNLineas_Vacias,theNumBedcodsCreados,theNumBedlitsCreados,theNumBedsCreados,theNumIdentificasCreados,theNumeroLineas,theNumeroNBOLs,theNumeroNBOLs_Creados,theNumeroNBOLs_YaExistentes,thePrimerIdentificaCreado,thePrimerNBOL,theUltimoIdentificaCreado,theUltimoNBOL",
+                        "theNombresResulkilotados": "theDefectosLineas,theDiferenciasBoletinesASCII,theDiferenciasLineas,theEstadosLineas,theIndLineas_Aceptables,theIndLineas_Alteradas,theIndLineas_ConDefectos,theIndLineas_ConDiferencias,theIndLineas_DiferenciasBoletinesASCII,theIndLineas_FDefuncionIncompleta,theIndLineas_FNacimientoIncompleta,theIndLineas_Ilegibles,theIndLineas_NBOLalterado,,theIndLineas_NBOLsYaExistentes,theIndLineas_NBOLcorto,theIndLineas_NBOLrepetido,theIndLineas_NoAceptables,theIndLineas_SinEdad,theIndLineas_SinNBOL,theIndLineas_SinSexo,theIndLineas_Vacias,theNBOLs,theNBOLs_Alterados,theNBOLs_ConDefectos,theNBOLs_Cortos,theNBOLs_Creados,theNBOLs_FDefuncionIncompleta,theNBOLs_FNacimientoIncompleta,theNBOLs_Repetidos,theNBOLs_SinSexo,theNBOLs_YaExistentes",
+                        "theIncluyeBlobs": true
+                    }
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTipo-TrabajoDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "TrabajoDatos"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrEstadoTrabajo-Terminado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrEstado",
+                    "checkValue": "Terminado"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrExito-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrExito",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theTipoBoletin}.vPaParstr-tipoBoletin",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theTipoBoletin.vPaParstr",
+                    "checkValue": "~tipoBoletin"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theAno}.vPaPardec-anoFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theAno.vPaPardec",
+                    "checkValue": "~anoFichero"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theMes}.vPaPardec-mesFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theMes.vPaPardec",
+                    "checkValue": "~mesFichero"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theProvincia}.vPaPardec-provinciaFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theProvincia.vPaPardec",
+                    "checkValue": "~provinciaFichero"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theMenorNBOL}.vReResstr",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theMenorNBOL.vReResstr",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theMayorNBOL}.vReResstr",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theMayorNBOL.vReResstr",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroLineas}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroLineas.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Aceptables}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Aceptables.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Alteradas}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Alteradas.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_ConDefectos}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_ConDefectos.vReResdec",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_ConDiferencias}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_ConDiferencias.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_BoletinesASCIIDiferentes}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_BoletinesASCIIDiferentes.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_FDefuncionIncompleta}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_FDefuncionIncompleta.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_FNacimientoIncompleta}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_FNacimientoIncompleta.vReResdec",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Ilegibles}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Ilegibles.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NBOLrepetido}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NBOLrepetido.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NBOLcorto}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NBOLcorto.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NBOLalterado}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NBOLalterado.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_NoAceptables}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_NoAceptables.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinEdad}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinEdad.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinNBOL}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinNBOL.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_SinSexo}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_SinSexo.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_Vacias}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNLineas_Vacias.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumBedcodsCreados}.vReResdec-2",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedcodsCreados.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumBedlitsCreados}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedlitsCreados.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumBedsCreados}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedsCreados.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumIdentificasCreados}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumIdentificasCreados.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs_Creados}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs_Creados.vReResdec",
+                    "checkValue": 2
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumeroNBOLs_YaExistentes}.vReResdec-0",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumeroNBOLs_YaExistentes.vReResdec",
+                    "checkValue": 0
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_Alterados.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_Alterados.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_Creados.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_Creados.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_ConDefectos.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_ConDefectos.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_Cortos.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_Cortos.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_FDefuncionIncompleta.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_FDefuncionIncompleta.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_FNacimientoIncompleta.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_FNacimientoIncompleta.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_Repetidos.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_Repetidos.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_SinSexo.vRkResulkilotado",
+                    "checkWhen": "NEVER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_SinSexo.vRkResulkilotado",
+                    "checkValue": null
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theNBOLs_YaExistentes.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theNBOLs_YaExistentes.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theDefectosLineas.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theDefectosLineas.vRkResulkilotado",
+                    "checkValue": "FECHANACIMIENTOINCOMPLETA\nSINDEFECTOS"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_NoAceptables.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_NoAceptables.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_Aceptables.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_Aceptables.vRkResulkilotado",
+                    "checkValue": "0\n1"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_Alteradas.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_Alteradas.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_ConDefectos.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_ConDefectos.vRkResulkilotado",
+                    "checkValue": "0"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_ConDiferencias.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_ConDiferencias.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_DiferenciasBoletinesASCII.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_DiferenciasBoletinesASCII.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_FDefuncionIncompleta.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_FDefuncionIncompleta.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_FNacimientoIncompleta.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_FNacimientoIncompleta.vRkResulkilotado",
+                    "checkValue": "0"
+                },
+
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLcorto.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLcorto.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theDiferenciasLineas.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theDiferenciasLineas.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theDiferenciasBoletinesASCII.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theDiferenciasBoletinesASCII.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theEstadosLineas.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theEstadosLineas.vRkResulkilotado",
+                    "checkValue": "ACEPTABLE\nACEPTABLE"
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_Ilegibles.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_Ilegibles.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLalterado.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLalterado.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLrepetido.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLrepetido.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLsYaExistentes.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_NBOLsYaExistentes.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinEdad.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinEdad.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinNBOL.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinNBOL.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinSexo.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_SinSexo.vRkResulkilotado",
+                    "checkValue": ""
+                },
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResulkilotados.vRkNombreresulkilotado=theIndLineas_Vacias.vRkResulkilotado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResulkilotados.vRkNombreresulkilotado=theIndLineas_Vacias.vRkResulkilotado",
+                    "checkValue": ""
+                }
+            ]
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-idTrabajoTerminado",
+            "parmNames": [
+                "idTrabajoTerminado"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-idTrabajoTerminado-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/poll-test",
+                    "constructorName": "PollTest_Constructor",
+                    "methodName": "pF_Poll",
+                    "parms": {
+                        "poll": {
+                            "eachParm":     "theNumPolls",
+                            "maxPolls":     100,
+                            "pollInterval": 1000
+                        },
+                        "theNumPolls": null
+                    },
+                    "scheduleSubs": "SERIES",
+                    "subs": [
+                        {
+                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-idTrabajoTerminado-supplier-subs-trabajoDatosJSON-vTrEstadoTrabajo-Terminado",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod":  "GET",
+                                    "statuscode":      200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "URLpath": "/trabajos/trabajoDatosJSON",
+                                    "URLparms": {
+                                        "theIdTrabajo": "~idTrabajo"
+                                    }
+                                }
+                            },
+                            "checks": [
+                                {
+                                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-subs-trabajoDatos-check-vTrEstadoTrabajo-Terminado",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vTrEstado",
+                                    "checkValue": "Terminado"
+                                }
+                            ]
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-idTrabajoTerminado-export",
+                            "exportAs": "idTrabajoTerminado",
+                            "exportOrigin": "PARMS",
+                            "exportSource": "idTrabajo",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "required": [
+                        {
+                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-creadolanzadoimportacionficheroascii-idTrabajo-idEjecucion",
+                            "parmNames": [
+                                "creadolanzadoimportacionficheroascii",
+                                "idTrabajo",
+                                "idEjecucion"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-creadolanzadoimportacionficheroascii-idTrabajo-idEjecucion-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/importacionficherosascii/crearYLanzarTrabajoImportacionFicheroASCIIJSON",
+                                            "URLparms": null,
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "multiparts": [
+                                                {
+                                                    "parmName" : "theTipoBoletin",
+                                                    "parmValue": "ine",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theFileEncoding",
+                                                    "parmValue": "UTF-8",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theForzar",
+                                                    "parmValue": "true",
+                                                    "contentType": null
+                                                },
+                                                {
+                                                    "parmName" : "theLanzar",
+                                                    "parmValue": "true",
+                                                    "contentType": null
+                                                }
+                                            ],
+                                            "uploads": [
+                                                {
+                                                    "parmName":    "theUploadedFile",
+                                                    "uploadBytes": "~contenidoficheroasciiPrimeraLineaSinDiaNacimiento",
+                                                    "contentType": "text/plain"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "checks": [
+                                        {
+                                            "name": "creadolanzadoimportacionficheroascii-check-vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "creadolanzadoimportacionficheroascii-check-vTipo-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "CreadoLanzadoImportacionFicheroASCII"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-creadolanzadoimportacionficheroascii-export",
+                                            "exportAs": "creadolanzadoimportacionficheroascii",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-creadolanzadoimportacionficheroascii-export-idTrabajo",
+                                            "exportAs": "idTrabajo",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vTrIdtrabajo",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-creadolanzadoimportacionficheroascii-export-idEjecucion",
+                                            "exportAs": "idEjecucion",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vTrIdejecucion",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ],
+                                    "required": [
+                                        {
+                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii",
+                                            "parmNames": [
+                                                "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                                                "contenidoficheroascii",
+                                                "contenidoficheroasciiPrimeraLineaSinDiaNacimiento"
+                                            ],
+                                            "suppliers": [
+                                                {
+                                                    "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier",
+                                                    "runnable": true,
+                                                    "expectSuccess": true,
+                                                    "module": "@cmppath/common-test/requestreply-test",
+                                                    "constructorName": "RequestReply_Constructor",
+                                                    "methodName": "pF_RequestReply",
+                                                    "parms": {
+                                                        "requestreply": {
+                                                            "requestmethod": "GET",
+                                                            "URLpath": "/aux/ficherosascii/ficheroASCIIDeEjemploParaFicheroDeAnoMesProvinciaJSON",
+                                                            "URLparms": {
+                                                                "theTipoBoletin":          "~tipoBoletin",
+                                                                "theAno":                  "~anoFichero",
+                                                                "theMes":                  "~mesFichero",
+                                                                "theProvincia":            "~provinciaFichero",
+                                                                "theNumeroHombres":        "~numeroHombres",
+                                                                "theNumeroMujeres":        "~numeroMujeres",
+                                                                "theNumNBOLsRepetidos":    0,
+                                                                "theNumNBOLsYaExistentes": 0,
+                                                                "theFechasHombresSpec":    null,
+                                                                "theFechasMujeresSpec":    null,
+                                                                "theReutilizarExistentes": false
+                                                            },
+                                                            "statuscode": 200,
+                                                            "UNUSED_dumpurl":         true,
+                                                            "UNUSED_dumprequestdata": true,
+                                                            "UNUSED_dumpreply":       true
+                                                        }
+                                                    },
+                                                    "scheduleSubs": "SERIES",
+                                                    "checks": [
+                                                        {
+                                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vSuccess-true",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vSuccess",
+                                                            "checkValue": true
+                                                        },
+                                                        {
+                                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-contenidoficheroascii-supplier-check-_v_Reply.vTipo-BoletinDatos",
+                                                            "checkWhen": "AFTER",
+                                                            "checkNegate": false,
+                                                            "checkKind": "EQ",
+                                                            "checkOrigin": "TEST",
+                                                            "checkSource": "_v_Reply.vTipo",
+                                                            "checkValue": "FicheroASCII"
+                                                        }
+
+                                                    ],
+                                                    "exports": [
+                                                        {
+                                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export",
+                                                            "exportAs": "ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "*",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        },
+                                                        {
+                                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroascii",
+                                                            "exportAs": "contenidoficheroascii",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "_v_Reply.vFicheroASCII",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK"
+                                                        },
+                                                        {
+                                                            "name": "suite-31-importacionficherosascii-crearlanzaryesperarterminaciontrabajo-lineafnacimientoincompleta-springnut-test-require-ficheroASCIIDeEjemploParaFicheroDeAnoMesProvincia-export-contenidoficheroascii",
+                                                            "exportAs": "contenidoficheroasciiPrimeraLineaSinDiaNacimiento",
+                                                            "exportOrigin": "TEST",
+                                                            "exportSource": "_v_Reply.vFicheroASCII",
+                                                            "exportTarget": ".",
+                                                            "exportWhen": "OK",
+                                                            "exportComputation": "function( theF) { return theF.substring(0,147).concat( '  ', theF.substring(149));}"
+
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,408 @@
+{
+    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod":  "GET",
+            "statuscode":      200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLpath": "/trabajos/trabajoDatosJSON",
+            "URLparms": {
+                "theIdTrabajo": "~idTrabajoTerminado"
+            }
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-administrador-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-ficheroParaEliminar",
+            "parmNames": [
+                "ficheroParaEliminar"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-ficheroParaEliminar-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-ficheroParaEliminar-export",
+                            "exportAs": "ficheroParaEliminar",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+        {
+            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado",
+            "parmNames": [
+                "trabajoEliminacionFicheroTerminado"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/poll-test",
+                    "constructorName": "PollTest_Constructor",
+                    "methodName": "pF_Poll",
+                    "parms": {
+                        "poll": {
+                            "eachParm":     "theNumPolls",
+                            "maxPolls":     100,
+                            "pollInterval": 2000
+                        },
+                        "theNumPolls": null
+                    },
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "hitpoint-import",
+                            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                            "importMode": "STATIC"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-require-idTrabajo-export",
+                            "exportAs": "idTrabajoTerminado",
+                            "exportOrigin": "PARMS",
+                            "exportSource": "idTrabajo",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "subs": [
+                        {
+                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-subs-trabajoDatosJSON-vTrEstadoTrabajo-Terminado",
+                            "runnable": true,
+                            "expectSuccess": true,
+                            "module": "@cmppath/common-test/requestreply-test",
+                            "constructorName": "RequestReply_Constructor",
+                            "methodName": "pF_RequestReply",
+                            "parms": {
+                                "requestreply": {
+                                    "requestmethod":  "GET",
+                                    "statuscode":      200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "URLpath": "/trabajos/trabajoDatosJSON",
+                                    "URLparms": {
+                                        "theIdTrabajo": "~idTrabajo"
+                                    }
+                                }
+                            },
+                            "checks": [
+                                {
+                                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-require-trabajoEliminacionFicheroTerminado-supplier-test-subs-trabajoDatos-check-vTrEstadoTrabajo-Terminado",
+                                    "checkWhen": "AFTER",
+                                    "checkNegate": false,
+                                    "checkKind": "EQ",
+                                    "checkOrigin": "TEST",
+                                    "checkSource": "_v_Reply.vTrEstado",
+                                    "checkValue": "Terminado"
+                                }
+                            ]
+                        }
+                    ],
+                    "required": [
+                        {
+                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-require-creadolanzadoeliminacionficheroascii-idTrabajo",
+                            "parmNames": [
+                                "creadolanzadoeliminacionficheroascii",
+                                "idTrabajo"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-require-creadolanzadoeliminacionficheroascii-idTrabajo-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "POST",
+                                            "URLpath": "/eliminacionficheros/crearYLanzarTrabajoEliminacionFicheroAnoMesProvinciaJSON",
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true,
+                                            "requestdata": {
+                                                "theTipoBoletin": "~tipoBoletin",
+                                                "theAno":         "~anoFichero",
+                                                "theMes":         "~mesFichero",
+                                                "theProvincia":   "~provinciaFichero",
+                                                "theForzar":      true,
+                                                "theLanzar":      true
+                                            },
+                                            "URLparms": null
+                                        }
+                                    },
+                                    "checks": [
+                                        {
+                                            "name": "creadolanzadoeliminacionficheroascii-check-vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "creadolanzadoeliminacionficheroascii-check-vTipo-CreadoEliminacionFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "CreadoLanzadoEliminacionFichero"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-require-creadolanzadoeliminacionficheroascii-export",
+                                            "exportAs": "creadolanzadoeliminacionficheroascii",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        },
+                                        {
+                                            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-require-trabajoEliminacionFicheroTerminado-supplier-require-idTrabajo-export",
+                                            "exportAs": "idTrabajo",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vTrIdtrabajo",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod":  "GET",
+                    "statuscode":      200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "URLpath": "/trabajos/trabajoDatosMiembrosJSON",
+                    "URLparms": {
+                        "theIdTrabajo": "~idTrabajoTerminado",
+                        "theNombresParametros": "theTipoBoletin,theAno,theMes,theProvincia",
+                        "theNombresParakilometros": null,
+                        "theNombresResultados":     "theIdFicheroEliminado,theNumBedImagenesEliminados,theNumBedcodsEliminados,theNumBedlitsEliminados,theNumBedsEliminados,theNumBloquesEliminados,theNumErroresDeBedEliminados,theNumErroresDeFaseEliminados,theNumFasesEliminadas,theNumFicherosEliminados,theNumIdentificasEliminados,theNumNBOLsEliminados,theNumPMejorasEliminados",
+                        "theNombresResulkilotados": null,
+                        "theIncluyeBlobs": false
+                    }
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTipo-TrabajoDatos",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTipo",
+                    "checkValue": "TrabajoDatos"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrEstadoTrabajo-Terminado",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrEstado",
+                    "checkValue": "Terminado"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vTrExito-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vTrExito",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theTipoBoletin}.vPaParstr-tipoBoletin",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theTipoBoletin.vPaParstr",
+                    "checkValue": "~tipoBoletin"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theAno}.vPaPardec-anoFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theAno.vPaPardec",
+                    "checkValue": "~anoFichero"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theMes}.vPaPardec-mesFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theMes.vPaPardec",
+                    "checkValue": "~mesFichero"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vParametros.{vPaNombreparametro=theProvincia}.vPaPardec-provinciaFichero",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vParametros.vPaNombreparametro=theProvincia.vPaPardec",
+                    "checkValue": "~provinciaFichero"
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumFicherosEliminados}.vReResdec-1",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumFicherosEliminados.vReResdec",
+                    "checkValue": 1
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumBedcodsEliminados}.vReResdec-4",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedcodsEliminados.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumBedlitsEliminados}.vReResdec-4",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedlitsEliminados.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNLineas_ConDiferencias}.vReResdec-4",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumBedsEliminados.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumIdentificasEliminados}.vReResdec-4",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumIdentificasEliminados.vReResdec",
+                    "checkValue": 4
+                },
+                {
+                    "name": "suite-42-eliminacionficheros-crearlanzaryesperarterminaciontrabajo-obteniendofichero-springnut-test-subs-trabajoDatosIncluyendoJSON-check-vResultados.{vReNombreresultado=theNumNBOLsEliminados}.vReResdec-4",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vResultados.vReNombreresultado=theNumNBOLsEliminados.vReResdec",
+                    "checkValue": 4
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

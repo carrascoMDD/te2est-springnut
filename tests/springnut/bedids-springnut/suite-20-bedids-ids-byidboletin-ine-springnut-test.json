@@ -1,0 +1,676 @@
+{
+    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-20-bedids-ids-byidboletin-ine. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "GET",
+            "URLpath": "/bedids/boletinIdsJSON",
+            "URLparms": {
+                "theTipoBoletin":  "~tipoBoletin",
+                "theIdBoletin":    "~idboletin"
+            },
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true
+        },
+        "tipoBoletin": "ine",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99,
+        "numeroBoletinesALeer": 3
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vTipo-BoletinIds",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "BoletinIds"
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vTipoBoletin-tipoBoletin",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipoBoletin",
+            "checkValue": "~tipoBoletin"
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vIdFichero-idfichero",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdFichero",
+            "checkValue": "~idfichero"
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vAnoFichero-anoFichero",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vAnoFichero",
+            "checkValue": "~anoFichero"
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vMesFichero-mesFichero",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vMesFichero",
+            "checkValue": "~mesFichero"
+        },
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+            "checkValue": "~provinciaFichero"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-sinperfiles-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin",
+            "parmNames": [
+                "idboletin"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/bedids/listaBedidsDeFicheroJSON",
+                            "URLparms": {
+                                "theTipoBoletin":  "~tipoBoletin",
+                                "theIdFichero":    "~idfichero",
+                                "thePrimero":      0,
+                                "theCuantos":      "~numeroBoletinesALeer"
+                            },
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "imports": [
+                        {
+                            "name": "hitpoint-import",
+                            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+                            "importMode": "STATIC"
+                        }
+                    ],
+                    "checks": [
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vTipo-ListaBoletinIds",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "ListaBoletinIds"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vIdFichero-idfichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vIdFichero",
+                            "checkValue": "~idfichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vNumeroBoletines-numeroBoletinesALeer",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vNumeroBoletines",
+                            "checkValue": "~numeroBoletinesALeer"
+                        },
+
+
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipo-BoletinIds",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vTipo",
+                            "checkValue": "BoletinIds"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vIdFichero-idfichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vIdFichero",
+                            "checkValue": "~idfichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-export",
+                            "exportAs": "idboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-nbol-supplier-export",
+                            "exportAs": "nbol",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vNbol",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-identifica-supplier-export",
+                            "exportAs": "identifica",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdentifica",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idcodboletin-supplier-export",
+                            "exportAs": "idcodboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdCodBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idlitboletin-supplier-export",
+                            "exportAs": "idlitboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdLitBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idimageboletin-supplier-export",
+                            "exportAs": "idimageboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdImageBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ],
+                    "required": [
+
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-ficheroConBoletines",
+                            "parmNames": [
+                                "ficheroConBoletines"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-ficheroConBoletines-supplier",
+                                    "imports": [
+                                        {
+                                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-ficheroConBoletines-export",
+                                            "exportAs": "ficheroConBoletines",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "*",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+
+
+
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero",
+                            "parmNames": [
+                                "idfichero"
+                            ],
+                            "suppliers": [
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-supplier",
+                                    "runnable": true,
+                                    "expectSuccess": true,
+                                    "module": "@cmppath/common-test/requestreply-test",
+                                    "constructorName": "RequestReply_Constructor",
+                                    "methodName": "pF_RequestReply",
+                                    "parms": {
+                                        "requestreply": {
+                                            "requestmethod": "GET",
+                                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                                            "URLparms": {
+                                                "theTipoBoletin": "~tipoBoletin",
+                                                "theAno":         "~anoFichero",
+                                                "theMes":         "~mesFichero",
+                                                "theProvincia":   "~provinciaFichero"
+
+                                            },
+                                            "statuscode": 200,
+                                            "UNUSED_dumpurl":         true,
+                                            "UNUSED_dumprequestdata": true,
+                                            "UNUSED_dumpreply":       true
+                                        }
+                                    },
+                                    "checks": [
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vSuccess-true",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vSuccess",
+                                            "checkValue": true
+                                        },
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vTipo-FicheroDatos",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipo",
+                                            "checkValue": "FicheroDatos"
+                                        },
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vTipoBoletin",
+                                            "checkValue": "~tipoBoletin"
+                                        },
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vAnoFichero-anoFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vAnoFichero",
+                                            "checkValue": "~anoFichero"
+                                        },
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vMesFichero-mesFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vMesFichero",
+                                            "checkValue": "~mesFichero"
+                                        },
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFichero-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                                            "checkWhen": "AFTER",
+                                            "checkNegate": false,
+                                            "checkKind": "EQ",
+                                            "checkOrigin": "TEST",
+                                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                                            "checkValue": "~provinciaFichero"
+                                        }
+                                    ],
+                                    "exports": [
+                                        {
+                                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-idboletin-supplier-require-idFicherorequire-idboletin-supplier-export-idfichero",
+                                            "exportAs": "idfichero",
+                                            "exportOrigin": "TEST",
+                                            "exportSource": "_v_Reply.vIdFichero",
+                                            "exportTarget": ".",
+                                            "exportWhen": "OK"
+                                        }
+                                    ]
+                                }
+
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-sub",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply2": {}
+            },
+            "scheduleSubs": "SERIES",
+            "required": [
+                {
+                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-expectedresponsepart",
+                    "parmNames": [
+                        "faketofillrequestreply"
+                    ],
+                    "suppliers": [
+                        {
+                            "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-springnut-test-require-expectedresponsepart-supplier",
+                            "runnable": true,
+                            "module": "@cmppath/general-test/fake-test",
+                            "constructorName": "FakeTest_Constructor",
+                            "methodName": "pF_Fake",
+                            "scheduleSubs": "SERIES",
+                            "expectSuccess": true,
+                            "parms": {
+                                "fake": {
+                                    "fakeResult":   { "fakeResult": "fakeResult"},
+                                    "fakeSuccess":  true,
+                                    "fakeRcvError": null,
+                                    "fakeRcvStatus": 200,
+                                    "fakeRcvBody": { "fakeBody": "fakeBody"}
+                                },
+                                "requestreplyForboletinIdsJSONToExport": {
+                                    "requestmethod": "GET",
+                                    "URLpath": "/bedids/ine/boletinIdsJSON",
+                                    "URLparms": {
+                                        "theIdBoletin":    "~idboletin"
+                                    },
+                                    "statuscode": 200,
+                                    "UNUSED_dumpurl":         true,
+                                    "UNUSED_dumprequestdata": true,
+                                    "UNUSED_dumpreply":       true,
+                                    "expectedresponsepart": {
+                                        "vTipo": "BoletinIds",
+                                        "vSuccess": true,
+                                        "vTipoBoletin": null,
+                                        "vIdFichero": null,
+                                        "vAnoFichero": null,
+                                        "vMesFichero": null,
+                                        "vCodigoProvinciaFichero": null,
+                                        "vNbol": null,
+                                        "vIdentifica": null,
+                                        "vIdBoletin": null,
+                                        "vIdCodBoletin": null,
+                                        "vIdLitBoletin": null,
+                                        "vIdImageBoletin": null
+                                    }
+                                }
+                            },
+                            "exports": [
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-springnut-test-require-requestreplyForboletinIdsJSONt-export-expectedresponsepart",
+                                    "exportAs": "requestreply",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "requestreplyForboletinIdsJSONToExport",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-vTipoBoletin",
+                                    "exportAs": "requestreply.expectedresponsepart.vTipoBoletin",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "tipoBoletin",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-idfichero",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdFichero",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idfichero",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-anoFichero",
+                                    "exportAs": "requestreply.expectedresponsepart.vAnoFichero",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "anoFichero",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-mesFichero",
+                                    "exportAs": "requestreply.expectedresponsepart.vMesFichero",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "mesFichero",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-provinciaFichero",
+                                    "exportAs": "requestreply.expectedresponsepart.vCodigoProvinciaFichero",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "provinciaFichero",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-nbol",
+                                    "exportAs": "requestreply.expectedresponsepart.vNbol",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "nbol",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-identifica",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdentifica",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "identifica",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-vIdBoletin",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdBoletin",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idboletin",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-vIdCodBoletin",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdCodBoletin",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idcodboletin",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-vIdLitBoletin",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdLitBoletin",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idlitboletin",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-vIdImageBoletin",
+                                    "exportAs": "requestreply.expectedresponsepart.vIdImageBoletin",
+                                    "exportOrigin": "PARMS",
+                                    "exportSource": "idimageboletin",
+                                    "exportTarget": "..",
+                                    "exportWhen": "OK"
+                                },
+                                {
+                                    "name": "suite-20-bedids-ids-byidboletin-ine-springnut-test-require-requestreplyForboletinIdsJSONt-supplier-export-faketofillrequestreply",
+                                    "exportAs": "faketofillrequestreply",
+                                    "exportOrigin": "TEST",
+                                    "exportSource": "*",
+                                    "exportTarget": ".",
+                                    "exportWhen": "OK"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

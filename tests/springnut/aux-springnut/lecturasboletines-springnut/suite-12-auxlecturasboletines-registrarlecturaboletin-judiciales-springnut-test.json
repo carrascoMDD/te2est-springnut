@@ -1,0 +1,470 @@
+{
+    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test",
+    "runnable": true,
+    "expectSuccess": true,
+    "module": "@cmppath/common-test/requestreply-test",
+    "constructorName": "RequestReply_Constructor",
+    "methodName": "pF_RequestReply",
+    "parms": {
+        "salutation": "Hello suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales. Copyright 2014 2015 Antonio Carrasco Valero {{CopyrightNoticeJSON2}} Licensed under the EUPL, Version 1.1 only (the 'Licence'); You may not use this work except in compliance with the Licence. You may obtain a copy of the Licence at: https://joinup.ec.europa.eu/software/page/eupl/licence-eupl Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an 'AS IS' basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific language governing permissions and limitations under the Licence.  {{LicenseJSON2}}  {{LicensedJSON1}} {{LicensedJSON2}}",
+        "requestreply": {
+            "requestmethod": "POST",
+            "URLpath": "/aux/lecturasBoletines/auxRegistrarLecturaBoletinJSON",
+            "statuscode": 200,
+            "UNUSED_dumpurl":         true,
+            "UNUSED_dumprequestdata": true,
+            "UNUSED_dumpreply":       true,
+            "URLparms": null,
+            "requestdata": {
+                "theTipoBoletin": "~tipoBoletin",
+                "theIdBoletin": "~idboletin",
+                "theDePrueba": "~deprueba"
+            }
+        },
+        "deprueba": "@lecturadeprueba",
+        "tipoBoletin": "judiciales",
+        "anoFichero": 2015, "mesFichero": 1, "provinciaFichero": 99
+    },
+    "scheduleSubs": "SERIES",
+    "imports": [
+        {
+            "name": "hitpoint-import",
+            "configurationPath": "@testspath/springnut-host/parms-hitpoint.json",
+            "importMode": "STATIC"
+        }
+    ],
+    "checks": [
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-check-_v_Reply.vSuccess-true",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vSuccess",
+            "checkValue": true
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vTipo-LecturaboletinDatos",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipo",
+            "checkValue": "LecturaboletinDatos"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vIdBoletin-tipoBoletin",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vTipoBoletin",
+            "checkValue": "~tipoBoletin"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vIdBoletin-idboletin",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdBoletin",
+            "checkValue": "~idboletin"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vIdBoletin-idcodboletin",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdCodBoletin",
+            "checkValue": "~idcodboletin"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vIdBoletin-idlitboletin",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdLitBoletin",
+            "checkValue": "~idlitboletin"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vNbol-nbol",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vNbol",
+            "checkValue": "~nbol"
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-check-vIdentifica-identificaLecturaregistrada",
+            "checkWhen": "AFTER",
+            "checkNegate": false,
+            "checkKind": "EQ",
+            "checkOrigin": "TEST",
+            "checkSource": "_v_Reply.vIdentifica",
+            "checkValue": "~identifica"
+        }
+    ],
+    "required": [
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-sessiontest",
+            "parmNames": [
+                "sessiontest"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-sessiontest-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-sessiontest-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/security-springnut/obtener-sessiontest-sinperfiles-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-sessiontest-export",
+                            "exportAs": "sessiontest",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-ficheroConBoletines",
+            "parmNames": [
+                "ficheroConBoletines"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-ficheroConBoletines-supplier",
+                    "imports": [
+                        {
+                            "name": "obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test-imported",
+                            "configurationPath": "@testspath/springnut/ficheros-springnut/obtener-fichero-ine-corto-paraeliminar-importarsinoexistecorrecto-springnut-test.json"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-ficheroConBoletines-export",
+                            "exportAs": "ficheroConBoletines",
+                            "exportOrigin": "TEST",
+                            "exportSource": "*",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+            ]
+        },
+
+
+
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero",
+            "parmNames": [
+                "idfichero"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/ficheros/ficheroDeAnoMesProvinciaJSON",
+                            "URLparms": {
+                                "theTipoBoletin": "~tipoBoletin",
+                                "theAno":         "~anoFichero",
+                                "theMes":         "~mesFichero",
+                                "theProvincia":   "~provinciaFichero"
+
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "checks": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vTipo-FicheroDatos",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "FicheroDatos"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFichero-check-_v_Reply.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idFicherorequire-idboletin-supplier-export-idfichero",
+                            "exportAs": "idfichero",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vIdFichero",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+
+            ]
+        },
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin",
+            "parmNames": [
+                "idboletin"
+            ],
+            "suppliers": [
+                {
+                    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier",
+                    "runnable": true,
+                    "expectSuccess": true,
+                    "module": "@cmppath/common-test/requestreply-test",
+                    "constructorName": "RequestReply_Constructor",
+                    "methodName": "pF_RequestReply",
+                    "parms": {
+                        "requestreply": {
+                            "requestmethod": "GET",
+                            "URLpath": "/bedids/listaBedidsDeFicheroJSON",
+                            "URLparms": {
+                                "theTipoBoletin":  "~tipoBoletin",
+                                "theIdFichero":    "~idfichero",
+                                "thePrimero":      0,
+                                "theCuantos":      10
+                            },
+                            "requestdata": null,
+                            "statuscode": 200,
+                            "UNUSED_dumpurl":         true,
+                            "UNUSED_dumprequestdata": true,
+                            "UNUSED_dumpreply":       true
+                        }
+                    },
+                    "scheduleSubs": "SERIES",
+                    "checks": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vSuccess-true",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vSuccess",
+                            "checkValue": true
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vTipo-ListaBoletinIds",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vTipo",
+                            "checkValue": "ListaBoletinIds"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vNumeroBoletines-4",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vNumeroBoletines",
+                            "checkValue": 4
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipo-BoletinIds",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vTipo",
+                            "checkValue": "BoletinIds"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vTipoBoletin-tipoBoletin",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vTipoBoletin",
+                            "checkValue": "~tipoBoletin"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vAnoFichero-anoFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vAnoFichero",
+                            "checkValue": "~anoFichero"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vMesFichero-mesFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vMesFichero",
+                            "checkValue": "~mesFichero"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-check-_v_Reply.vBoletines.first.vCodigoProvinciaFichero-provinciaFichero",
+                            "checkWhen": "AFTER",
+                            "checkNegate": false,
+                            "checkKind": "EQ",
+                            "checkOrigin": "TEST",
+                            "checkSource": "_v_Reply.vBoletines.first.vCodigoProvinciaFichero",
+                            "checkValue": "~provinciaFichero"
+                        }
+                    ],
+                    "exports": [
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-export-idboletin",
+                            "exportAs": "idboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-export-nbol",
+                            "exportAs": "nbol",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vNbol",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-export-vIdentifica",
+                            "exportAs": "identifica",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdentifica",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-export-idcodboletin",
+                            "exportAs": "idcodboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdCodBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        },
+                        {
+                            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-require-idboletin-supplier-export-idlitboletin",
+                            "exportAs": "idlitboletin",
+                            "exportOrigin": "TEST",
+                            "exportSource": "_v_Reply.vBoletines.first.vIdLitBoletin",
+                            "exportTarget": ".",
+                            "exportWhen": "OK"
+                        }
+                    ]
+                }
+
+            ]
+        }
+    ],
+    "subs": [
+        {
+            "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-sub-otroreutilizandoreciente",
+            "runnable": true,
+            "expectSuccess": true,
+            "module": "@cmppath/common-test/requestreply-test",
+            "constructorName": "RequestReply_Constructor",
+            "methodName": "pF_RequestReply",
+            "parms": {
+                "requestreply": {
+                    "requestmethod": "POST",
+                    "URLpath": "/aux/lecturasBoletines/auxRegistrarLecturaBoletinJSON",
+                    "statuscode": 200,
+                    "UNUSED_dumpurl":         true,
+                    "UNUSED_dumprequestdata": true,
+                    "UNUSED_dumpreply":       true,
+                    "requestdata": {
+                        "theTipoBoletin": "~tipoBoletin",
+                        "theIdBoletin": "~idboletin",
+                        "theDePrueba": "~deprueba"
+                    },
+                    "URLparms": null
+                }
+            },
+            "checks": [
+                {
+                    "name": "suite-12-auxlecturasboletines-registrarlecturaboletin-judiciales-springnut-test-check-_v_Reply.vSuccess-true",
+                    "checkWhen": "AFTER",
+                    "checkNegate": false,
+                    "checkKind": "EQ",
+                    "checkOrigin": "TEST",
+                    "checkSource": "_v_Reply.vSuccess",
+                    "checkValue": true
+                }
+            ]
+        }
+
+    ]
+}
+
+
+
+
+
+
+
+
